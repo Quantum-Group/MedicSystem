@@ -12,3 +12,6 @@ Route::resource('/admin/paciente/registro', 'RegistroController');
 Route::get('admin/verifyPaciente','PacienteController@verifyPaciente');
 Route::get('admin/getPaciente','PacienteController@getPaciente');
 Route::resource('admin/user','CmsUserController');
+
+
+//Test de commit lesnier
