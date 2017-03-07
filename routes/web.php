@@ -14,4 +14,15 @@ Route::get('admin/getPaciente','PacienteController@getPaciente');
 Route::resource('admin/user','CmsUserController');
 
 
-//Test de commit lesnier
+
+
+
+
+
+
+
+
+
+
+
+//Mis rutas
