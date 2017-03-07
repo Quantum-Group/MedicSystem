@@ -25,4 +25,3 @@ Route::resource('admin/user','CmsUserController');
 
 
 
-//Mis rutas
