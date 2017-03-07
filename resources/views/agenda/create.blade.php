@@ -203,6 +203,9 @@ $page_title = $agenda->nombre;
                     }
                 });
             };
+            /*
+            * Panel de modificacion de la cita
+            * */
             $scope.panelModCita = function (event) {
                 /*
                  * Cambiar colores del panel de crear o modificar citas
