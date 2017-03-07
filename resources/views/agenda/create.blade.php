@@ -279,6 +279,9 @@ $page_title = $agenda->nombre;
                     });
                 });
             };
+            /*
+            * Panel bootstrap de creacion de citas
+            */
             $scope.panelNewCita = function () {
                 var panel = $("#pan-nueva-cita");
                 panel
