@@ -1,11 +1,12 @@
 <?php namespace App\Http\Controllers;
 
 use Session;
-//use Request;
-use Illuminate\Http\Request;
+use Request;
+//use Illuminate\Http\Request;
 use DB;
 use CRUDbooster;
 use App\ModMedico;
+use App\CmsUser;
 
 class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -117,17 +118,25 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
     $medico = ModMedico::findOrFail($medico_id);
     $medico->cms_user_id = $id;
     $medico->save();
-  }catch (\Error $x){}
+  }catch (\Error $x){
 
+	}
 }
   public function hook_before_delete($id)
   {
     try {
-      $medico = ModMedico::where("cms_user_id",$id)->first();
-      $medico->cms_user_id = 0;
-      $medico->save();
-    }catch (\Error $x){
+			$user = CmsUser::with('privilege')->find($id);
+			if($user->privilege->id == 3){ // es paciente
+				$p = ModPaciente::where("cms_user_id","=",$id)->first();
+				$p->cms_user_id = null;
+				$p->save();
+			}else if($user->privilege->id == 4){ // es medico
+				$m = ModMedico::where("cms_user_id","=",$id)->first();
+				$m->cms_user_id = null;
+				$m->save();
+			}
 
+    }catch (\Error $x){
     }
   }
 }

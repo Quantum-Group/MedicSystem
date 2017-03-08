@@ -52,7 +52,7 @@ class AdminCitaController extends Controller
     {
         $agenda = ModAgenda::where("medico_id",$id)->first();
         $agenda_id = $agenda->id;
-        $citas = ModCita::where("agenda_id",$agenda_id)->get();
+        $citas = ModCita::where(["agenda_id"=>$agenda_id,"estado_cita"=>"1"])->get();
         return response()->json( $citas );
     }
 
@@ -104,7 +104,8 @@ class AdminCitaController extends Controller
     public function destroy($id)
     {
         $cita = ModCita::findOrFail($id);
-        $response = $cita->delete();
+        $cita->estado_cita = 0;
+        $response = $cita->save();
 
         return response()->json([
             "response"=>$response
