@@ -289,7 +289,9 @@ cita.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
       $scope.agendaWorker = {
           load:function(){
             if(!$scope.functionIsRunning){
-              $scope.citaDisponible($scope.hoy);
+              var fecha = moment().format('YYYY-MM-DD h:mm:ss');
+              console.log(fecha);
+              $scope.citaDisponible(fecha);
             }
           }
       };
