@@ -122,7 +122,6 @@
         $timeout(countUp, 500);
         $scope.agendaWorker = {
             load:function(){
-                console.log(true);
                 $("#calendar").fullCalendar("refetchEvents");
             }
         };

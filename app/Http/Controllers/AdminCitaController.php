@@ -52,7 +52,9 @@ class AdminCitaController extends Controller
     {
         $agenda = ModAgenda::where("medico_id",$id)->first();
         $agenda_id = $agenda->id;
-        $citas = ModCita::where(["agenda_id"=>$agenda_id,"estado_cita"=>"1"])->get();
+        $citas = ModCita::where("agenda_id","=",$agenda_id)
+                          ->where("estado_cita","=","1")
+                          ->get();
         return response()->json( $citas );
     }
 
@@ -80,7 +82,7 @@ class AdminCitaController extends Controller
         $paciente = ModPaciente::find($request->get("idpaciente"));
         $cita->paciente_id = $request->get("idpaciente");
         $cita->detalle_cita = $request->get("descripcion");
-        $cita->estado_cita = false;
+        $cita->estado_cita = 1;
         $cita->start = $request->get("start");
         $cita->end = $request->get("end");
         $agenda_id = $request->get("agenda_id");
@@ -104,8 +106,8 @@ class AdminCitaController extends Controller
     public function destroy($id)
     {
         $cita = ModCita::findOrFail($id);
-        $cita->estado_cita = 0;
-        $response = $cita->save();
+        //$cita->estado_cita = 0;
+        $response = $cita->delete();
 
         return response()->json([
             "response"=>$response

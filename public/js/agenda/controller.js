@@ -9,6 +9,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
             autoclose: true,
             format: 'dd/mm/yyyy'
         });
+        //alert(URL_CITAS);
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next, today',

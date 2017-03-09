@@ -51,7 +51,7 @@ class AdminAgendaController extends Controller
         $cita->paciente_id = $request->get("idpaciente");
         $cita->detalle_cita = $request->get("descripcion");
         $cita->agenda_id = $request->get("agenda_id");
-        $cita->estado_cita = false;
+        $cita->estado_cita = 1;
         $cita->start = $request->get("start");
         $cita->end = $request->get("end");
         if(is_null($request->get("agenda_id"))){ //si es null viene por solicitud de usuario
