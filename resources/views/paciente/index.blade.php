@@ -193,6 +193,7 @@ class="portlet light portlet-fit bordered">
   URL_AGENDA = '{{ CRUDBooster::adminPath('medico/agenda/') }}';
   PATH_IMG = '{{asset('img/doctor.png')}}';
   URL_ALL_MEDIC = '{{CRUDBooster::adminPath()."/todoMedico"}}';
+  PACIENTE_ID ='{{$paciente->id}}';
   //URL_MEDICO_CITA = '{{ CRUDBooster::adminPath('medico/cita')}}';
   /*
   * -->

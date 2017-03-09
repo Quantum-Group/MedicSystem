@@ -4,12 +4,12 @@ $page_title = $agenda->nombre;
 @extends("crudbooster::admin_template")
 @section("content")
     <style>
-        .fc-time-grid .fc-slats td{ height: 50px !important; }
+        .fc-time-grid .fc-slats td{ height: 40px !important; }
     </style>
     {{--modal edicion de evento--}}
     <div ng-app="AppAgenda"
          ng-init="fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);"
-         ng-controller="CtrlApp">
+         ng-controller="CtrlApp" ng-cloack>
         <div id="mod_agregar_cita" class="modal fade bd-example-modal-md" tabindex="-1" role="dialog"
              aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
@@ -159,5 +159,4 @@ $page_title = $agenda->nombre;
     <script src="{{asset('js/agenda/controller.js')}}"></script>
     <script src="{{asset('js/agenda/directive.js')}}"></script>
     <!--  ANGULAR APP -->
-
 @endsection

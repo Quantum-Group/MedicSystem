@@ -103,7 +103,7 @@ cita.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
           var data = {
               "start":$scope.start_selected,
               "end":$scope.end_selected,
-              "idpaciente":'{{$paciente->id}}',
+              "idpaciente":PACIENTE_ID,
               "medico_id":$scope.medico_id,
               "descripcion":'Realizado por el usuario'
           };
