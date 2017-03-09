@@ -126,8 +126,8 @@ $page_title = $agenda->nombre;
                             <button ng-show="modificar" ng-click="eliminarCita([[cita_id]])" type="button" class="btn btn-danger"><i style="font-size: 19px;"
                                                                                                 class="fa fa-trash pull-left"></i>
                             </button>
-                            <button ng-show="modificar" ng-click="reloadRoute()" style="margin-right: 5px;" type="reset"
-                                    class="btn btn-info"><i class="fa fa-minus-circle"></i> Cancelar
+                            <button ng-show="modificar" ng-click="cancelarCita()" style="margin-right: 5px;" type="reset"
+                                    class="btn btn-default"><i class="fa fa-minus-circle"></i> Cancelar Cita
                             </button>
                             <button ng-show="modificar" type="submit" class="btn btn-warning"><i
                                         class="fa fa-check"></i> Modificar
@@ -150,6 +150,7 @@ $page_title = $agenda->nombre;
 
       URL_CITAS = '{{ CRUDBooster::adminPath('medico/cita/'.$medico->id) }}';
       URL_MEDICO_CITA = '{{ CRUDBooster::adminPath('medico/cita')}}';
+      URL_MEDICO_AGENDA = '{{ CRUDBooster::adminPath('medico/agenda')}}';
       /*
       * -->
       */

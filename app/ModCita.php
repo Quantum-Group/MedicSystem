@@ -15,7 +15,9 @@ class ModCita extends Model
         "estado_cita",
         "start",
         "end",
-        "title"
+        "title",
+        "color",
+        "trash"
     ];
 
     public function agenda(){

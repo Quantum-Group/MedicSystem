@@ -45,27 +45,32 @@ class AdminAgendaController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->get("color") == "#7f8c8d"){
+            $cita = ModCita::findOrFail($request->get("cita_id"));
+            $cita->color = $request->get("color");
+            $response = $cita->save();
+        }else {
+            $cita = new ModCita;
+            $paciente = ModPaciente::find($request->get("idpaciente"));
+            $cita->paciente_id = $request->get("idpaciente");
+            $cita->detalle_cita = $request->get("descripcion");
+            $cita->agenda_id = $request->get("agenda_id");
+            $cita->estado_cita = 1;
+            $cita->start = $request->get("start");
+            $cita->end = $request->get("end");
+            if (is_null($request->get("agenda_id"))) { //si es null viene por solicitud de usuario
+                $a = ModAgenda::where("medico_id", "=", $request->get('medico_id'))->first();
+                $agenda_id = $a->id;
+                $cita->agenda_id = $agenda_id;
+            } else { //si tiene valor viene por solicitud de call center
+                $agenda_id = $request->get('agenda_id');
+                $cita->agenda_id = $agenda_id;
+            }
 
-        $cita = new ModCita;
-        $paciente = ModPaciente::find($request->get("idpaciente"));
-        $cita->paciente_id = $request->get("idpaciente");
-        $cita->detalle_cita = $request->get("descripcion");
-        $cita->agenda_id = $request->get("agenda_id");
-        $cita->estado_cita = 1;
-        $cita->start = $request->get("start");
-        $cita->end = $request->get("end");
-        if(is_null($request->get("agenda_id"))){ //si es null viene por solicitud de usuario
-            $a = ModAgenda::where("medico_id","=",$request->get('medico_id'))->first();
-            $agenda_id = $a->id;
-            $cita->agenda_id = $agenda_id;
-        }else { //si tiene valor viene por solicitud de call center
-            $agenda_id = $request->get('agenda_id');
-            $cita->agenda_id = $agenda_id;
+            $medico = ModMedico::find($request->get("medico_id"));
+            $cita->title = ($medico->titulo . " " . $medico->nombre . " " . $medico->apellido . "," . $paciente->nombre . " " . $paciente->apellido);
+            $response = $cita->save();
         }
-
-        $medico = ModMedico::find($request->get("medico_id"));
-        $cita->title = ($medico->titulo." ".$medico->nombre." ".$medico->apellido.",".$paciente->nombre." ".$paciente->apellido);
-        $response = $cita->save();
 
         return response()->json([
             "response"=>$response,

@@ -54,6 +54,8 @@ class AdminCitaController extends Controller
         $agenda_id = $agenda->id;
         $citas = ModCita::where("agenda_id","=",$agenda_id)
                           ->where("estado_cita","=","1")
+                          ->where("trash","=",null)
+                          ->orWhere("trash","=",0) // los que no estan en papelera
                           ->get();
         return response()->json( $citas );
     }
@@ -79,18 +81,24 @@ class AdminCitaController extends Controller
     public function update(Request $request, $id)
     {
         $cita = ModCita::findOrFail($id);
-        $paciente = ModPaciente::find($request->get("idpaciente"));
-        $cita->paciente_id = $request->get("idpaciente");
-        $cita->detalle_cita = $request->get("descripcion");
-        $cita->estado_cita = 1;
-        $cita->start = $request->get("start");
-        $cita->end = $request->get("end");
-        $agenda_id = $request->get("agenda_id");
-        $medico = ModMedico::find($request->get("medico_id"));
+        if(!is_null($request->get("color"))){
+            $cita->color = $request->get("color");
+            $response = $cita->save();
+        }else {
+            $paciente = ModPaciente::find($request->get("idpaciente"));
+            $cita->paciente_id = $request->get("idpaciente");
+            $cita->detalle_cita = $request->get("descripcion");
+            $cita->estado_cita = 1;
+            $cita->start = $request->get("start");
+            $cita->end = $request->get("end");
+            $agenda_id = $request->get("agenda_id");
+            $medico = ModMedico::find($request->get("medico_id"));
 
-        $cita->title = ($medico->titulo." ".$medico->nombre." ".$medico->apellido.",".$paciente->nombre." ".$paciente->apellido);
+            $cita->title = ($medico->titulo." ".$medico->nombre." ".$medico->apellido.",".$paciente->nombre." ".$paciente->apellido);
 
-        $response = $cita->save();
+            $response = $cita->save();
+        }
+
 
         return response()->json([
             "response"=>$response
@@ -106,8 +114,8 @@ class AdminCitaController extends Controller
     public function destroy($id)
     {
         $cita = ModCita::findOrFail($id);
-        //$cita->estado_cita = 0;
-        $response = $cita->delete();
+        $cita->trash = 1;
+        $response = $cita->save();
 
         return response()->json([
             "response"=>$response
