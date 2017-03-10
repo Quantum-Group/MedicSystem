@@ -72,7 +72,7 @@ $page_title = $agenda->nombre;
         {{--fin modal edicion de evento--}}
         <div class="box">
             <div class="box-header">
-                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Nueva Cita</button>
+                <button ng-click="resetPanelCita()" type="button" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Nueva Cita</button>
                 <a href="{{CRUDBooster::adminPath().'/paciente/add?m=3'}}">
                     <button class="btn btn-default btn-sm"><i class="fa fa-male"></i> Nuevo paciente</button>
                 </a>
@@ -86,59 +86,9 @@ $page_title = $agenda->nombre;
                 </div>
             </div>
             <div class="col-xs-4">
-                <div id="pan-nueva-cita" class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h4 id="heading"><i class="fa fa-calendar-check-o"></i> Agendar Cita</h4>
-                    </div>
-                    <div class="panel-body">
-                        {{Form::open(array('url'=>'/admin/medico/agenda','method'=>'post','id'=>'form-cita','name'=>'form-cita','ng-submit'=>'submit($event)'))}}
-                        <input ng-model="agenda_id" type="hidden" name="agenda_id" value="{{$agenda->id}}">
-                        <input ng-model="medico_id" type="hidden" name="medico_id" value="{{$medico->id}}">
-
-                        <div class="form-group">
-                            <label for=""> Seleccione el paciente:</label>
-                            <select id="select-paciente" class="form-control select2" name="idpaciente">
-                                @foreach($paciente as $p)
-                                    <option value="{{$p->id}}">{{$p->nombre." ".$p->apellido}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-5">
-                                <button type="button" ng-click="showModalDate()" class="btn btn-default btn-sm"><i
-                                            class="fa fa-clock-o"></i> Fecha
-                                    y Hora
-                                </button>
-                            </div>
-                            <div class="col-sm-7">
-                                <h5 for=""><b>Fecha:</b> <a id="p_fecha">[[ fecha | date: "mediumDate" ]]</a></h5>
-                                <h5 for=""><b>Desde:</b> <a id="p_desde">[[ horaInicio | date: "shortTime" ]]</a></h5>
-                                <h5 for=""><b>Hasta:</b> <a id="p_hasta">[[ horaFin | date: "shortTime" ]]</a></h5>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Observaciones</label>
-                        <textarea ng-model="descripcion" class="form-control" name="descripcion"
-                                  cols="30"
-                                  rows="6"></textarea>
-                        </div>
-                        <div class="form-group pull-right">
-                            <button ng-show="modificar" ng-click="eliminarCita([[cita_id]])" type="button" class="btn btn-danger"><i style="font-size: 19px;"
-                                                                                                class="fa fa-trash pull-left"></i>
-                            </button>
-                            <button ng-show="modificar" ng-click="cancelarCita()" style="margin-right: 5px;" type="reset"
-                                    class="btn btn-default"><i class="fa fa-minus-circle"></i> Cancelar Cita
-                            </button>
-                            <button ng-show="modificar" type="submit" class="btn btn-warning"><i
-                                        class="fa fa-check"></i> Modificar
-                            </button>
-                            <button ng-show="agendar" type="submit" class="btn btn-success"><i class="fa fa-check"></i>
-                                Agendar
-                            </button>
-                        </div>
-                        {{ Form::close() }}
-                    </div>
-                </div>
+                {{--Panel de gestion de citas--}}
+                <panel-cita></panel-cita>
+                {{--FIN Panel de gestion de citas--}}
             </div>
             <div class="box-footer"></div>
         </div>
@@ -147,10 +97,14 @@ $page_title = $agenda->nombre;
     /*
     * GLOBALS
     */
-
+    AGENDA_ID = '{{$agenda->id}}';
+    MEDICO_ID = '{{$medico->id}}';
       URL_CITAS = '{{ CRUDBooster::adminPath('medico/cita/'.$medico->id) }}';
       URL_MEDICO_CITA = '{{ CRUDBooster::adminPath('medico/cita')}}';
       URL_MEDICO_AGENDA = '{{ CRUDBooster::adminPath('medico/agenda')}}';
+      OPTIONS_PACIENTE = '@foreach($paciente as $p)'+
+          '<option value="{{$p->id}}">{{$p->nombre." ".$p->apellido}}</option>'+
+          '@endforeach';
       /*
       * -->
       */

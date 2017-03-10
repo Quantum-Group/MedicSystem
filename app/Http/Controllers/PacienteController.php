@@ -104,11 +104,11 @@ class PacienteController extends Controller
     }
     public function citaDisponible(Request $request){
         $fecha = Carbon::parse($request->get('fecha'))->format('Y-m-d');
-        //$fecha = Carbon::createFromFormat('Y/m/d',$request->get('f_selected'))->toDateString();
         $resultado = ModAgenda::where("medico_id",$request->get('medico_id'))
                                     ->with(["cita"=>function($query) use($fecha){
-                                        $query->where("updated_at","like","%".$fecha."%")
-                                                ->orderBy("updated_at","asc");
+                                        $query->where("start","like","%".$fecha."%")
+                                                ->where("trash","=",null)
+                                                ->orderBy("start","asc");
                                     }])->get();
         return response()->json([
             "agenda"=>$resultado

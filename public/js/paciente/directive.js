@@ -36,7 +36,7 @@ cita.directive('citasDisponibles', function () {
         },
         template: '<div ng-show="!loading" style="max-height: 400px;overflow-y: auto;" class="list-group">' +
         '<div class="list-group-item"><b>HORARIO</b> <b class="pull-right">ESTADO</b> </div>' +
-        '<a ng-click="selectHorario(res.start,res.end,res.estado)" href="javascript:void(0)" ng-repeat="res in cDisponible" class="list-group-item">[[ res.start]] - [[res.end]] <button class="btn [[ res.estado == \'Disponible\' ? \'btn-success\':\'btn-danger\' ]] btn-xs pull-right">[[res.estado]]</button></a>' +
+        '<a ng-click="selectHorario(res.start,res.end,res.estado)" href="javascript:void(0)" ng-repeat="res in cDisponible" class="list-group-item">[[ res.start ]] - [[res.end]] <button class="btn [[ res.estado == \'Disponible\' ? \'btn-success\':\'btn-danger\' ]] btn-xs pull-right">[[res.estado]]</button></a>' +
         '</div>'
     }
 });

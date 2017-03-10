@@ -98,11 +98,6 @@ class AdminAgendaController extends Controller
      */
     public function edit($id)
     {
-        /*$agenda = ModAgenda::with(["medico"=>function($query) use($id){
-            $query->where('id',$id);
-        }])
-            ->first();*/
-
         $agenda = ModAgenda::where("medico_id",$id)->first();
         $paciente = ModPaciente::all();
         $medico = ModMedico::find($id);
@@ -119,7 +114,6 @@ class AdminAgendaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**

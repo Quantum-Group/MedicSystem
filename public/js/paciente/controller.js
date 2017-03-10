@@ -96,18 +96,17 @@ $scope.agendarCita = function () {
     text: 'Espere...',
     showConfirmButton: false
   });
-  $scope.f_selected = moment($scope.f_selected,"LL").format('YYYY-MM-DD');
-  $scope.start_selected = moment($scope.f_selected+" "+$scope.start_selected,'YYYY-MM-DD H:mm').format();
-  $scope.end_selected = moment($scope.f_selected+" "+$scope.end_selected,'YYYY-MM-DD H:mm').format();
+  var f_selected = moment($scope.f_selected,"YYYY-MM-DD H:mm").format('YYYY-MM-DD'),
+  start_selected = moment(f_selected+" "+$scope.start_selected,'YYYY-MM-DD H:mm a').format(),
+  end_selected = moment(f_selected+" "+$scope.end_selected,'YYYY-MM-DD H:mm a').format();
   // obtener id de paciente basado en id de usuario
   var data = {
-    "start":$scope.start_selected,
-    "end":$scope.end_selected,
+    "start":start_selected,
+    "end":end_selected,
     "idpaciente":PACIENTE_ID,
     "medico_id":$scope.medico_id,
     "descripcion":'Realizado por el usuario'
   };
-
   $http({
     url: URL_AGENDA,
     method: 'POST',
@@ -200,10 +199,13 @@ $scope.ajuste = function () {
 * @return
 */
 $scope.functionIsRunning = false; //verificar que la funcion termine de ejecutar
+    $scope.count = 0;
 $scope.citaDisponible = function (fecha) {
+  $scope.count == 0 ? $timeout(countUp, 4000): console.log(false) ; // inicializar una sola vez el timeout
   $scope.functionIsRunning = true;
   //$scope.loading=true; // muestra estado de elementos de carga
-  $scope.f_selected = moment(fecha).format('LL'); //fecha = "2017-03-08 17:02:27"
+  $scope.show_fecha = typeof fecha != "undefined" ? moment(fecha).format('LL') : moment($scope.hoy).format('LL'); //fecha = "2017-03-08 17:02:27"
+    $scope.f_selected = fecha;
   $http({
     url: URL_CITA_DISPONIBLE,
     method: 'GET',
@@ -276,6 +278,7 @@ $scope.citaDisponible = function (fecha) {
       $scope.cDisponible = citasDisp;
   });
   $scope.functionIsRunning = false;
+    $scope.count++; // usado para inicializar el timeout una sola vez
 };
 /*
 *  Sincronizar agenda
@@ -287,15 +290,15 @@ var countUp = function() {
 $scope.agendaWorker = {
   load:function(){
     if(!$scope.functionIsRunning){
-      var fecha = moment().format('YYYY-MM-DD h:mm:ss');
-      console.log(fecha);
-      $scope.citaDisponible(fecha);
+      //var fecha = moment($scope.f_selected).format('YYYY-MM-DD h:mm:ss');
+      console.log($scope.f_selected);
+      $scope.citaDisponible($scope.f_selected || $scope.hoy);
     }
   }
 };
-$timeout(countUp, 4000);//iniciar el timeout
+
 /*
 * -->
 *
-* */
+*/
 });// fin controller

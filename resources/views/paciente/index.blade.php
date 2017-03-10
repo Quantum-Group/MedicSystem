@@ -148,7 +148,7 @@ class="portlet light portlet-fit bordered">
                 </div>
               </div>
               <div class="col-sm-4 pull-left">
-                <h4 style="color:white" class="pull-right"><b>Fecha:</b> [[ f_selected |
+                <h4 style="color:white" class="pull-right"><b>Fecha:</b> [[ show_fecha |
                   date:'yyyy']]
                 </h4>
               </div>
@@ -175,7 +175,7 @@ class="portlet light portlet-fit bordered">
           <h4 class=""><b>* Cita con el Médico: </b>[[medico_titulo+" "+medico_nombre+" "+medico_apellido]]
           </h4>
           <h4 class=""><b>* Nombre del paciente: </b> {{CRUDBooster::myName()}}</h4>
-          <h4 class=""><b>* Fecha de la Cita: </b> [[f_selected]]</h4>
+          <h4 class=""><b>* Fecha de la Cita: </b> [[show_fecha]]</h4>
           <h4 class=""><b>* Hora de la Cita: </b> [[hora_cita_selected]]</h4>
           <div class="col-sm-2 pull-right">
             <button ng-click="agendarCita()" class="btn btn-success"> Enviar <i class="fa fa-send"></i>

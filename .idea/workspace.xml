@@ -15,15 +15,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
-    <option name="FLATTEN" value="false" />
-    <option name="GROUP_BY_TYPE" value="true" />
-    <option name="SORT_CHILDREN" value="false" />
-    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -31,26 +32,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AdminCitaController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminCitaController.php">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/agenda/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51746035">
-              <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="-288">
+              <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <folding>
+                <element signature="e#79#111#0" expanded="false" />
+                <element signature="e#1266#1408#0" expanded="false" />
+                <element signature="e#3860#3881#0" expanded="false" />
+                <element signature="e#3886#3938#0" expanded="false" />
+                <element signature="e#4881#5267#0" expanded="false" />
+                <element signature="e#5301#5554#0" expanded="false" />
+                <element signature="e#5466#5540#0" expanded="false" />
+                <element signature="e#6141#6165#0" expanded="false" />
+                <element signature="e#6257#6351#0" expanded="false" />
+                <element signature="e#6673#6715#0" expanded="false" />
+                <element signature="e#6753#6795#0" expanded="false" />
+                <element signature="e#6801#6822#0" expanded="false" />
+                <element signature="e#6827#6869#0" expanded="false" />
+                <element signature="e#6977#6998#0" expanded="false" />
+                <element signature="e#7003#7067#0" expanded="false" />
+                <element signature="e#7152#7437#0" expanded="false" />
+                <element signature="e#7471#7725#0" expanded="false" />
+                <element signature="e#7637#7711#0" expanded="false" />
+                <element signature="e#7817#8109#0" expanded="false" />
+                <element signature="e#8403#8424#0" expanded="false" />
+                <element signature="e#8464#8517#0" expanded="false" />
+                <element signature="e#8556#9342#0" expanded="false" />
+                <element signature="e#8566#8659#0" expanded="false" />
+                <element signature="e#9524#9554#0" expanded="false" />
+                <element signature="e#11295#11593#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>form-cita</find>
+      <find>descripcion</find>
+      <find>form::</find>
+      <find>nueva cita</find>
+      <find>agendar nueva</find>
+      <find>agendar nueva</find>
+      <find>nueva-ci</find>
+      <find>nuevaci</find>
+      <find>nuevacita</find>
+      <find>reset</find>
+      <find>fullcalendar</find>
+      <find>panelModCita</find>
+      <find>panel_modify</find>
+      <find>heading</find>
+      <find>nueva cit</find>
+      <find>patch</find>
+      <find>agendar</find>
+      <find>resetpanel</find>
+      <find>reloadCalendar</find>
+      <find>medico</find>
+      <find>fullcale</find>
+      <find>horaFin</find>
+      <find>resetPanelCita</find>
+      <find>verify_time</find>
+      <find>submit</find>
+      <find>actualizar</find>
+      <find>agendaworker</find>
+      <find>citaco</find>
+      <find>cita</find>
+      <find>select</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/ModAgenda.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminAgendaCotroller.php" />
-        <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
         <option value="$PROJECT_DIR$/public/vendor/crudbooster/assets/styles.css" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminMedicoController.php" />
@@ -76,7 +132,6 @@
         <option value="$PROJECT_DIR$/app/CmsUser.php" />
         <option value="$PROJECT_DIR$/app/ModPaciente.php" />
         <option value="$PROJECT_DIR$/resources/views/register/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PacienteController.php" />
         <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/form.blade.php" />
         <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/users/select_user.blade.php" />
@@ -87,25 +142,32 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminCmsUsersController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CmsUserController.php" />
         <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/paciente/index.blade.php" />
-        <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php" />
         <option value="$PROJECT_DIR$/public/js/doWork.js" />
         <option value="$PROJECT_DIR$/resources/views/agenda/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/ModCita.php" />
+        <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/paciente/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/paciente/directive.js" />
+        <option value="$PROJECT_DIR$/public/js/paciente/controller.js" />
         <option value="$PROJECT_DIR$/resources/views/agenda/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminAgendaController.php" />
-        <option value="$PROJECT_DIR$/public/js/agenda/controller.js" />
-        <option value="$PROJECT_DIR$/app/ModCita.php" />
+        <option value="$PROJECT_DIR$/public/js/agenda/directive.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminCitaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PacienteController.php" />
+        <option value="$PROJECT_DIR$/public/js/agenda/controller.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminAgenda1Controller.php" />
+        <option value="$PROJECT_DIR$/public/js/agenda/app.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-  </component>
-  <component name="NamedScopeManager">
-    <order />
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpServers">
     <servers />
@@ -116,16 +178,6 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -138,9 +190,10 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,304 +201,23 @@
               <option name="myItemId" value="MedicSystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crocodicstudio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudbooster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crocodicstudio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudbooster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crocodicstudio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudbooster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crocodicstudio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudbooster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crocodicstudio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudbooster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userfiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crocodicstudio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudbooster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userfiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crocodicstudio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudbooster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agenda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MedicSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="AdminCitaController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;controller.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/controller.js&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;modc&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;agendacon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;modcit&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;citacont&#9;null&#9;null&#10;agendacont&#9;null&#9;null&#10;pacientecon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.p&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/routes.php&#10;create.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/app.js&#10;admin_temp&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;index.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/index.blade.php&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;create.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;index.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/index.blade.php&#10;dowork&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/doWork.js&#10;select&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/users/select_user.blade.php&#10;form_bo&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form.blade.php&#10;admin_templ&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;admin_tem&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template_plugins.blade.php&#10;home.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/home.blade.php&#10;cms&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCmsUsersController.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/CmsUser.php&#10;CmsUserController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCmsUsersController.php&#10;medico&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminMedico1Controller.php&#10;agenda&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/.env&#10;adminuse&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/userfiles/controllers/AdminCmsUsersController.php&#10;pacientec&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminPaciente1Controller.php&#10;cbcontroll&#9;null&#9;null&#10;cmsuserscontroller&#9;null&#9;null&#10;cmsuserscontro&#9;null&#9;null&#10;cbba&#9;null&#9;null&#10;admincms&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/userfiles/controllers/AdminCmsUsersController.php&#10;modmed&#9;null&#9;null&#10;adminmedi&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminMedicoController.php&#10;adminme&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminMedico1Controller.php&#10;component&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/type_components/checkbox/component.blade.php&#10;form_body.bl&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;for&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form.blade.php&#10;cita&#9;null&#9;null&#10;adminagenda&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;modp&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModPaciente.php" />
+    <property name="SearchEverywhereHistoryKey" value="app.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/app.js&#10;controller.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/controller.js&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;agendacon&#9;null&#9;null&#10;citacale&#9;null&#9;null&#10;citacalendar&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaCalendarioController.php&#10;cita&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaCalendarioController.php&#10;PacienteController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;admincita&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;citacon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;AdminAgendaController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;directi&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/directive.js&#10;create.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;pacientecont&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.php&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;directive.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/directive.js&#10;controller&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/controller.js&#10;index.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/paciente/index.blade.php&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;admin_tem&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;create.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;AdminCitaController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;modc&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;modcit&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;citacont&#9;null&#9;null&#10;agendacont&#9;null&#9;null&#10;pacientecon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.p&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/routes.php&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/app.js&#10;admin_temp&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;index.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/index.blade.php&#10;dowork&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/doWork.js&#10;select&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/users/select_user.blade.php&#10;form_bo&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form.blade.php&#10;admin_templ&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;home.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/home.blade.php&#10;cms&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCmsUsersController.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/CmsUser.php&#10;CmsUserController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCmsUsersController.php&#10;medico&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminMedico1Controller.php&#10;agenda&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/.env&#10;adminuse&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/userfiles/controllers/AdminCmsUsersController.php&#10;pacientec&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminPaciente1Controller.php" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
@@ -458,7 +230,16 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -472,10 +253,15 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -484,8 +270,30 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -494,9 +302,17 @@
       <changelist id="d3c0afc5-d932-4cd0-acd2-4b0ef52f1805" name="Default" comment="" />
       <created>1486399169838</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1486399169838</updated>
+      <workItem from="1489159716167" duration="227000" />
+      <workItem from="1489159987558" duration="352000" />
+      <workItem from="1489160376259" duration="1642000" />
+      <workItem from="1489162081509" duration="24779000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="27000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,47 +325,51 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3396779" sideWeight="0.49479166" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294271" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44791666" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3396779" sideWeight="0.5052083" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6692708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15355521" sideWeight="0.49479166" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6692708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44791666" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3396779" sideWeight="0.5052083" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44791666" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.295764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46484375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44791666" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46484375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -567,562 +387,782 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/register/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5728863">
-          <caret line="258" column="10" selection-start-line="258" selection-start-column="10" selection-end-line="258" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/type_components/checkbox/component.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5013774">
-          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/middlewares/CBBackend.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36363637">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33236152">
-          <caret line="66" column="17" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/helpers/CRUDBooster.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7289973">
-          <caret line="186" column="18" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dompdf/dompdf/lib/Cpdf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15889212">
-          <caret line="5055" column="23" selection-start-line="5055" selection-start-column="19" selection-end-line="5055" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/userfiles/controllers/CBHook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45454547">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/components/action.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5">
-          <caret line="122" column="49" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
+        <state relative-caret-position="0">
+          <caret line="122" column="49" lean-forward="false" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/channels.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/console.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6363636">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="0">
+          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/CreatesApplication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6363636">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/CRUDBoosterServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8943089">
-          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+        <state relative-caret-position="0">
+          <caret line="20" column="75" lean-forward="false" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/type_components/child/component.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="175" column="72" selection-start-line="175" selection-start-column="72" selection-end-line="175" selection-end-column="72" />
+        <state relative-caret-position="0">
+          <caret line="175" column="72" lean-forward="false" selection-start-line="175" selection-start-column="72" selection-end-line="175" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/unisharp/laravel-filemanager/src/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7988981">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3181818">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/crudbooster.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14876033">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="0">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/type_components/filemanager/component.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44214877">
-          <caret line="19" column="353" selection-start-line="19" selection-start-column="353" selection-end-line="19" selection-end-column="353" />
+        <state relative-caret-position="0">
+          <caret line="19" column="353" lean-forward="false" selection-start-line="19" selection-start-column="353" selection-end-line="19" selection-end-column="353" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminPaciente1Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0454545">
-          <caret line="546" column="24" selection-start-line="546" selection-start-column="24" selection-end-line="546" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="546" column="24" lean-forward="false" selection-start-line="546" selection-start-column="24" selection-end-line="546" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2892562">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.24910395">
-          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+        <state relative-caret-position="0">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/userfiles/controllers/AdminCmsUsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3181818">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.171875">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/ModMedico.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7107438">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminMedico1Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.11294766">
-          <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="258" column="0" lean-forward="false" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CmsUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4090909">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminCmsUsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9339622">
-          <caret line="126" column="31" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="126" column="31" lean-forward="false" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/cache/data/bc/65/bc65ec7aaef08c869120e6262b2d7f4a9b66e429">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+        <state relative-caret-position="0">
+          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CmsUserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48104957">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="0">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13636364">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="0">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template_plugins.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8636364">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/paciente/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7782369">
-          <caret line="190" column="51" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+        <state relative-caret-position="0">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/table.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57575756">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+        <state relative-caret-position="0">
+          <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/form_detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.44214877">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55785125">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/select_user.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05647383">
-          <caret line="42" column="70" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="70" />
+        <state relative-caret-position="0">
+          <caret line="42" column="70" lean-forward="false" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2272727">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agenda/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6789727">
-          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="123" column="28" lean-forward="false" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/doWork.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21364452">
-          <caret line="0" column="1294" selection-start-line="0" selection-start-column="1294" selection-end-line="0" selection-end-column="1294" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54545456">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        <state relative-caret-position="0">
+          <caret line="0" column="1294" lean-forward="false" selection-start-line="0" selection-start-column="1294" selection-end-line="0" selection-end-column="1294" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5110193">
-          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PacienteController.php">
+    <entry file="file://$PROJECT_DIR$/app/ModCita.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6212121">
-          <caret line="85" column="32" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/paciente/directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding>
-            <marker date="1488572011713" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder=" Display a listing of the resource. ..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder=" Show the form for creating a new resource. ..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder=" Store a newly created resource in storage. ..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder=" Display the specified resource. ..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder=" Show the form for editing the specified resource. ..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder=" Update the specified resource in storage. ..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder=" Remove the specified resource from storage. ..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1488572011713" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1489164995830" expanded="true" signature="50:885" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="63:882" ph="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1489164995830" expanded="true" signature="159:337" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="199:327" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="238:311" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="888:983" ph="/*...*/" />
+            <marker date="1489164995830" expanded="true" signature="1031:1808" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="1044:1806" ph="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1489164995830" expanded="true" signature="1132:1261" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="1172:1251" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="1216:1235" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="1313:1348" ph="..." />
+            <marker date="1489164995830" expanded="true" signature="1846:2256" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="1859:2254" ph="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1489164995830" expanded="true" signature="1948:2077" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="1988:2067" ph="{...}" />
+            <marker date="1489164995830" expanded="true" signature="2032:2051" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/paciente/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="209" column="28" lean-forward="false" selection-start-line="209" selection-start-column="9" selection-end-line="209" selection-end-column="28" />
+          <folding>
+            <marker date="1489166003742" expanded="true" signature="70:8858" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="74:438" ph="//..." />
+            <marker date="1489166003742" expanded="true" signature="441:471" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="501:2168" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="985:1632" ph="[...]" />
+            <marker date="1489166003742" expanded="true" signature="1682:1850" ph="{&quot;url&quot;: URL_ALL_MEDIC...}" />
+            <marker date="1489166003742" expanded="true" signature="1781:1846" ph="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded'...}" />
+            <marker date="1489166003742" expanded="true" signature="1877:2164" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="1909:2088" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="1997:2080" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="2034:2072" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="2094:2160" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="2185:2198" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="2199:2238" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="2270:2314" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="2316:2329" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="2330:2363" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="2397:2429" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="2431:2444" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="2446:2499" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="2533:3646" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="2542:2624" ph="{&quot;title&quot;: &quot;Procesando&quot;...}" />
+            <marker date="1489166003742" expanded="true" signature="2961:3127" ph="{&quot;start&quot;: start_selected...}" />
+            <marker date="1489166003742" expanded="true" signature="3137:3262" ph="{&quot;url&quot;: URL_AGENDA...}" />
+            <marker date="1489166003742" expanded="true" signature="3209:3258" ph="{&quot;Content-Type&quot;: 'application/json '...}" />
+            <marker date="1489166003742" expanded="true" signature="3285:3611" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="3313:3536" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="3326:3478" ph="{&quot;title&quot;: &quot;Correcto!&quot;...}" />
+            <marker date="1489166003742" expanded="true" signature="3489:3528" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="3541:3607" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="3648:3661" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="3662:3732" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="3761:3805" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="3807:3820" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="3821:3952" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="4014:4240" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="4242:4255" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="4256:4385" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="4435:4762" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="4465:4607" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="4612:4760" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="4623:4754" ph="{&quot;title&quot;: &quot;Alerta!&quot;...}" />
+            <marker date="1489166003742" expanded="true" signature="4764:4777" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="4807:4832" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="4862:4877" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="4879:5015" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="5160:8456" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="5554:5762" ph="{&quot;url&quot;: URL_CITA_DISPONIBLE...}" />
+            <marker date="1489166003742" expanded="true" signature="5617:5678" ph="{&quot;medico_id&quot;: $scope.medico_id...}" />
+            <marker date="1489166003742" expanded="true" signature="5693:5758" ph="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded'...}" />
+            <marker date="1489166003742" expanded="true" signature="5789:8346" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="6040:8302" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="6176:6207" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="6272:7036" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="6288:7000" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="6353:6530" ph="//..." />
+            <marker date="1489166003742" expanded="true" signature="6588:6988" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="6687:6829" ph="{&quot;start&quot;: key...}" />
+            <marker date="1489166003742" expanded="true" signature="7013:7026" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="7140:7408" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="7158:7304" ph="{&quot;start&quot;: key...}" />
+            <marker date="1489166003742" expanded="true" signature="7414:8294" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="7426:7552" ph="//..." />
+            <marker date="1489166003742" expanded="true" signature="7809:8284" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="7823:7931" ph="//..." />
+            <marker date="1489166003742" expanded="true" signature="7994:8179" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="8057:8165" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="8458:8487" ph="/*...*/" />
+            <marker date="1489166003742" expanded="true" signature="8513:8573" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="8597:8840" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="8616:8838" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="8651:8834" ph="{...}" />
+            <marker date="1489166003742" expanded="true" signature="8843:8856" ph="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/paciente/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="191" column="68" lean-forward="false" selection-start-line="191" selection-start-column="54" selection-end-line="191" selection-end-column="68" />
+          <folding>
+            <marker date="1489162948207" expanded="true" signature="59:7943" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="165:182" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="387:1197" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="395:418" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="433:461" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="474:563" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="582:778" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="789:866" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="876:1057" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="1079:1121" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="1130:1189" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="1248:6950" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="1406:1576" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="1430:1569" ph="..." />
+            <marker date="1489162948207" expanded="false" signature="1590:1601" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="1623:6941" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="1674:6930" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="1705:2788" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="1767:2091" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="1794:2079" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2136:2449" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2163:2437" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2494:2778" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2521:2766" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2834:4309" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2883:4136" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2909:4125" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="2942:3458" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="3028:3443" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="3489:4112" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="3696:4069" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="3785:3877" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="3920:4052" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="3980:4032" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4159:4274" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4212:4263" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4343:6105" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4381:6090" ph="..." />
+            <marker date="1489162948207" expanded="false" signature="4401:4414" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4437:5641" ph="..." />
+            <marker date="1489162948207" expanded="false" signature="4459:4472" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4497:5624" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4530:4681" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4547:4664" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4714:5394" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4756:5373" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4804:5350" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="4881:4980" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5083:5166" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5086:5155" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5236:5325" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5239:5310" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5441:5605" ph="..." />
+            <marker date="1489162948207" expanded="false" signature="5470:5481" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5501:5584" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5692:6073" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="5734:6054" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="6152:6917" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="6194:6301" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="6381:6481" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="6759:6902" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="6829:6885" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="6984:7387" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="6988:7007" ph="/*...*/" />
+            <marker date="1489162948207" expanded="true" signature="7361:7376" ph="/*...*/" />
+            <marker date="1489162948207" expanded="true" signature="7696:7915" ph="..." />
+            <marker date="1489162948207" expanded="true" signature="7718:7892" ph="{...}" />
+            <marker date="1489162948207" expanded="true" signature="7749:7853" ph="{&quot;labelNext&quot;: ''...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminAgendaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.045454547">
-          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        <state relative-caret-position="392">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
-            <marker date="1489099918198" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder=" Display a listing of the resource. ..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder=" Show the form for creating a new resource. ..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder=" Store a newly created resource in storage. ..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder=" Display the specified resource. ..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder=" Show the form for editing the specified resource. ..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder=" Update the specified resource in storage. ..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder=" Remove the specified resource from storage. ..." />
-            <marker date="1489099918198" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1489177251205" expanded="false" signature="44:221" ph="..." />
+            <marker date="1489177251205" expanded="true" signature="269:3919" ph="{...}" />
+            <marker date="1489177251205" expanded="true" signature="279:375" ph=" Display a listing of the resource. ..." />
+            <marker date="1489177251205" expanded="true" signature="405:822" ph="{...}" />
+            <marker date="1489177251205" expanded="true" signature="831:935" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1489177251205" expanded="true" signature="966:989" ph="{...}" />
+            <marker date="1489177251205" expanded="true" signature="998:1152" ph=" Store a newly created resource in storage. ..." />
+            <marker date="1489177251205" expanded="true" signature="1198:2699" ph="{...}" />
+            <marker date="1489177251205" expanded="true" signature="1253:1419" ph="..." />
+            <marker date="1489177251205" expanded="true" signature="1426:2584" ph="..." />
+            <marker date="1489177251205" expanded="true" signature="1905:2140" ph="..." />
+            <marker date="1489177251205" expanded="true" signature="2148:2317" ph="..." />
+            <marker date="1489177251205" expanded="true" signature="2619:2691" ph="..." />
+            <marker date="1489177251205" expanded="true" signature="2620:2690" ph="..." />
+            <marker date="1489177251205" expanded="true" signature="2708:2825" ph=" Display the specified resource. ..." />
+            <marker date="1489177251205" expanded="true" signature="2874:2983" ph="{...}" />
+            <marker date="1489177251205" expanded="true" signature="2992:3127" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1489177251205" expanded="true" signature="3159:3471" ph="{...}" />
+            <marker date="1489177251205" expanded="true" signature="3480:3657" ph=" Update the specified resource in storage. ..." />
+            <marker date="1489177251205" expanded="true" signature="3709:3721" ph="{...}" />
+            <marker date="1489177251205" expanded="true" signature="3730:3859" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1489177251205" expanded="true" signature="3894:3917" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/ModCita.php">
+    <entry file="file://$PROJECT_DIR$/public/js/agenda/directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4090909">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="338">
+          <caret line="70" column="65" lean-forward="true" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
           <folding>
-            <marker date="1489100805597" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100805597" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489100805597" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489100805597" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1489177766062" expanded="true" signature="43:2518" ph="{...}" />
+            <marker date="1489177766062" expanded="true" signature="56:2515" ph="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1489177766062" expanded="true" signature="179:2344" ph="{...}" />
+            <marker date="1489177766062" expanded="true" signature="193:1538" ph="/*...*/" />
+            <marker date="1489177766062" expanded="true" signature="1567:2332" ph="[...]" />
+            <marker date="1489177766062" expanded="true" signature="2561:3672" ph="{...}" />
+            <marker date="1489177766062" expanded="true" signature="2574:3669" ph="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1489177766062" expanded="true" signature="2697:3504" ph="{...}" />
+            <marker date="1489177766062" expanded="true" signature="2727:3492" ph="[...]" />
+            <marker date="1489177766062" expanded="true" signature="3675:3707" ph="/*...*/" />
+            <marker date="1489177766062" expanded="true" signature="3750:6661" ph="{...}" />
+            <marker date="1489177766062" expanded="true" signature="3763:6659" ph="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1489177766062" expanded="true" signature="4128:4148" ph="..." />
+            <marker date="1489177766062" expanded="true" signature="5923:5954" ph="..." />
+            <marker date="1489177766062" expanded="true" signature="6111:6129" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/agenda/controller.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminCitaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42307693">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="24" />
+        <state relative-caret-position="438">
+          <caret line="91" column="50" lean-forward="true" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
           <folding>
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;language&quot;: 'es'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;height&quot;: 430...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;left&quot;: 'prev,next, today'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;title&quot;: '¿Mover a la papelera?'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;method&quot;: 'POST'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;Content-Type&quot;: 'application/json'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;title&quot;: &quot;Correcto!&quot;...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;title&quot;: &quot;¿Desea cancelar la cita?&quot;...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;method&quot;: 'POST'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;Content-Type&quot;: 'application/json'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;title&quot;: &quot;Correcto!&quot;...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;title&quot;: &quot;Procesando&quot;...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;method&quot;: 'POST'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded'...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{&quot;title&quot;: &quot;Correcto!&quot;...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1489100656749" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agenda/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4090909">
-          <caret line="150" column="66" selection-start-line="150" selection-start-column="66" selection-end-line="150" selection-end-column="66" />
-          <folding>
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1489097751586" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1489183959753" expanded="false" signature="44:144" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="190:3142" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="200:296" ph=" Display a listing of the resource. ..." />
+            <marker date="1489183959753" expanded="true" signature="326:414" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="423:527" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1489183959753" expanded="true" signature="558:581" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="590:744" ph=" Store a newly created resource in storage. ..." />
+            <marker date="1489183959753" expanded="true" signature="790:813" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="822:939" ph=" Display the specified resource. ..." />
+            <marker date="1489183959753" expanded="true" signature="971:1409" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="1168:1189" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="1225:1241" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="1279:1292" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="1418:1553" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1489183959753" expanded="true" signature="1585:1608" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="1617:1794" ph=" Update the specified resource in storage. ..." />
+            <marker date="1489183959753" expanded="true" signature="1846:2771" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="1940:2039" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="2046:2682" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="2718:2763" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="2719:2762" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="2780:2909" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1489183959753" expanded="true" signature="2944:3140" ph="{...}" />
+            <marker date="1489183959753" expanded="true" signature="3087:3132" ph="..." />
+            <marker date="1489183959753" expanded="true" signature="3088:3131" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27272728">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        <state relative-caret-position="297">
+          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminCitaController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PacienteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51746035">
-          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="394">
+          <caret line="109" column="58" lean-forward="false" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+          <folding>
+            <marker date="1489184592001" expanded="false" signature="44:163" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="208:3425" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="218:314" ph=" Display a listing of the resource. ..." />
+            <marker date="1489184592001" expanded="true" signature="344:481" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="490:594" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1489184592001" expanded="true" signature="625:648" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="657:811" ph=" Store a newly created resource in storage. ..." />
+            <marker date="1489184592001" expanded="true" signature="857:880" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="889:1006" ph=" Display the specified resource. ..." />
+            <marker date="1489184592001" expanded="true" signature="1038:1061" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="1070:1205" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1489184592001" expanded="true" signature="1237:1260" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="1269:1446" ph=" Update the specified resource in storage. ..." />
+            <marker date="1489184592001" expanded="true" signature="1498:1521" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="1530:1659" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1489184592001" expanded="true" signature="1694:1717" ph="{...}" />
+            <marker date="1489184592001" expanded="true" signature="1763:2153" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="1888:1939" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="1979:2034" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2105:2146" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2106:2145" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2186:2303" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2255:2296" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2256:2295" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2358:2956" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2553:2863" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2554:2862" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2591:2861" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2733:2749" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2809:2822" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2905:2949" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="2906:2948" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="3006:3230" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="3169:3223" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="3170:3222" ph="..." />
+            <marker date="1489184592001" expanded="true" signature="3278:3422" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminCitaCalendarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding>
+            <marker date="1489186595148" expanded="false" signature="44:93" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="194:9779" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="227:6319" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="1307:1573" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="1602:1854" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="1883:2123" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="2152:2388" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="2417:2669" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="2698:2938" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="2967:3293" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="3322:3654" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="2135:2138" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="2185:2663" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="2717:3331" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="3384:3822" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="3898:4246" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="4329:4673" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="4730:5143" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="5227:5528" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="5588:5906" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="5957:6276" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="6330:6612" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="6685:6731" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="6742:6998" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="7049:7095" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="7105:7328" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="7402:7440" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="7450:7698" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="7751:7792" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="7802:8076" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="8121:8162" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="8172:8480" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="8538:8579" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="8589:8870" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="8916:8950" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="8960:9244" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="9293:9326" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="9336:9619" ph="..." />
+            <marker date="1489186595148" expanded="true" signature="9667:9700" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminAgenda1Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="196" column="45" lean-forward="true" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
+          <folding>
+            <marker date="1489187158297" expanded="false" signature="43:89" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="180:9365" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="212:6025" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="1225:1575" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="1608:2062" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="2119:2606" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="2658:3248" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="3299:3717" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="3774:4098" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="4145:4471" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="4525:4915" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="4972:5263" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="5320:5627" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="5675:5983" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="6034:6307" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="6378:6416" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="6425:6671" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="6719:6803" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="6746:6795" ph="SELECT * FRO... cita_calendario" />
+            <marker date="1489187158297" expanded="true" signature="6811:7026" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="7094:7131" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="7139:7379" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="7429:7467" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="7475:7738" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="7780:7818" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="7826:8121" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="8177:8215" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="8223:8489" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="8532:8570" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="8578:8847" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="8893:8931" ph="{...}" />
+            <marker date="1489187158297" expanded="true" signature="8939:9207" ph="..." />
+            <marker date="1489187158297" expanded="true" signature="9252:9290" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agenda/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="78" column="60" lean-forward="false" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="60" />
+          <folding>
+            <marker date="1489171922006" expanded="true" signature="99:5622" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="110:186" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="251:4821" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="501:3649" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="617:3634" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="661:3615" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="708:1079" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="809:893" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="815:884" ph="..." />
+            <marker date="1489171922006" expanded="false" signature="871:878" ph="×" />
+            <marker date="1489171922006" expanded="true" signature="958:1052" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1124:2925" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1178:2898" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1231:2007" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1286:1391" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1446:1972" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1513:1933" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1585:1707" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="1827:1890" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="2060:2443" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="2115:2228" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="2283:2408" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="2496:2867" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="2551:2661" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="2716:2832" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="2972:3592" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3021:3565" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3074:3534" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3167:3294" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3170:3244" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3387:3499" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3719:4810" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3756:4276" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="3976:4107" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="4311:4552" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="4361:4533" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="4406:4510" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="4444:4462" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="4587:4752" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="4857:5381" ph="..." />
+            <marker date="1489171922006" expanded="true" signature="4863:4886" ph="/*...*/" />
+            <marker date="1489171922006" expanded="true" signature="5345:5368" ph="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/agenda/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <marker date="1489187299908" expanded="true" signature="77:166" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/agenda/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="e#79#111#0" expanded="false" />
+            <element signature="e#1266#1408#0" expanded="false" />
+            <element signature="e#3860#3881#0" expanded="false" />
+            <element signature="e#3886#3938#0" expanded="false" />
+            <element signature="e#4881#5267#0" expanded="false" />
+            <element signature="e#5301#5554#0" expanded="false" />
+            <element signature="e#5466#5540#0" expanded="false" />
+            <element signature="e#6141#6165#0" expanded="false" />
+            <element signature="e#6257#6351#0" expanded="false" />
+            <element signature="e#6673#6715#0" expanded="false" />
+            <element signature="e#6753#6795#0" expanded="false" />
+            <element signature="e#6801#6822#0" expanded="false" />
+            <element signature="e#6827#6869#0" expanded="false" />
+            <element signature="e#6977#6998#0" expanded="false" />
+            <element signature="e#7003#7067#0" expanded="false" />
+            <element signature="e#7152#7437#0" expanded="false" />
+            <element signature="e#7471#7725#0" expanded="false" />
+            <element signature="e#7637#7711#0" expanded="false" />
+            <element signature="e#7817#8109#0" expanded="false" />
+            <element signature="e#8403#8424#0" expanded="false" />
+            <element signature="e#8464#8517#0" expanded="false" />
+            <element signature="e#8556#9342#0" expanded="false" />
+            <element signature="e#8566#8659#0" expanded="false" />
+            <element signature="e#9524#9554#0" expanded="false" />
+            <element signature="e#11295#11593#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
