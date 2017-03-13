@@ -80,7 +80,7 @@ class="portlet light portlet-fit bordered">
           <div class="mt-step-content font-grey-cascade">Seleccione una cita disponible</div>
         </a>
       </li>
-      <li class="col-md-4 mt-step-col item">
+      <li class="col-md-4 mt-step-col last item">
         <a href="#step-3">
           <label class="mt-step-number bg-white stepNumber">3</label>
 
@@ -89,7 +89,8 @@ class="portlet light portlet-fit bordered">
         </a>
       </li>
     </ul>
-    <div id="step-1" class="container steps">
+
+    <div id="step-1" class="container steps col-md-12">
       {{--contenido--}}
       <div class="well">
         <div class="row">
@@ -126,7 +127,7 @@ class="portlet light portlet-fit bordered">
     </div>
     {{--fin contenido--}}
   </div>
-  <div class="steps" id="step-2">
+  <div class="steps col-md-12" id="step-2">
     <div class="panel panel-primary">
       <div style="padding: 0px;" class="panel-heading">
         <div style="padding: 0px;" class="container-fluid">
@@ -166,7 +167,7 @@ class="portlet light portlet-fit bordered">
             </div>
           </div>
         </div>
-        <div id="step-3" class="shadow steps">
+        <div id="step-3" class="shadow steps col-md-12">
           <div class="col-sm-12 bg-info">
             <h2>Confirmación <i class="fa fa-check-circle-o" aria-hidden="true"></i></h2>
           </div>
