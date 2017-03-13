@@ -135,29 +135,19 @@ class="portlet light portlet-fit bordered">
                         <div style="padding: 0px;" class="panel-heading">
                             <div style="padding: 0px;" class="container-fluid">
                                 <div class="row" style="padding-left: 15px">
-                                    <div class="col-md-6">
-                                        <h3><i class="fa fa-user-md"></i>&nbsp; [[medico_titulo+" "+medico_nombre+" "+medico_apellido]] &nbsp; &nbsp; |&nbsp; &nbsp;
-                                            <i  class="fa fa-calendar"></i>&nbsp;&nbsp;FECHA: &nbsp; &nbsp; [[show_fecha |  date:'yyyy']]
+                                    <div class="col-md-6" style="margin-top:10px">
+                                        <h3 class="ng-binding" style="font-size: 16px;"><i class="fa fa-user-md"></i>&nbsp; Dr. Mario Palacios &nbsp; &nbsp; |&nbsp; &nbsp;
+                                            <i class="fa fa-calendar"></i>&nbsp;&nbsp;FECHA: &nbsp; &nbsp; 13 de marzo de 2017
                                         </h3>
                                     </div>
-                                    <div class="col-md-2" style="margin-top: 20px">
-                                    </div>
 
-                                    <div class="col-md-4 " style="margin-top: 20px">
+
+                                    <div class="col-md-6 " style="margin-top:20px">
                                         <div class="row">
                                             <div class="col-md-1">
                                             </div>
-                                            <div class="col-md-3"><a href="javascript:void(0)"
-                                                                     ng-click="citaDisponible(hoy)"
-                                                                     class="btn btn-default" role="button"
-                                                                     style="width: 100px"><i
-                                                            class="fa fa-calendar"
-                                                            aria-hidden="true"></i>&nbsp; Hoy</a> &nbsp;</div>
-                                            <div class="col-md-3"><a href="javascript:void(0)"
-                                                                     ng-click="citaDisponible(maniana)"
-                                                                     class="btn btn-default" role="button"
-                                                                     style="width: 100px"><i
-                                                            class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
+                                            <div class="col-md-3"><a href="javascript:void(0)" ng-click="citaDisponible(hoy)" class="btn btn-default" role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; Hoy</a> &nbsp;</div>
+                                            <div class="col-md-3"><a href="javascript:void(0)" ng-click="citaDisponible(maniana)" class="btn btn-default" role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
                                                     Mañana</a></div>
                                             <div class="col-md-5">
                                                 <div class="form-group" style="width: 100%">
@@ -165,9 +155,7 @@ class="portlet light portlet-fit bordered">
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
-                                                        <input ng-model="fecha" id="fecha" type="text"
-                                                               class="form-control"
-                                                               id="datepicker">
+                                                        <input ng-model="fecha" id="fecha" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty">
                                                     </div>
 
                                                 </div>
