@@ -129,6 +129,8 @@
                             <lista-medico></lista-medico>
                         </div>
                     </div>
+
+
                     {{--fin contenido--}}
                 </div>
                 <div class="steps col-md-12" id="step-2">
@@ -138,12 +140,12 @@
                                 <div class="row" style="padding-left: 15px">
                                     <div class="col-md-6">
                                         <h3><i class="fa fa-user-md"></i>&nbsp; [[medico_titulo+" "+medico_nombre+"
-                                            "+medico_apellido]] &nbsp; &nbsp; |&nbsp; &nbsp; <i class="fa fa-calendar"></i>&nbsp;&nbsp;FECHA: &nbsp; &nbsp; [[
+                                            "+medico_apellido]] &nbsp; &nbsp; |&nbsp; &nbsp; <i
+                                                    class="fa fa-calendar"></i>&nbsp;&nbsp;FECHA: &nbsp; &nbsp; [[
                                             show_fecha |
                                             date:'yyyy']]
                                         </h3>
                                     </div>
-
                                     <div class="col-md-2" style="margin-top: 20px">
                                     </div>
 
