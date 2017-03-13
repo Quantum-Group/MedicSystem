@@ -9,13 +9,13 @@ cita.directive('listaMedico', function ($timeout) {
                 });
             }
         },
-        template: '<div class="col-sm-2 grid-item" ng-repeat="m in medico | filter:busqueda" ng-click="selected(m.id,m.titulo,m.nombre,m.apellido)">' +
+        template: '<div class="col-md-3" ng-repeat="m in medico | filter:busqueda" ng-click="selected(m.id,m.titulo,m.nombre,m.apellido)">' +
         '<div class="panel itemMedic">' +
         '<i ng-show="check[m.id]" class="fa fa-check-circle checked"></i>' +
         '<div class="panel-body">' +
         '<img class="img-responsive" src="'+PATH_IMG+'" alt="">' +
-        '<h5>[[m.titulo+" "+m.nombre+" "+m.apellido]]</h5>' +
-        '<small>[[m.especialidad]]</small>' +
+        '<h5><b>[[m.titulo+" "+m.nombre+" "+m.apellido]]</b></h5>' +
+        '<em>[[m.especialidad]]</em>' +
         '</div>' +
         '</div>' +
         '</div>'
