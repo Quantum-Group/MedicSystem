@@ -122,7 +122,7 @@ class="portlet light portlet-fit bordered">
       </div>
     </div>
     <div class="well">
-      <div class="m-grid m-grid-full-height shadow">
+      <div class="m-grid m-grid-full-height shadow" style="padding-top: 15px;">
         <lista-medico></lista-medico>
       </div>
     </div>
