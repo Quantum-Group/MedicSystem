@@ -70,6 +70,10 @@ class AdminAgendaController extends Controller
             $medico = ModMedico::find($request->get("medico_id"));
             $cita->title = ($medico->titulo . " " . $medico->nombre . " " . $medico->apellido . "," . $paciente->nombre . " " . $paciente->apellido);
             $response = $cita->save();
+            if($response){
+                $data = ['name'=>$paciente->nombre." ".$paciente->apellido ];
+                CRUDBooster::sendEmail(['to'=>$paciente->email,'data'=>$data,'template'=>'cita_agendada']);
+            }
         }
 
         return response()->json([

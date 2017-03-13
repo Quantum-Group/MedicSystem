@@ -32,15 +32,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/paciente/index.blade.php">
+      <file leaf-file-name="AdminAgendaController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminAgendaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="148" column="24" lean-forward="true" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
-              <folding>
-                <element signature="e#4259#4285#0#HTML" expanded="true" />
-                <marker date="1489433352652" expanded="true" signature="1735:2519" ph="..." />
-              </folding>
+            <state relative-caret-position="502">
+              <caret line="72" column="26" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,7 +46,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nueva-ci</find>
       <find>nuevaci</find>
       <find>nuevacita</find>
       <find>reset</find>
@@ -76,9 +72,10 @@
       <find>query</find>
       <find>$idUser</find>
       <find>div</find>
-      <find>mañana</find>
       <find>sm-2</find>
       <find>lista</find>
+      <find>mañana</find>
+      <find>admin</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -123,7 +120,6 @@
         <option value="$PROJECT_DIR$/app/ModCita.php" />
         <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/agenda/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminAgendaController.php" />
         <option value="$PROJECT_DIR$/public/js/agenda/directive.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminCitaController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PacienteController.php" />
@@ -135,6 +131,7 @@
         <option value="$PROJECT_DIR$/public/js/paciente/controller.js" />
         <option value="$PROJECT_DIR$/public/js/paciente/directive.js" />
         <option value="$PROJECT_DIR$/resources/views/paciente/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminAgendaController.php" />
       </list>
     </option>
   </component>
@@ -179,6 +176,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MedicSystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicSystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicSystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crocodicstudio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crudbooster" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicSystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crocodicstudio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crudbooster" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,7 +304,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/paciente/modals.blade.php&#10;directiv&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/directive.js&#10;controller&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/controller.js&#10;controller.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/controller.js&#10;index.blade.php&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/paciente/index.blade.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/.env&#10;styles.css&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/css/styles.css&#10;smartwi\&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/jquery.smartWizard.js&#10;cita&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaCalendarioController.php&#10;citacalendar&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaCalendarioController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/app.js&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;agendacon&#9;null&#9;null&#10;citacale&#9;null&#9;null&#10;PacienteController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;admincita&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;citacon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;AdminAgendaController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;directi&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/directive.js&#10;create.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;pacientecont&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.php&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;directive.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/directive.js&#10;index.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/paciente/index.blade.php&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;admin_tem&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;create.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;AdminCitaController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;modc&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;modcit&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;citacont&#9;null&#9;null&#10;agendacont&#9;null&#9;null&#10;pacientecon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.p&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/routes.php&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/app.js&#10;admin_temp&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;index.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/index.blade.php&#10;dowork&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/doWork.js&#10;select&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/users/select_user.blade.php&#10;form_bo&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form.blade.php&#10;admin_templ&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;home.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/home.blade.php&#10;cms&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCmsUsersController.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/CmsUser.php" />
+    <property name="SearchEverywhereHistoryKey" value="agenda&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;crudbooster.php&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/config/crudbooster.php&#10;directiv&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/directive.js&#10;controller&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/controller.js&#10;controller.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/controller.js&#10;index.blade.php&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/paciente/index.blade.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/.env&#10;styles.css&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/css/styles.css&#10;smartwi\&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/jquery.smartWizard.js&#10;cita&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaCalendarioController.php&#10;citacalendar&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaCalendarioController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/app.js&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;agendacon&#9;null&#9;null&#10;citacale&#9;null&#9;null&#10;PacienteController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;admincita&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;citacon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;AdminAgendaController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminAgendaController.php&#10;directi&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/agenda/directive.js&#10;create.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;pacientecont&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.php&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;directive.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/paciente/directive.js&#10;index.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/paciente/index.blade.php&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;admin_tem&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;create.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;AdminCitaController&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCitaController.php&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/create.blade.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;modc&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;modcit&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/ModCita.php&#10;citacont&#9;null&#9;null&#10;agendacont&#9;null&#9;null&#10;pacientecon&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/PacienteController.php&#10;web.p&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/routes/web.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/routes.php&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/app.js&#10;admin_temp&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;index.bla&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/agenda/index.blade.php&#10;dowork&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/public/js/doWork.js&#10;select&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/resources/views/users/select_user.blade.php&#10;form_bo&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form_body.blade.php&#10;form.&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/default/form.blade.php&#10;admin_templ&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php&#10;home.blade&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/vendor/crocodicstudio/crudbooster/src/views/home.blade.php&#10;cms&#9;FILE&#9;file://C:/xampp/htdocs/MedicSystem/app/Http/Controllers/AdminCmsUsersController.php" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -343,12 +402,12 @@
       <workItem from="1489419447992" duration="2336000" />
       <workItem from="1489423374657" duration="1129000" />
       <workItem from="1489426305070" duration="313000" />
-      <workItem from="1489426636930" duration="6796000" />
+      <workItem from="1489426636930" duration="15751000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37574000" />
+    <option name="totallyTimeSpent" value="46529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -469,13 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/crudbooster.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -640,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/ModCita.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -658,13 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
           <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminAgendaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -858,8 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/paciente/directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        <state relative-caret-position="264">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <marker date="1489433278033" expanded="true" signature="50:909" ph="{...}" />
             <marker date="1489433278033" expanded="true" signature="63:906" ph="{&quot;restrict&quot;: 'E'...}" />
@@ -885,12 +923,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/paciente/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="148" column="24" lean-forward="true" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
+        <state relative-caret-position="275">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding>
-            <element signature="e#4259#4285#0#HTML" expanded="true" />
-            <marker date="1489433352652" expanded="true" signature="1735:2519" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="59:8022" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="165:182" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="387:1196" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="395:418" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="433:461" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="473:562" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="581:777" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="788:865" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="875:1056" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="1078:1120" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="1129:1188" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="1247:7029" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1435:1605" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1459:1598" ph="..." />
+            <marker date="1489440131611" expanded="false" signature="1619:1630" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1652:7020" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1703:7009" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1734:2518" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1734:2822" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1796:2120" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="1823:2108" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2165:2478" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2192:2466" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2528:2812" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2555:2800" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2879:4381" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2928:4181" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2954:4170" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="2987:3503" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="3073:3488" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="3534:4157" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="3741:4114" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="3830:3922" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="3965:4097" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4025:4077" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4204:4346" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4265:4283" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4284:4335" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4425:6174" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4463:6159" ph="..." />
+            <marker date="1489440131611" expanded="false" signature="4483:4496" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4519:5710" ph="..." />
+            <marker date="1489440131611" expanded="false" signature="4541:4554" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4579:5693" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4612:4750" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4629:4733" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4783:5463" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4825:5442" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4873:5419" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="4950:5049" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5152:5235" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5155:5224" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5305:5394" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5308:5379" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5510:5674" ph="..." />
+            <marker date="1489440131611" expanded="false" signature="5539:5550" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5570:5653" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5761:6142" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="5803:6123" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="6231:6996" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="6273:6380" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="6460:6560" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="6838:6981" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="6908:6964" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="7063:7466" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="7067:7086" ph="/*...*/" />
+            <marker date="1489440131611" expanded="true" signature="7440:7455" ph="/*...*/" />
+            <marker date="1489440131611" expanded="true" signature="7775:7994" ph="..." />
+            <marker date="1489440131611" expanded="true" signature="7797:7971" ph="{...}" />
+            <marker date="1489440131611" expanded="true" signature="7828:7932" ph="{&quot;labelNext&quot;: ''...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/crudbooster.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <marker date="1486400989080" expanded="true" signature="15:714" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding>
+            <marker date="1487971919654" expanded="true" signature="109:666" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="235:665" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="354:662" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="563:659" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="708:1121" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="768:1120" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="1160:2045" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="1265:2044" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2100:2566" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2269:2565" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2282:2529" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2331:2345" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2358:2378" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2391:2407" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2447:2522" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2553:2560" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2621:3512" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="2778:3511" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="3057:3481" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="3318:3478" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="3356:3474" ph="..." />
+            <marker date="1487971919654" expanded="true" signature="3503:3508" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminAgendaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="72" column="26" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

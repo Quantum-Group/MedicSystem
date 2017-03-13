@@ -12,7 +12,6 @@ type="text/css"/>
 .item a:link {
   text-decoration: none;
 }
-
 .itemMedic {
   cursor: pointer;
   -webkit-opacity: .9;
@@ -133,8 +132,7 @@ class="portlet light portlet-fit bordered">
       <div style="padding: 0px;" class="panel-heading">
         <div style="padding: 0px;" class="container-fluid">
           <div class="col-sm-4">
-            <h3><i class="fa fa-user-md"></i> [[medico_titulo+" "+medico_nombre+"
-              "+medico_apellido]]
+            <h3><i class="fa fa-user-md"></i> [[medico_titulo+" "+medico_nombre+" "+medico_apellido ]]
             </h3>
           </div>
           <div class="col-sm-4">
