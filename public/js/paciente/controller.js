@@ -37,6 +37,7 @@ cita.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
     '18:00 pm', '18:15 pm', '18:30 pm', '18:45 pm', '19:00 pm', '19:15 pm',
     '19:30 pm', '19:45 pm'
   ];
+    $();
   $("section.content-header").remove();
   $http({
     url: URL_ALL_MEDIC,

@@ -4,10 +4,13 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use App\CmsUser;
+	use App\ModPaciente;
 
 	class AdminCitaCalendarioController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
+
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
 			$this->title_field = "title";
@@ -29,14 +32,25 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Título","name"=>"title"];
+			$this->col[] = ["label"=>"Fecha","name"=>"created_at"];
+			$this->col[] = ["label"=>"Médico - Paciente","name"=>"title"];
 			$this->col[] = ["label"=>"Detalle Cita","name"=>"detalle_cita"];
-			$this->col[] = ["label"=>"Desde","name"=>"start"];
-			$this->col[] = ["label"=>"Hasta","name"=>"end"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
+			$this->form[] = array (
+  'style' => NULL,
+  'help' => NULL,
+  'placeholder' => NULL,
+  'readonly' => NULL,
+  'disabled' => NULL,
+  'label' => 'Fecha',
+  'name' => 'created_at',
+  'type' => 'text',
+  'validation' => 'required',
+  'width' => 'col-sm-9',
+);
 			$this->form[] = array (
   'style' => NULL,
   'help' => NULL,
@@ -50,32 +64,13 @@
   'width' => 'col-sm-9',
 );
 			$this->form[] = array (
+  'style' => NULL,
+  'help' => NULL,
+  'placeholder' => NULL,
+  'readonly' => NULL,
+  'disabled' => NULL,
   'label' => 'Detalle Cita',
   'name' => 'detalle_cita',
-  'type' => 'text',
-  'validation' => 'required',
-  'width' => 'col-sm-9',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Desde',
-  'name' => 'start',
-  'type' => 'text',
-  'validation' => 'required',
-  'width' => 'col-sm-9',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Hasta',
-  'name' => 'end',
   'type' => 'text',
   'validation' => 'required',
   'width' => 'col-sm-9',
@@ -217,7 +212,12 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
-	            
+            $idUser = CRUDBooster::myId();
+
+            $user = CmsUser::findOrFail($idUser);
+$paciente = ModPaciente::where("cms_user_id",$user->id)->first();
+
+            $query->where('paciente_id',$paciente->id);
 	    }
 
 	    /*

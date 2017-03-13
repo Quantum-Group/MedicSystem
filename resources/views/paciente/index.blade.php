@@ -55,6 +55,7 @@ type="text/css"/>
 <div ng-app="AppPaciente" ng-controller="CtrlApp"
 ng-init="hoy=('{{\Carbon\Carbon::now()}}');maniana=('{{\Carbon\Carbon::tomorrow()}}')"
 class="portlet light portlet-fit bordered">
+  @include("paciente.modals")
 <div class="portlet-title">
   <div class="caption">
     <i class=" icon-layers font-green"></i>
