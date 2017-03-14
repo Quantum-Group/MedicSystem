@@ -9,6 +9,8 @@ use App\ModPaciente;
 use App\ModMedico;
 use App\ModAgenda;
 use App\ModCita;
+use App\Mail\CitaAgenda;
+use Mail;
 
 class AdminAgendaController extends Controller
 {
@@ -71,14 +73,14 @@ class AdminAgendaController extends Controller
             $cita->title = ($medico->titulo . " " . $medico->nombre . " " . $medico->apellido . "," . $paciente->nombre . " " . $paciente->apellido);
             $response = $cita->save();
             if($response){
-                $data = ['name'=>$paciente->nombre." ".$paciente->apellido ];
-                CRUDBooster::sendEmail(['to'=>$paciente->email,'data'=>$data,'template'=>'cita_agendada']);
+                $sendEmail = Mail::to("pdavid211@hotmail.com")->send(new CitaAgenda());
             }
         }
 
         return response()->json([
             "response"=>$response,
-            "cita"=>$cita
+            "cita"=>$cita,
+            "sendEmail"=>$sendEmail
         ]);
     }
 

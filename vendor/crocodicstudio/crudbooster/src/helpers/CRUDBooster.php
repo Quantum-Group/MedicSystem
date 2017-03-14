@@ -571,13 +571,15 @@ class CRUDBooster  {
 
 		public static function sendEmail($config=[]) {   
 
-		    \Config::set('mail.driver',self::getSetting('smtp_driver'));
-		    \Config::set('mail.host',self::getSetting('smtp_host'));
+		   /* \Config::set('mail.driver',self::getSetting('smtp_driver'));
+            \Config::set('mail.host',self::getSetting('smtp_host'));
 		    \Config::set('mail.port',self::getSetting('smtp_port'));
 		    \Config::set('mail.username',self::getSetting('smtp_username'));
-		    \Config::set('mail.password',self::getSetting('smtp_password'));
+		    \Config::set('mail.password',self::getSetting('smtp_password'));*/
 
-		    $to = $config['to'];
+		    /*echo "datos".$config["to"]." ".self::getSetting('smtp_username');
+		    abortt(500);*/
+            $to = $config['to'];
 		    $data = $config['data'];
 		    $template = $config['template'];
 

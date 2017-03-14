@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,10 +55,11 @@ return [
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+    /*'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'veronica@dmotionec.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
-    ],
+    ],*/
+    'from' => ['address' => 'gnsist.sa@gmail.com', 'name' => 'Sistema Medico'],
 
     /*
     |--------------------------------------------------------------------------
@@ -100,7 +101,7 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
+    'pretend' => false,
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
