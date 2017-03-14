@@ -146,9 +146,9 @@ class="portlet light portlet-fit bordered">
                                         <div class="row">
                                             <div class="col-md-1">
                                             </div>
+                                            <div class="col-md-3">{{--<a href="javascript:void(0)" ng-click="citaDisponible(maniana)" class="btn btn-default" role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;--}}
+                                                    {{--Mañana</a>--}}</div>
                                             <div class="col-md-3"><a href="javascript:void(0)" ng-click="citaDisponible(hoy)" class="btn btn-default" role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; Hoy</a> &nbsp;</div>
-                                            <div class="col-md-3"><a href="javascript:void(0)" ng-click="citaDisponible(maniana)" class="btn btn-default" role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
-                                                    Mañana</a></div>
                                             <div class="col-md-5">
                                                 <div class="form-group" style="width: 100%">
                                                     <div class="input-group date">
