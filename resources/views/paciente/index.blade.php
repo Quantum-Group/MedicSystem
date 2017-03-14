@@ -148,14 +148,14 @@ class="portlet light portlet-fit bordered">
                                             </div>
                                             <div class="col-md-3">{{--<a href="javascript:void(0)" ng-click="citaDisponible(maniana)" class="btn btn-default" role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;--}}
                                                     {{--Mañana</a>--}}</div>
-                                            <div class="col-md-3"><a href="javascript:void(0)" ng-click="citaDisponible(hoy)" class="btn btn-default" role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; Hoy</a> &nbsp;</div>
+                                            <div class="col-md-3" align="right"><a href="javascript:void(0)" ng-click="citaDisponible(hoy)" class="btn btn-default " role="button" style="width: 100px"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; Hoy</a> &nbsp;</div>
                                             <div class="col-md-5">
                                                 <div class="form-group" style="width: 100%">
                                                     <div class="input-group date">
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
-                                                        <input ng-model="fecha" id="fecha" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty">
+                                                        <input ng-model="fecha" id="fecha" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Seleccione día de Cita ">
                                                     </div>
 
                                                 </div>
