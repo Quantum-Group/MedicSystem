@@ -181,6 +181,7 @@ class="portlet light portlet-fit bordered">
                             </div>
                         </div>
                     </div>
+                </div>
                     <div id="step-3" class="shadow steps col-md-12">
                         <div class="col-sm-12 bg-info">
                             <h2>Confirmación <i class="fa fa-check-circle-o" aria-hidden="true"></i></h2>
