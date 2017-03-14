@@ -137,7 +137,7 @@ class="portlet light portlet-fit bordered">
                                 <div class="row" style="padding-left: 15px">
                                     <div class="col-md-6" style="margin-top:10px">
                                         <h3 class="ng-binding" style="font-size: 16px;"><i class="fa fa-user-md"></i>&nbsp; Dr. Mario Palacios &nbsp; &nbsp; |&nbsp; &nbsp;
-                                            <i class="fa fa-calendar"></i>&nbsp;&nbsp;FECHA: &nbsp; &nbsp; 13 de marzo de 2017
+                                            <i class="fa fa-calendar"></i>&nbsp;&nbsp;FECHA: &nbsp; &nbsp; [[ show_fecha ]]
                                         </h3>
                                     </div>
 
@@ -155,9 +155,8 @@ class="portlet light portlet-fit bordered">
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
-                                                        <input ng-model="fecha" id="fecha" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Seleccione día de Cita ">
+                                                        <input ng-model="select_by_calendar"id="fecha" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Seleccione día de Cita ">
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>

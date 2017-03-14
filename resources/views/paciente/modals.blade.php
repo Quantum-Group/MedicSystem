@@ -1,5 +1,5 @@
 <!-- Modal -->
-<link rel="stylesheet" href="{{asset("css/bootstrap-year-calendar.min")}}">
+{{--<link rel="stylesheet" href="{{asset("css/bootstrap-year-calendar.min")}}">--}}
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -16,4 +16,5 @@
         </div>
     </div>
 </div>
-<script src="{{asset("js/bootstrap-year-calendar.min.js")}}"></script>
+{{--
+<script src="{{asset("js/bootstrap-year-calendar.min.js")}}"></script>--}}

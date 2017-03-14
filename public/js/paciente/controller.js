@@ -18,6 +18,13 @@ cita.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
   */
 
   $scope.init = function () {
+      $('#fecha').datepicker({
+       language: 'es',
+       autoclose: true,
+       format: 'dd/mm/yyyy'
+       }).on("changeDate",function(e){
+           $scope.citaDisponible(moment(e.date).format('YYYY-MM-DD H:mm'));
+      });
     $scope.cDisponible = []; //guarda las citas disponibles procesadas
     $scope.medico_id = 0; //id medico seleccionado
     $scope.medico_titulo = ''; //id medico seleccionado
@@ -37,7 +44,7 @@ cita.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
     '18:00 pm', '18:15 pm', '18:30 pm', '18:45 pm', '19:00 pm', '19:15 pm',
     '19:30 pm', '19:45 pm'
   ];
-    $();
+    //$();
   $("section.content-header").remove();
   $http({
     url: URL_ALL_MEDIC,
@@ -165,6 +172,7 @@ $scope.selected = function (index, titulo, nombre, apellido) {
 *
 */
 /*
+
 * function selectHorario: guarda los datos del médico seleccionado
 * @param  date  start, date end, string estado
 * @return
@@ -205,7 +213,7 @@ $scope.citaDisponible = function (fecha) {
   $scope.count == 0 ? $timeout(countUp, 4000): console.log(false) ; // inicializar una sola vez el timeout
   $scope.functionIsRunning = true;
   //$scope.loading=true; // muestra estado de elementos de carga
-  $scope.show_fecha = typeof fecha != "undefined" ? moment(fecha).format('LL') : moment($scope.hoy).format('LL'); //fecha = "2017-03-08 17:02:27"
+  $scope.show_fecha = typeof fecha != "undefined" ? moment(fecha).format('LL') : moment($scope.hoy).format('LL'); //mostrar la fecha = "2017-03-08 17:02:27"
     $scope.f_selected = fecha;
   $http({
     url: URL_CITA_DISPONIBLE,
