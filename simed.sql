@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2017 a las 22:14:33
+-- Tiempo de generación: 15-03-2017 a las 22:19:09
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -859,7 +859,9 @@ INSERT INTO `cms_logs` (`id`, `created_at`, `updated_at`, `ipaddress`, `useragen
 (567, '2017-03-15 20:47:48', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1),
 (568, '2017-03-15 20:47:56', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'celia@correo.com Inicia sesión con la dirección IP ::1', 14),
 (569, '2017-03-15 20:48:04', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'celia@correo.com cerrar sesión', 14),
-(570, '2017-03-15 20:48:09', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1);
+(570, '2017-03-15 20:48:09', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(571, '2017-03-15 21:18:09', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/module_generator/delete/16', 'Eliminar datos Instituciónes at Module Generator', 1),
+(572, '2017-03-15 21:18:21', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/menu_management/delete/16', 'Eliminar datos Instituciones at Menu Management', 1);
 
 -- --------------------------------------------------------
 
@@ -902,10 +904,7 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 (12, 'Usuarios', 'URL External', '#', 'normal', 'fa fa-users', 0, 1, 0, 5, 4, '2017-03-03 19:03:32', NULL),
 (13, 'Listado usuarios', 'Route', 'AdminCmsUsersControllerGetIndex', 'normal', 'fa fa-bars', 12, 1, 0, 5, 2, '2017-03-03 19:04:32', '2017-03-03 19:49:27'),
 (14, 'Agregar usuario', 'Route', 'AdminCmsUsersControllerGetAdd', 'normal', 'fa fa-plus-circle', 12, 1, 0, 5, 1, '2017-03-03 19:50:27', NULL),
-(15, 'Agendar Cita', 'Admin Path', 'medico/agenda', 'normal', 'fa fa-plus-circle', 0, 1, 0, 4, NULL, '2017-03-06 16:40:05', '2017-03-06 16:52:14'),
-(16, 'Instituciones', 'URL External', '#', 'normal', 'fa fa-industry', 0, 1, 0, 5, 1, '2017-03-15 18:57:22', NULL),
-(17, 'Agregar institución', 'Route', 'AdminInstitucionControllerGetAdd', 'normal', 'fa fa-plus', 16, 1, 0, 5, 1, '2017-03-15 18:58:23', NULL),
-(18, 'Listado instituciones', 'Route', 'AdminInstitucionControllerGetIndex', 'normal', 'fa fa-bars', 16, 1, 0, 5, 2, '2017-03-15 18:58:49', NULL);
+(15, 'Agendar Cita', 'Admin Path', 'medico/agenda', 'normal', 'fa fa-plus-circle', 0, 1, 0, 4, NULL, '2017-03-06 16:40:05', '2017-03-06 16:52:14');
 
 -- --------------------------------------------------------
 
@@ -945,8 +944,7 @@ INSERT INTO `cms_moduls` (`id`, `created_at`, `updated_at`, `name`, `icon`, `pat
 (12, '2017-02-07 15:58:26', NULL, 'Lista de pacientes', 'fa fa-cog', 'paciente', 'paciente', 'AdminPaciente1Controller', 0, 0),
 (13, '2017-02-07 15:59:41', NULL, 'Lista de médicos', 'fa fa-user-md', 'medico', 'medico', 'AdminMedico1Controller', 0, 0),
 (14, '2017-03-10 22:34:04', NULL, 'Historial citas', 'fa fa-bars', 'cita_calendario', 'cita_calendario', 'AdminCitaCalendarioController', 0, 0),
-(15, '2017-03-10 22:42:10', NULL, 'Historial', 'fa fa-history', 'agenda', 'agenda', 'AdminAgenda1Controller', 0, 0),
-(16, '2017-03-15 18:52:22', NULL, 'Instituciónes', 'fa fa-industry', 'institucion', 'institucion', 'AdminInstitucionController', 0, 0);
+(15, '2017-03-10 22:42:10', NULL, 'Historial', 'fa fa-history', 'agenda', 'agenda', 'AdminAgenda1Controller', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1489,7 +1487,7 @@ ALTER TABLE `cms_email_templates`
 -- AUTO_INCREMENT de la tabla `cms_logs`
 --
 ALTER TABLE `cms_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=571;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=573;
 --
 -- AUTO_INCREMENT de la tabla `cms_menus`
 --
