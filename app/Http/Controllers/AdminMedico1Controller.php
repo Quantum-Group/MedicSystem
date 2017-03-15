@@ -44,6 +44,11 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = array (
+  'style' => NULL,
+  'help' => NULL,
+  'placeholder' => 'Ejem: Traumatología',
+  'readonly' => NULL,
+  'disabled' => NULL,
   'label' => 'Especialidad',
   'name' => 'especialidad',
   'type' => 'text',
