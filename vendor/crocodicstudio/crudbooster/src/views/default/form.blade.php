@@ -1,6 +1,8 @@
 @extends('crudbooster::admin_template')
 @section('content')
-
+<?php //conseguir la url completa
+$getUrl = Request::fullUrl();
+?>
     <div>
         @if(CRUDBooster::getCurrentMethod() != 'getProfile' && $button_cancel)
             @if(g('return_url'))
@@ -31,8 +33,11 @@
                     <input type='hidden' name='return_url' value='{{ @$return_url }}'/>
                     <input type='hidden' name='ref_mainpath' value='{{ CRUDBooster::mainpath() }}'/>
                     <input type='hidden' name='ref_parameter' value='{{urldecode(http_build_query(@$_GET))}}'/>
-
+                    @if(strpos($getUrl,'users/add'))
                     <div ng-app="App" ng-init="select=(false)" ng-controller="Ctrl" class="box-body">
+                        @else
+                    <div class="box-body">
+                    @endif
 
                         @if($command == 'detail')
                             @include("crudbooster::default.form_detail")
