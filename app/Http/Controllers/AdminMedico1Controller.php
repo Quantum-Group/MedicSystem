@@ -14,7 +14,6 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 
     public function cbInit()
     {
-
         # START CONFIGURATION DO NOT REMOVE THIS LINE
         $this->title_field = "id";
         $this->limit = "20";
@@ -33,21 +32,36 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
         $this->table = "medico";
         # END CONFIGURATION DO NOT REMOVE THIS LINE
 
-        # START COLUMNS DO NOT REMOVE THIS LINE
-        $this->col = [];
-        $this->col[] = ["label" => "Titulo", "name" => "titulo"];
-        $this->col[] = ["label" => "Nombre", "name" => "nombre"];
-        $this->col[] = ["label" => "Apellido", "name" => "apellido"];
-        $this->col[] = ["label" => "Especialidad", "name" => "especialidad"];
-        $this->col[] = ["label" => "Telefono", "name" => "telefono"];
-        # END COLUMNS DO NOT REMOVE THIS LINE
+			# START COLUMNS DO NOT REMOVE THIS LINE
+			$this->col = [];
+			$this->col[] = ["label"=>"Titulo","name"=>"titulo"];
+			$this->col[] = ["label"=>"Nombre","name"=>"nombre"];
+			$this->col[] = ["label"=>"Apellido","name"=>"apellido"];
+			$this->col[] = ["label"=>"Especialidad","name"=>"especialidad"];
+			$this->col[] = ["label"=>"Telefono","name"=>"telefono"];
+			$this->col[] = ["label"=>"Institucion","name"=>"institucion_id","join"=>"institucion,nombre"];
+			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = array (
+  'dataenum' => NULL,
+  'datatable' => 'institucion,nombre',
   'style' => NULL,
   'help' => NULL,
-  'placeholder' => 'Ejem: Cardiología',
+  'datatable_where' => NULL,
+  'datatable_format' => NULL,
+  'datatable_exception' => NULL,
+  'label' => 'Institucion',
+  'name' => 'institucion_id',
+  'type' => 'select2',
+  'validation' => 'required',
+  'width' => 'col-sm-9',
+);
+			$this->form[] = array (
+  'style' => NULL,
+  'help' => NULL,
+  'placeholder' => 'Ejem: Dr.',
   'readonly' => NULL,
   'disabled' => NULL,
   'label' => 'Especialidad',
@@ -59,7 +73,7 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			$this->form[] = array (
   'style' => NULL,
   'help' => NULL,
-  'placeholder' => 'Ejem: Dr.',
+  'placeholder' => NULL,
   'readonly' => NULL,
   'disabled' => NULL,
   'label' => 'Titulo',
@@ -118,7 +132,6 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
         |
         */
         $this->sub_module = array();
-
 
         /*
         | ----------------------------------------------------------------------
