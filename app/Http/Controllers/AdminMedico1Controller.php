@@ -39,31 +39,11 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			$this->col[] = ["label"=>"Apellido","name"=>"apellido"];
 			$this->col[] = ["label"=>"Especialidad","name"=>"especialidad"];
 			$this->col[] = ["label"=>"Telefono","name"=>"telefono"];
-			$this->col[] = ["label"=>"Institucion","name"=>"institucion_id","join"=>"institucion,nombre"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = array (
-  'dataenum' => NULL,
-  'datatable' => 'institucion,nombre',
-  'style' => NULL,
-  'help' => NULL,
-  'datatable_where' => NULL,
-  'datatable_format' => NULL,
-  'datatable_exception' => NULL,
-  'label' => 'Institucion',
-  'name' => 'institucion_id',
-  'type' => 'select2',
-  'validation' => 'required',
-  'width' => 'col-sm-9',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => 'Ejem: Dr.',
-  'readonly' => NULL,
-  'disabled' => NULL,
   'label' => 'Especialidad',
   'name' => 'especialidad',
   'type' => 'text',
@@ -73,7 +53,7 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			$this->form[] = array (
   'style' => NULL,
   'help' => NULL,
-  'placeholder' => NULL,
+  'placeholder' => 'Ejem: Dr.',
   'readonly' => NULL,
   'disabled' => NULL,
   'label' => 'Titulo',
