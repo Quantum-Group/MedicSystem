@@ -47,21 +47,22 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			$this->form[] = array (
   'dataenum' => NULL,
   'datatable' => 'institucion,nombre',
+  'dataquery' => NULL,
   'style' => NULL,
   'help' => NULL,
   'datatable_where' => NULL,
   'datatable_format' => NULL,
-  'datatable_exception' => NULL,
+  'parent_select' => NULL,
   'label' => 'Institucion',
   'name' => 'institucion_id',
-  'type' => 'select2',
+  'type' => 'select',
   'validation' => 'required',
   'width' => 'col-sm-9',
 );
 			$this->form[] = array (
   'style' => NULL,
   'help' => NULL,
-  'placeholder' => 'Ejem: Dr.',
+  'placeholder' => 'Ejem: Traumatología',
   'readonly' => NULL,
   'disabled' => NULL,
   'label' => 'Especialidad',
@@ -73,7 +74,7 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			$this->form[] = array (
   'style' => NULL,
   'help' => NULL,
-  'placeholder' => NULL,
+  'placeholder' => 'Ejem: Dra.',
   'readonly' => NULL,
   'disabled' => NULL,
   'label' => 'Titulo',
@@ -216,7 +217,11 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
         | $this->script_js = "function() { ... }";
         |
         */
-        $this->script_js = NULL;
+        $this->script_js = "$(function() {
+            $(document).ready(function(){
+                    $('#institucion_id').select2();
+                    });
+                })";
 
 
         /*
