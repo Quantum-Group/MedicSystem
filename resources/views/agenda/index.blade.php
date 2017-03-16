@@ -64,90 +64,16 @@
     <div class="box-footer"></div>
 </div>
 {{--<script src="{{asset("js/Thread/Concurrent.Thread.js")}}"></script>--}}
-
 <script>
-    var agenda = angular.module("AppAgenda", [], function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-    });
+    /*
+     * GLOBALS
+     */
+    URL_CITAS = '{{ CRUDBooster::adminPath('medico/cita/') }}';
 
-    agenda.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
-        $scope.init = function () {
-            $scope.uno = 0;
-            $.get('{{ CRUDBooster::adminPath('medico/agenda/calendario') }}', function (data) {
-            });
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next, today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                //defaultView: 'agendaWeek',
-                locale: 'es', // tomado de locale
-                buttonIcons: false,
-                navLinks: true,
-                editable: false,
-                eventLimit: true,
-                aspectRatio: 2,
-                nowIndicator: true,
-                titleFormat: 'MMMM D YYYY',
-                columnFormat: 'dddd',
-                //fixedWeekCount:true,
-                //weekNumbers: true,
-                timeFormat: 'H:mm',
-                events: {
-                    url: '{{ CRUDBooster::adminPath('medico/cita') }}'
-                },
-                eventRender: function (event, element) {
-                    element.click(function () {
-                        $("#mod_mostrar_cita").modal('show');
-                        // colocar titulo
-                        $scope.modalTitle = 'Cita Agendada - '+event.title;
-                        $scope.fechaInicio = moment(event.start).format('DD/MM/YYYY');
-                        $scope.horaInicio = moment(event.start).format('h:mm a');
-                        $scope.paciente = moment(event.start).format('h:mm a');
-                        $scope.$apply(); //refrescar el objeto $scope
-                    });
-                }
-            });
-        };
-        /*
-        *  Sincronizar agenda
-        * */
-        var countUp = function() {
-            $scope.agendaWorker.load();
-            $timeout(countUp, 4000);
-        };
-
-        $timeout(countUp, 500);
-        $scope.agendaWorker = {
-            load:function(){
-                $("#calendar").fullCalendar("refetchEvents");
-            }
-        };
-        /*
-        * -->
-        *
-        * */
-        $scope.reloadRoute = function () {
-            $window.location.reload();
-        };
-        $scope.init(); //inicializar varios metodos
-    });
-    /*agenda.factory("HelloWorldService",['$q',function($q){
-        var worker = new Worker('js/doWork.js');
-        var defer = $q.defer();
-        worker.addEventListener('message', function(e) {
-            console.log('Worker said: ', e.data);
-            defer.resolve(e.data);
-        }, false);
-        return {
-            doWork : function(myData){
-                defer = $q.defer();
-                worker.postMessage(agendaWorker); // Send data to our worker.
-                return defer.promise;
-            }
-        };
-
-    }]);*/
+    /*
+     * -->
+     */
 </script>
+<script src="{{asset('js/agenda/app.js')}}"></script>
+<script src="{{asset('js/agenda/dashboard_controller.js')}}"></script>
+

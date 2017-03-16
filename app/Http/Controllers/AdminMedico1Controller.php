@@ -343,4 +343,14 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
         $medico->cms_user_id = $user->id;
         $medico->save();
     }
+    /*
+     * @$id : id de usuario logueado
+     *
+     * */
+    public function dashboard(){
+        $id = CRUDBooster::myId();
+        $user = CmsUser::find($id);
+        $medico = ModMedico::where("cms_user_id",$user->id)->first();
+        return view("medico.dashboard",["medico"=>$medico]);
+    }
 }

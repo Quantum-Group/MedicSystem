@@ -2,6 +2,8 @@
 
 
 Route::resource('/admin/medico/agenda', 'AdminAgendaController');
+Route::get('/admin/medico/dashboard', 'AdminMedico1Controller@dashboard');
+Route::get('/admin/medico/dashboard/{id}', 'AdminCitaController@medico_citas');
 Route::resource('/admin/medico/cita','AdminCitaController');
 Route::resource('admin/pacientes','PacienteController');
 Route::get('admin/buscarMedico','PacienteController@search');

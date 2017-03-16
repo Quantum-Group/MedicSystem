@@ -121,4 +121,13 @@ class AdminCitaController extends Controller
             "response"=>$response
         ]);
     }
+    /*
+     * @$id: id de medico
+     * funcion usada para el dashboard de medico
+     * */
+    public function medico_citas($id){
+        $agenda = ModAgenda::where("medico_id",$id)->first();
+        $citas = ModCita::where("agenda_id",$agenda->id)->get();
+        return response()->json( $citas );
+    }
 }

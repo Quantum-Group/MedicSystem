@@ -77,7 +77,7 @@
 
           </div>
           <div class="form-group">
-            <label class="control-label" for="signupName">Nombre de usuario *</label>
+            <label class="control-label" for="signupName">Nombre *</label>
             <input ng-model="newUser.SUnombre" required id="username" type="text" ng-minlength="3"
             ng-maxlength="50" class="form-control">
           </div>
