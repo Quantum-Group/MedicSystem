@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ModConvenio;
 use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Http\Request;
 //use App\Http\Requests;
@@ -11,6 +12,7 @@ use App\ModAgenda;
 use App\ModCita;
 use App\Mail\CitaAgenda;
 use Mail;
+use Carbon\Carbon;
 
 class AdminAgendaController extends Controller
 {
@@ -53,6 +55,7 @@ class AdminAgendaController extends Controller
             $response = $cita->save();
         }else {
             $cita = new ModCita;
+            $convenio = new ModConvenio;
             $paciente = ModPaciente::find($request->get("idpaciente"));
             $cita->paciente_id = $request->get("idpaciente");
             $cita->detalle_cita = $request->get("descripcion");
@@ -72,8 +75,23 @@ class AdminAgendaController extends Controller
             $medico = ModMedico::find($request->get("medico_id"));
             $cita->title = ($medico->titulo . " " . $medico->nombre . " " . $medico->apellido . "," . $paciente->nombre . " " . $paciente->apellido);
             $response = $cita->save();
+
             if($response){
-                $sendEmail = Mail::to("pdavid211@hotmail.com")->send(new CitaAgenda());
+                /*
+             * Insertar el convenio si se ingresa datos
+             * */
+                $convenio->cita_calendario_id = $cita->id;
+                $convenio->autorizacion = $request->get("autorizacion");
+                $date1 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_autorizacion"))->format("Y-m-d");
+                $date2 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_vence"))->format("Y-m-d");
+                $convenio->fecha_autorizacion = $date1;
+                $convenio->fecha_vence = $date2;
+             if($convenio->save()){
+                 /*
+                  * Envio de e-mail cuando se guarda la cita
+                  * */
+                 $sendEmail = Mail::to($paciente->email)->send(new CitaAgenda());
+             }
             }
         }
 

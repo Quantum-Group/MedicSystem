@@ -3,6 +3,11 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
      * Inicializacion
      */
     $scope.init = function () {
+        $scope.sel_convenio = "PARTICULAR";
+        $scope.options_convenio = [
+            "PARTICULAR",
+            "I.E.S.S."
+        ];
         $scope.panel_default = {
             title_panel: "Agendar nueva Cita",
             class_heading: "panel-primary",
@@ -33,7 +38,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
             }
         };
         $(".select2").select2();
-        $('#fecha').datepicker({
+        $('#fecha, .datepicker').datepicker({
             language: 'es',
             autoclose: true,
             format: 'dd/mm/yyyy'
@@ -44,7 +49,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
-            height: 430, //alto del calendario
+            height: 450, //alto del calendario
             defaultView: 'agendaWeek',
             locale: 'es', // tomado de locale
             buttonIcons: true,
@@ -70,7 +75,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                 element.click(function () {
                     //cambiar color panel
                     $scope.panelModCita(event);
-
                 });
             },
             eventResize: function (event, delta, revertFunc) {
@@ -81,7 +85,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                 /*if (!confirm("is this okay?")) {
                  revertFunc();
                  }*/
-
             },
             eventDrop: function (event, delta, revertFunc) {
                     $scope.panelModCita(event);
@@ -98,8 +101,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         var horaF = hora2.split(":",2);
         var hora_fin= horaF[0];
         var min_fin = horaF[1];
-        console.log(min_fin);
-        console.log(hora_fin);
         var verified = false;
         if(typeof hora_inicio == "undefined"){
             verified = 'undefined';
@@ -117,6 +118,13 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         return verified;
     };
     $scope.init(); //inicializar
+    /*
+    * muestra los datos para ingresar fechas de autorizacion de convenio particular o iess
+    * */
+    $scope.show_convenio = function(){
+        // mostrar modal si es IESS
+        $scope.sel_convenio == "I.E.S.S." ? $("#modal_autorizacion").modal("show") : null ;
+    };
     /*
      * -->
      */
@@ -326,10 +334,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
             swal({
                 type:"error",
                 title:"Error!",
-                text:"Revise que los campos no esten vacios y que las horas de inicio no sean las mismas que las de fin!",
-
+                text:"Revise que los campos no esten vacios y que las horas de inicio no sean las mismas que las de fin!"
             });
-
         }
     };
     // cambiar formato de fecha 01/11/2017 a 2017-01-11 // not used
@@ -338,7 +344,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
             month = '' + (d.getMonth() + 1),
             day = '' + d.getDate(),
             year = d.getFullYear();
-
         if (month.length < 2) month = '0' + month;
         if (day.length < 2) day = '0' + day;
         return [year, month, day].join('-');
