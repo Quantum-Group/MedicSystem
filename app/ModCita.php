@@ -17,13 +17,16 @@ class ModCita extends Model
         "end",
         "title",
         "color",
-        "trash"
+        "trash",
+        "sel_convenio"
     ];
-
     public function agenda(){
         return $this->belongsTo('\App\ModAgenda');
     }
     public function paciente(){
         return $this->belongsTo('\App\ModPaciente');
+    }
+    public function convenio(){
+        return $this->hasOne('\App\ModConvenio',"cita_calendario_id");
     }
 }

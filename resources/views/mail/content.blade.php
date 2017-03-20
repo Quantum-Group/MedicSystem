@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<input type="button" value="Boton">
-<h1>Es un boton</h1>
+<h1><i class="fa fa-industry"></i> Agenda Médica</h1>
+<h4>Estimado paciente, {{$paciente->nombre." ".$paciente->apellido}} <br> Su cita ha sido agendada correctamente!</h4>
+<br><br><br>
+<p>Saludos Cordiales</p>
+<p>El equipo QUAMTUM</p>
 </body>
 </html>
