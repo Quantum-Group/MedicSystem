@@ -79,12 +79,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
             },
             eventResize: function (event, delta, revertFunc) {
                 $scope.panelModCita(event);
-
-                //alert(event.title + " end is now " + event.end.format());
-
-                /*if (!confirm("is this okay?")) {
-                 revertFunc();
-                 }*/
             },
             eventDrop: function (event, delta, revertFunc) {
                     $scope.panelModCita(event);
@@ -133,7 +127,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
      * */
     $scope.panelModCita = function (event) {
         /*
-         * Cambiar colores del panel de crear o modificar citas
+         * Preparar el panel para modificar una cita
          * */
         $scope.panel_modify.url = URL_MEDICO_CITA + "/" + event.id;
         $scope.cita_id = event.id;
@@ -144,13 +138,28 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         $scope.horaFin = moment(event.end).format('H:mm a');
         $scope.start = moment(event.start, 'YYYY/MM/DD,H:mm').format();
         $scope.end = moment(event.end, 'YYYY/MM/DD,H:mm').format();
+        //convenio assign
+        $scope.sel_convenio = event.sel_convenio;
+        $("#sel_convenio").trigger("change");
+        if($scope.sel_convenio == "I.E.S.S."){
+            $scope.autorizacion = event.convenio.autorizacion;
+            $scope.fecha_autorizacion = moment(event.convenio.fecha_autorizacion,"YYYY-MM-DD").format("DD/MM/YYYY");
+            $scope.fecha_vence = moment(event.convenio.fecha_vence,"YYYY-MM-DD").format("DD/MM/YYYY");
+        }else{
+            $scope.resetAutorizacion();
+        }
         //cambio de botones
         $scope.modificar = true;
         $scope.agendar = false;
         $scope.panel = $scope.panel_modify;
-        $scope.$apply(); //refrescar el objeto $scope
+        try{$scope.$apply();}catch(err){}
     };
-
+    // Borra los campos del ingreso de datos de actualizacion
+    $scope.resetAutorizacion= function(){
+        $scope.autorizacion = "";
+        $scope.fecha_autorizacion = "";
+        $scope.fecha_vence = "";
+    };
     $scope.eliminarCita = function () {
         swal({
             title: '¿Mover a la papelera?',
@@ -183,8 +192,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                         $scope.reloadCalendar();
                         $scope.resetPanelCita();
                     });
-                    //$scope.panelNewCita();
-                    //$("#calendar").fullCalendar("refetchEvents");
                 } else {
                     swal("Error!", "No se pudo borrar la cita!", "error");
                 }
@@ -197,9 +204,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         $scope.horaInicio = "";
         $scope.horaFin = "";
         $scope.formCita = {};
-        try{
-            $scope.$apply();
-        }catch(err){}
+        $scope.resetAutorizacion();
+        try{$scope.$apply();}catch(err){console.log(err);}
     };
     /*
      * Recarga la página actual
@@ -220,11 +226,10 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
      * -->
      */
     /*
-     * Cancelar la cita // cambia el color de la cita
+     * Cancelar la cita
      */
     $scope.cancelarCita = function () {
         $scope.setDateTime();
-
         swal({
             title: "¿Desea cancelar la cita?",
             text: 'El tiempo no será liberado!',
