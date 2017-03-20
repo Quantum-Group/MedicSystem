@@ -8,7 +8,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                //defaultView: 'agendaWeek',
                 locale: 'es', // tomado de locale
                 buttonIcons: false,
                 navLinks: true,
@@ -32,6 +31,11 @@ agenda.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
                 $scope.fechaInicio = moment(event.start).format('DD/MM/YYYY');
                 $scope.horaInicio = moment(event.start).format('h:mm a');
                 $scope.paciente = moment(event.start).format('h:mm a');
+                $scope.observ = event.detalle_cita;
+                $scope.sel_convenio = event.sel_convenio;
+                $scope.autorizacion = event.convenio.autorizacion;
+                $scope.fecha_autorizacion = event.convenio.fecha_autorizacion;
+                $scope.fecha_vence = event.convenio.fecha_vence;
                 $scope.$apply(); //refrescar el objeto $scope
             });
         }

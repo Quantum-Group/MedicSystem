@@ -39,6 +39,7 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			$this->col[] = ["label"=>"Apellido","name"=>"apellido"];
 			$this->col[] = ["label"=>"Especialidad","name"=>"especialidad"];
 			$this->col[] = ["label"=>"Telefono","name"=>"telefono"];
+			$this->col[] = ["label"=>"Email","name"=>"email"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -102,6 +103,18 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
   'type' => 'text',
   'validation' => 'min:3|max:255',
   'width' => 'col-sm-10',
+);
+			$this->form[] = array (
+  'style' => NULL,
+  'help' => NULL,
+  'placeholder' => NULL,
+  'readonly' => NULL,
+  'disabled' => NULL,
+  'label' => 'Email',
+  'name' => 'email',
+  'type' => 'email',
+  'validation' => NULL,
+  'width' => 'col-sm-9',
 );
 			# END FORM DO NOT REMOVE THIS LINE
 

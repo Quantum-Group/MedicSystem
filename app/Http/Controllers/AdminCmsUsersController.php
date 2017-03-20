@@ -113,14 +113,20 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
 	}
   public function hook_after_add($id)
   {
-    try{
-    $medico_id = \Request::get('medico_id');
-    $medico = ModMedico::findOrFail($medico_id);
-    $medico->cms_user_id = $id;
-    $medico->save();
-  }catch (\Error $x){
+      /*
+       *  Asignar el id de usuario al que pertenece el medico
+       * */
+      $medico_id = \Request::get('medico_id');
+      if($medico_id != null)
+      {
+          try{
+              $medico = ModMedico::findOrFail($medico_id);
+              $medico->cms_user_id = $id;
+              $medico->save();
+          }catch (\Error $x){
 
-	}
+          }
+      }
 }
   public function hook_before_delete($id)
   {

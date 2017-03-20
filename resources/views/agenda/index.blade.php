@@ -19,17 +19,46 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <div class="col-sm-7">
-                            <h4 class="col-sm-6" for="">
-                                <b>Agendado para:</b>
-                            </h4>
-                            <h4>[[ fechaInicio ]]</h4>
-                        </div>
-                        <div class="col-sm-7">
-                            <h4 class="col-sm-6" for="">
-                                <b>Hora:</b>
-                            </h4>
-                            <h4>[[ horaInicio ]]</h4>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <h4 class="col-sm-6" for="">
+                                    <b>Agendado para:</b>
+                                </h4>
+                                <h4>[[ fechaInicio ]]</h4>
+                            </div>
+                            <div class="col-sm-7">
+                                <h4 class="col-sm-6" for="">
+                                    <b>Hora:</b>
+                                </h4>
+                                <h4>[[ horaInicio ]]</h4>
+                            </div>
+                            <div class="col-sm-7">
+                                <h4 class="col-sm-6" for="">
+                                    <b>Observaciones:</b>
+                                </h4>
+                                <h4>[[ observ ]]</h4>
+                            </div>
+                            <div class="col-sm-7">
+                                <h4 class="col-sm-6" for="">
+                                    <b>Condicion de paciente:</b>
+                                </h4>
+                                <h4>[[ sel_convenio ]]</h4>
+                            </div><div class="col-sm-7">
+                                <h4 class="col-sm-6" for="">
+                                    <b>Autorización:</b>
+                                </h4>
+                                <h4>[[ autorizacion ]]</h4>
+                            </div><div class="col-sm-7">
+                                <h4 class="col-sm-6" for="">
+                                    <b>Fecha de Autorización:</b>
+                                </h4>
+                                <h4>[[ fecha_autorizacion ]]</h4>
+                            </div><div class="col-sm-7">
+                                <h4 class="col-sm-6" for="">
+                                    <b>Fecha de vencimiento</b>
+                                </h4>
+                                <h4>[[ fecha_vence ]]</h4>
+                            </div>
                         </div>
                     </div>
                 </div>

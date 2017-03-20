@@ -17,7 +17,7 @@ class AdminCitaController extends Controller
      */
     public function index()
     {
-        $citas = ModCita::all();
+        $citas = ModCita::with("convenio")->get();
         return response()->json( $citas );
     }
 
