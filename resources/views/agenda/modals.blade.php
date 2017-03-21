@@ -19,7 +19,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input ng-model="fecha" id="fecha" type="text" class="form-control pull-right"
+                                <input ng-model="cita.fecha" id="fecha" type="text" class="form-control pull-right"
                                        id="datepicker">
                             </div>
                         </div>

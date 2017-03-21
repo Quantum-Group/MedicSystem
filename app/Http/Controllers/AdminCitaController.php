@@ -7,7 +7,8 @@ use App\ModPaciente;
 use App\ModMedico;
 use App\ModAgenda;
 use App\ModCita;
-
+use App\ModConvenio;
+use Carbon\Carbon;
 class AdminCitaController extends Controller
 {
     /**
@@ -17,7 +18,10 @@ class AdminCitaController extends Controller
      */
     public function index()
     {
-        $citas = ModCita::with("convenio")->get();
+        $citas = ModCita::with("convenio")
+            ->where("estado_cita",1)
+            ->where("trash",null)
+            ->get();
         return response()->json( $citas );
     }
 
@@ -67,10 +71,15 @@ class AdminCitaController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * Funcion usada para el historial de citas muestra la cita en la agenda
      */
     public function edit($id)
     {
-        //
+        $cita = ModCita::with("convenio")->find($id);
+        $paciente = ModPaciente::all();
+        $agenda = ModAgenda::find($cita->agenda_id);
+        $medico = ModMedico::find($agenda->medico_id);
+        return view("agenda.create",compact('page_title'),["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico,"cita"=>$cita]);
     }
 
     /**
@@ -107,14 +116,25 @@ class AdminCitaController extends Controller
                     /*
                  * Insertar el convenio si se ingresa datos
                  * */
-                    $convenio = ModConvenio::where("cita_calendario_id",$cita->id)->find();
-                    $convenio->cita_calendario_id = $cita->id;
-                    $convenio->autorizacion = $request->get("autorizacion");
-                    $date1 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_autorizacion"))->format("Y-m-d");
-                    $date2 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_vence"))->format("Y-m-d");
-                    $convenio->fecha_autorizacion = $date1;
-                    $convenio->fecha_vence = $date2;
-                    $convenio->save();
+                    $convenio = ModConvenio::where("cita_calendario_id",$id)->first();
+                    if(count($convenio)>0 && !is_null($request->get("fecha_autorizacion")) && !is_null($request->get("fecha_vence"))){
+                        $convenio->cita_calendario_id = $id;
+                        $convenio->autorizacion = $request->get("autorizacion");
+                        $date1 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_autorizacion"))->format("Y-m-d");
+                        $date2 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_vence"))->format("Y-m-d");
+                        $convenio->fecha_autorizacion = $date1;
+                        $convenio->fecha_vence = $date2;
+                        $convenio->save();
+                    }else if(!is_null($request->get("fecha_autorizacion")) && !is_null($request->get("fecha_vence"))){
+                        $convenio = new ModConvenio;
+                        $convenio->cita_calendario_id = $id;
+                        $convenio->autorizacion = $request->get("autorizacion");
+                        $date1 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_autorizacion"))->format("Y-m-d");
+                        $date2 = Carbon::createFromFormat("d/m/Y",$request->get("fecha_vence"))->format("Y-m-d");
+                        $convenio->fecha_autorizacion = $date1;
+                        $convenio->fecha_vence = $date2;
+                        $convenio->save();
+                    }
                 }
                 /*
                  * Envio de e-mail cuando se actualiza la cita

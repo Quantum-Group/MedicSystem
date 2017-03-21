@@ -206,13 +206,6 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
   'width' => 'col-sm-10',
 );
 			$this->form[] = array (
-  'label' => 'Condición Paciente',
-  'name' => 'condicion_paciente',
-  'type' => 'text',
-  'validation' => 'min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
   'label' => 'Dirección',
   'name' => 'direccion',
   'type' => 'text',
@@ -220,6 +213,11 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
   'width' => 'col-sm-10',
 );
 			$this->form[] = array (
+  'style' => NULL,
+  'help' => NULL,
+  'placeholder' => NULL,
+  'readonly' => NULL,
+  'disabled' => NULL,
   'label' => 'Telf. Domicilio',
   'name' => 'telf_domicilio',
   'type' => 'text',

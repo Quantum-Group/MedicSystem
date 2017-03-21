@@ -33,6 +33,7 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Fecha","name"=>"created_at"];
+			$this->col[] = ["label"=>"Cedula Paciente","name"=>"paciente_id","join"=>"paciente,cedula"];
 			$this->col[] = ["label"=>"Médico - Paciente","name"=>"title"];
 			$this->col[] = ["label"=>"Detalle Cita","name"=>"detalle_cita"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -102,7 +103,15 @@
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
 	        */
-	        $this->addaction = array();
+	        if(CRUDBooster::myPrivilegeId() != 3) { //mostrar el boton de abrir cita
+                $this->addaction = array(['label' => 'Cita',
+                    'icon' => 'fa fa-external-link',
+                    'color' => 'success',
+                    'url' => CRUDBooster::adminpath($slug = 'medico/cita') . '/[id]/edit'
+                ]);
+            }else {
+                $this->addaction = array();
+            }
 
 
 	        /* 
@@ -211,13 +220,19 @@
 	    |
 	    */
 	    public function hook_query_index(&$query) {
-	        //Your code here
-            $idUser = CRUDBooster::myId();
+            if(CRUDBooster::myPrivilegeId() == 3){ // si es paciente
+                $idUser = CRUDBooster::myId();
+                $user = CmsUser::findOrFail($idUser);
+                $paciente = ModPaciente::where("cms_user_id",$user->id)->first();
+                $query->where('paciente_id',$paciente->id)
+                        ->where('trash',null)
+                        ->where('estado_cita',1);
 
-            $user = CmsUser::findOrFail($idUser);
-$paciente = ModPaciente::where("cms_user_id",$user->id)->first();
-
-            $query->where('paciente_id',$paciente->id);
+            }
+            if(CRUDBooster::myPrivilegeId() == 2){// call center
+                $query->where('trash',null)
+                        ->where('estado_cita',1);
+            }
 	    }
 
 	    /*

@@ -1,42 +1,96 @@
 agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
+    /*variables de inicializacion*/
+    $scope.panel_default = {
+        title_panel: "Agendar nueva Cita",
+        class_heading: "panel-primary",
+        url: URL_MEDICO_AGENDA,
+        buttons: {
+            agendar: true,
+            trash: false,
+            cancelar: false,
+            modificar: false
+        }
+    };
+    $scope.panel_modify = {
+        title_panel: "Modificar Cita",
+        class_heading: "carrot",
+        style_body: "background-color:white",
+        url: URL_MEDICO_CITA,
+        method: {
+            name: "_method",
+            value: "PATCH"
+        },
+        class_text_title: "white-header",
+        buttons: {
+            agendar: false,
+            trash: true,
+            cancelar: true,
+            modificar: true
+        }
+    };
+    // Borra los campos del ingreso de datos de actualizacion
+    $scope.resetAutorizacion= function(){
+        $scope.autorizacion = "";
+        $scope.fecha_autorizacion = "";
+        $scope.fecha_vence = "";
+    };
+    /*
+     * Panel de modificacion de la cita
+     * */
+    $scope.panelModCita = function (event) {
+        /*
+         * Preparar el panel para modificar una cita
+         * */
+        $scope.config = {
+            defaultDate:moment(event.start).format('YYYY-MM-DD'),
+            defaultView:'agendaDay'
+        };
+        $("#calendar").fullCalendar( 'gotoDate', moment(event.start).format('YYYY-MM-DD'));
+        $scope.panel_modify.url = URL_MEDICO_CITA + "/" + event.id;
+        $scope.cita_id = event.id;
+        $("#select-paciente").val(event.paciente_id).trigger("change");
+        $scope.cita = {
+            descripcion:event.detalle_cita,
+            fecha:moment(event.start).format('DD/MM/YYYY')
+        };
+        $scope.horaInicio = moment(event.start).format('H:mm a');
+        $scope.horaFin = moment(event.end).format('H:mm a');
+        $scope.start = moment(event.start, 'YYYY/MM/DD,H:mm').format();
+        $scope.end = moment(event.end, 'YYYY/MM/DD,H:mm').format();
+        //convenio assign
+        $scope.sel_convenio = event.sel_convenio;
+        $("#sel_convenio").trigger("change");
+        if($scope.sel_convenio == "I.E.S.S."){
+            try {
+                $scope.autorizacion = event.convenio.autorizacion;
+                $scope.fecha_autorizacion = moment(event.convenio.fecha_autorizacion,"YYYY-MM-DD").format("DD/MM/YYYY");
+                $scope.fecha_vence = moment(event.convenio.fecha_vence,"YYYY-MM-DD").format("DD/MM/YYYY");
+            }catch(err){}
+        }else{
+            $scope.resetAutorizacion();
+        }
+        //cambio de botones
+        $scope.modificar = true;
+        $scope.agendar = false;
+        $scope.panel = $scope.panel_modify;
+        /*$scope.$watch('panel',function(){
+            $scope.panel = $scope.panel_modify;
+        });*/
+        try{$scope.$apply();}catch(err){}
+    };
     /*
      * Inicializacion
      */
     $scope.init = function () {
+        $scope.config = {
+            defaultDate:$scope.fecha,
+            defaultView:'agendaWeek'
+        };
         $scope.sel_convenio = "PARTICULAR";
         $scope.options_convenio = [
             "PARTICULAR",
             "I.E.S.S."
         ];
-        $scope.panel_default = {
-            title_panel: "Agendar nueva Cita",
-            class_heading: "panel-primary",
-            url: URL_MEDICO_AGENDA,
-            buttons: {
-                agendar: true,
-                trash: false,
-                cancelar: false,
-                modificar: false
-            }
-        };
-        $scope.panel = $scope.panel_default;
-        $scope.panel_modify = {
-            title_panel: "Modificar Cita",
-            class_heading: "carrot",
-            style_body: "background-color:white",
-            url: URL_MEDICO_CITA,
-            method: {
-                name: "_method",
-                value: "PATCH"
-            },
-            class_text_title: "white-header",
-            buttons: {
-                agendar: false,
-                trash: true,
-                cancelar: true,
-                modificar: true
-            }
-        };
         $(".select2").select2();
         $('#fecha, .datepicker').datepicker({
             language: 'es',
@@ -49,13 +103,17 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
+            defaultDate: $scope.config.defaultDate,
             height: 450, //alto del calendario
-            defaultView: 'agendaWeek',
+            defaultView: $scope.config.defaultView,
             locale: 'es', // tomado de locale
             buttonIcons: true,
+            selectHelper: true,
             navLinks: true,
             editable: true,
             eventLimit: true,
+            minTime: "7:00:00",
+            maxTime: "20:00:00",
             aspectRatio: 2,
             nowIndicator: true,
             slotDuration: '00:15:00',
@@ -85,6 +143,14 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                 $scope.verify_time();
             }
         });
+        /*
+        *  Inicializar paneles
+        * */
+        if(CITA.id == ""){
+            $scope.panel =  $scope.panel_default;
+        }else {
+            $scope.panelModCita(CITA);
+        }
     };
     $scope.verify_time = function () {
         var hora1 = moment($scope.horaInicio, "H:mm a").format("H:mm");
@@ -119,47 +185,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         // mostrar modal si es IESS
         $scope.sel_convenio == "I.E.S.S." ? $("#modal_autorizacion").modal("show") : null ;
     };
-    /*
-     * -->
-     */
-    /*
-     * Panel de modificacion de la cita
-     * */
-    $scope.panelModCita = function (event) {
-        /*
-         * Preparar el panel para modificar una cita
-         * */
-        $scope.panel_modify.url = URL_MEDICO_CITA + "/" + event.id;
-        $scope.cita_id = event.id;
-        $("#select-paciente").val(event.paciente_id).trigger("change");
-        $scope.descripcion = event.detalle_cita;
-        $scope.fecha = moment(event.start).format('DD/MM/YYYY');
-        $scope.horaInicio = moment(event.start).format('H:mm a');
-        $scope.horaFin = moment(event.end).format('H:mm a');
-        $scope.start = moment(event.start, 'YYYY/MM/DD,H:mm').format();
-        $scope.end = moment(event.end, 'YYYY/MM/DD,H:mm').format();
-        //convenio assign
-        $scope.sel_convenio = event.sel_convenio;
-        $("#sel_convenio").trigger("change");
-        if($scope.sel_convenio == "I.E.S.S."){
-            $scope.autorizacion = event.convenio.autorizacion;
-            $scope.fecha_autorizacion = moment(event.convenio.fecha_autorizacion,"YYYY-MM-DD").format("DD/MM/YYYY");
-            $scope.fecha_vence = moment(event.convenio.fecha_vence,"YYYY-MM-DD").format("DD/MM/YYYY");
-        }else{
-            $scope.resetAutorizacion();
-        }
-        //cambio de botones
-        $scope.modificar = true;
-        $scope.agendar = false;
-        $scope.panel = $scope.panel_modify;
-        try{$scope.$apply();}catch(err){}
-    };
-    // Borra los campos del ingreso de datos de actualizacion
-    $scope.resetAutorizacion= function(){
-        $scope.autorizacion = "";
-        $scope.fecha_autorizacion = "";
-        $scope.fecha_vence = "";
-    };
+
+
     $scope.eliminarCita = function () {
         swal({
             title: '¿Mover a la papelera?',
@@ -199,12 +226,15 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         });
     };
     $scope.resetPanelCita = function () {
-        $scope.panel = $scope.panel_default;
-        $scope.descripcion = "";
+        $scope.cita={descripcion:""};
         $scope.horaInicio = "";
         $scope.horaFin = "";
-        $scope.formCita = {};
+        $scope.cita={fecha : $scope.fecha};
         $scope.resetAutorizacion();
+        $scope.panel = $scope.panel_default;
+        /*$scope.$watch('panel',function(){
+            $scope.panel = $scope.panel_default;
+        });*/
         try{$scope.$apply();}catch(err){console.log(err);}
     };
     /*
@@ -279,8 +309,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         var hora_inicio = $scope.horaInicio.split(" "); //obtener solo la hora
         var hora_fin = $scope.horaFin.split(" ");
         //convertir a tipo aceptado por el calendario uniendo fecha y hora
-        $scope.start = moment($scope.fecha + "," + hora_inicio[0], 'DD/MM/YYYY,H:mm').format();
-        $scope.end = moment($scope.fecha + "," + hora_fin[0], 'DD/MM/YYYY,H:mm').format();
+        $scope.start = moment($scope.cita.fecha + "," + hora_inicio[0], 'DD/MM/YYYY,H:mm').format();
+        $scope.end = moment($scope.cita.fecha + "," + hora_fin[0], 'DD/MM/YYYY,H:mm').format();
         $("#start").remove();
         $("#end").remove();
         $("#form-cita").append('<input id="start" ng-model="start" type="hidden" name="start" value="' + $scope.start + '">' +

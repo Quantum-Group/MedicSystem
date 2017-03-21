@@ -27,14 +27,23 @@ agenda.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
             element.click(function () {
                 $("#mod_mostrar_cita").modal('show');
                 // colocar titulo
+                $scope.modalTitle ="";
                 $scope.modalTitle = 'Cita Agendada - '+event.title;
+                $scope.fechaInicio ="";
                 $scope.fechaInicio = moment(event.start).format('DD/MM/YYYY');
+                $scope.horaInicio ="";
                 $scope.horaInicio = moment(event.start).format('h:mm a');
+                $scope.paciente ="";
                 $scope.paciente = moment(event.start).format('h:mm a');
+                $scope.observ ="";
                 $scope.observ = event.detalle_cita;
+                $scope.sel_convenio ="";
                 $scope.sel_convenio = event.sel_convenio;
+                $scope.autorizacion ="";
                 $scope.autorizacion = event.convenio.autorizacion;
+                $scope.fecha_autorizacion ="";
                 $scope.fecha_autorizacion = event.convenio.fecha_autorizacion;
+                $scope.fecha_vence ="";
                 $scope.fecha_vence = event.convenio.fecha_vence;
                 $scope.$apply(); //refrescar el objeto $scope
             });

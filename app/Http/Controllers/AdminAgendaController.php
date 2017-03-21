@@ -78,7 +78,7 @@ class AdminAgendaController extends Controller
             $response = $cita->save();
 
             if($response){// si se guarda la cita
-               if($sel_convenio == "I.E.S.S."){ // si el convenio es I.E.S.S.
+               if($sel_convenio == "I.E.S.S." && !is_null($request->get("fecha_autorizacion")) && !is_null($request->get("fecha_vence"))){ // si el convenio es I.E.S.S.
                    /*
                 * Insertar el convenio si se ingresa datos
                 * */
