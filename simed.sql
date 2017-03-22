@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2017 a las 00:45:31
+-- Tiempo de generación: 23-03-2017 a las 00:32:34
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -100,7 +100,7 @@ INSERT INTO `cita_calendario` (`id`, `detalle_cita`, `estado_cita`, `created_at`
 (38, 'Realizado por el usuario', 0, '2017-03-03 18:49:35', '2017-03-03 18:49:35', '2017-03-03T07:15:00-05:00', '2017-03-03T07:30:00-05:00', 'Dra. Celia Camaño,Diana ', NULL, 7, 11, NULL, NULL),
 (40, 'Realizado por el usuario', 0, '2017-03-06 19:53:20', '2017-03-06 19:55:44', '2017-03-06T07:00:00-05:00', '2017-03-06T07:15:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
 (41, 'Realizado por el usuario', 0, '2017-03-07 17:30:09', '2017-03-07 17:30:09', '2017-03-07T07:15:00-05:00', '2017-03-07T07:30:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(43, 'FUUUUUUUULLLLIIIIIIASFDAS111', 1, '2017-03-07 17:40:55', '2017-03-21 21:15:16', '2017-03-21T07:30:00-05:00', '2017-03-21T07:45:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, 'I.E.S.S.'),
+(43, 'FUUUUUUUULLLLIIIIIIASFDAS111', 1, '2017-03-07 17:40:55', '2017-03-22 17:29:10', '2017-03-21T07:30:00-05:00', '2017-03-21T08:30:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, 'I.E.S.S.'),
 (44, 'desde medico', 0, '2017-03-07 17:42:08', '2017-03-07 18:05:07', '2017-03-07T07:45:00-05:00', '2017-03-07T08:00:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, NULL),
 (45, 'Realizado por el usuario', 0, '2017-03-07 17:48:46', '2017-03-07 17:48:46', '2017-03-07T07:00:00-05:00', '2017-03-07T07:15:00-05:00', 'Dr. Francisco Silva,Pablo Chamba', NULL, 3, 2, NULL, NULL),
 (46, 'Realizado por el usuario', 0, '2017-03-07 17:49:11', '2017-03-07 17:49:11', '2017-03-08T08:00:00-05:00', '2017-03-08T08:15:00-05:00', 'Dr. Mario Palacios,Pablo Chamba', NULL, 1, 2, NULL, NULL),
@@ -160,16 +160,43 @@ INSERT INTO `cita_calendario` (`id`, `detalle_cita`, `estado_cita`, `created_at`
 (113, 'CALL CENTER', 1, '2017-03-17 21:18:12', '2017-03-17 21:37:17', '2017-03-17T07:15:00-05:00', '2017-03-17T07:30:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, 1, NULL),
 (114, 'call center', 1, '2017-03-17 21:38:11', '2017-03-17 22:03:34', '2017-03-17T07:15:00-05:00', '2017-03-17T07:30:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, 1, NULL),
 (115, 'CALL CENTER', 1, '2017-03-17 22:04:12', '2017-03-17 22:04:12', '2017-03-17T07:15:00-05:00', '2017-03-17T07:30:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, NULL, NULL),
-(116, 'call', 1, '2017-03-20 16:28:18', '2017-03-20 16:28:18', '2017-03-20T07:00:00-05:00', '2017-03-20T07:15:00-05:00', 'Dra. LUCY PEREZ,Leonardo Armijos', NULL, 10, 1, NULL, 'PARTICULAR'),
+(116, 'call', 1, '2017-03-20 16:28:18', '2017-03-22 16:59:34', '2017-03-20T07:00:00-05:00', '2017-03-20T07:45:00-05:00', 'Dra. LUCY PEREZ,Leonardo Armijos', '#7f8c8d', 10, 1, NULL, 'PARTICULAR'),
 (117, 'CALL CENTER', 1, '2017-03-20 16:34:26', '2017-03-20 17:08:32', '2017-03-20T07:15:00-05:00', '2017-03-20T07:30:00-05:00', 'Dra. LUCY PEREZ,Leonardo Armijos', NULL, 10, 1, 1, 'I.E.S.S.'),
-(118, 'CALL CENTER ASDKFJAS', 1, '2017-03-20 17:12:01', '2017-03-21 22:13:22', '2017-03-20T07:15:00-05:00', '2017-03-20T07:30:00-05:00', 'Dra. LUCY PEREZ,Diana ', '#7f8c8d', 10, 11, NULL, 'I.E.S.S.'),
-(119, 'CALL CENTER', 1, '2017-03-20 17:52:12', '2017-03-20 17:52:12', '2017-03-20T08:00:00-05:00', '2017-03-20T08:15:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, NULL, 'PARTICULAR'),
+(118, 'CALL CENTER ASDKFJAS', 1, '2017-03-20 17:12:01', '2017-03-22 16:54:45', '2017-03-25T07:30:00-05:00', '2017-03-25T07:45:00-05:00', 'Dra. LUCY PEREZ,Diana ', '#7f8c8d', 10, 11, NULL, 'I.E.S.S.'),
+(119, 'CALL CENTER', 1, '2017-03-20 17:52:12', '2017-03-22 16:57:26', '2017-03-20T08:15:00-05:00', '2017-03-20T08:30:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, NULL, 'PARTICULAR'),
 (120, 'CALL CENTER', 1, '2017-03-20 17:54:02', '2017-03-21 22:13:27', '2017-03-20T07:30:00-05:00', '2017-03-20T07:45:00-05:00', 'Dra. LUCY PEREZ,PABLO DAVID', NULL, 10, 18, 1, 'PARTICULAR'),
 (121, 'call center', 1, '2017-03-20 18:06:18', '2017-03-21 22:12:37', '2017-03-20T07:45:00-05:00', '2017-03-20T08:00:00-05:00', 'Dra. LUCY PEREZ,PABLO DAVID', NULL, 10, 18, NULL, 'I.E.S.S.'),
 (122, 'Paciente con autorizacion para cirugia histerectomia', 1, '2017-03-20 19:57:54', '2017-03-20 19:57:54', '2017-03-21T08:00:00-05:00', '2017-03-21T08:15:00-05:00', 'Dr. Marco Del Pozo,Leonardo Armijos', NULL, 11, 1, NULL, 'I.E.S.S.'),
-(126, 'asdfasdfasdfasd', 1, '2017-03-21 22:48:25', '2017-03-21 22:48:25', '2017-03-21T09:15:00-05:00', '2017-03-21T10:45:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, 'I.E.S.S.'),
+(126, 'asdfasdfasdfasd', 1, '2017-03-21 22:48:25', '2017-03-22 17:29:44', '2017-03-24T07:30:00-05:00', '2017-03-24T08:00:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, 'I.E.S.S.'),
 (127, 'dsgfsdfgdsf', 1, '2017-03-21 22:51:48', '2017-03-21 23:01:58', '2017-03-20T08:15:00-05:00', '2017-03-20T08:45:00-05:00', 'Dra. LUCY PEREZ,PABLO DAVID', NULL, 10, 18, 1, 'I.E.S.S.'),
-(128, 'fdsdgsdf', 1, '2017-03-21 23:16:29', '2017-03-21 23:18:30', '2017-03-22T07:00:00-05:00', '2017-03-22T07:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, 'PARTICULAR');
+(128, 'fdsdgsdfASDFASDFASDFASD', 1, '2017-03-21 23:16:29', '2017-03-22 16:52:50', '2017-03-22T07:00:00-05:00', '2017-03-22T07:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, 'PARTICULAR'),
+(129, 'CITA NORMAL', 1, '2017-03-22 15:39:20', '2017-03-22 16:52:21', '2017-03-23T11:00:00-05:00', '2017-03-23T12:00:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, 'I.E.S.S.'),
+(130, 'call center', 1, '2017-03-22 18:52:20', '2017-03-22 18:54:44', '2017-03-22T07:00:00-05:00', '2017-03-22T07:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(131, 'call center', 1, '2017-03-22 18:55:29', '2017-03-22 19:16:29', '2017-03-22T07:00:00-05:00', '2017-03-22T07:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(132, 'call center', 1, '2017-03-22 19:17:11', '2017-03-22 19:17:11', '2017-03-22T07:00:00-05:00', '2017-03-22T07:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(133, 'call center', 1, '2017-03-22 19:19:12', '2017-03-22 21:28:45', '2017-03-22T08:00:00-05:00', '2017-03-22T08:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(134, 'CALL CENTER', 1, '2017-03-22 21:29:14', '2017-03-22 21:30:30', '2017-03-22T08:00:00-05:00', '2017-03-22T08:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(135, 'CALL CENTER', 1, '2017-03-22 21:30:48', '2017-03-22 21:42:47', '2017-03-22T07:30:00-05:00', '2017-03-22T07:45:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(136, 'hola', 1, '2017-03-22 21:37:53', '2017-03-22 21:37:53', '2017-03-22T09:15:00-05:00', '2017-03-22T11:00:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(137, 'CALL CENTER', 1, '2017-03-22 21:47:04', '2017-03-22 21:51:46', '2017-03-22T08:00:00-05:00', '2017-03-22T08:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(138, 'CALL CENTER', 1, '2017-03-22 21:52:06', '2017-03-22 21:52:41', '2017-03-22T08:00:00-05:00', '2017-03-22T08:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(139, 'CALL CENTER', 1, '2017-03-22 21:53:00', '2017-03-22 23:10:57', '2017-03-23T08:00:00-05:00', '2017-03-23T08:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(140, 'El paciente debe ser atendido pronto', 1, '2017-03-22 21:55:56', '2017-03-22 21:57:25', '2017-03-22T07:15:00-05:00', '2017-03-22T07:30:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, 1, 'PARTICULAR'),
+(141, 'Estas son las observaciones de la cita agendada desde call center', 1, '2017-03-22 21:58:22', '2017-03-22 21:58:22', '2017-03-22T07:30:00-05:00', '2017-03-22T07:45:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(142, 'ESTO ES UNA OBSERVACION', 1, '2017-03-22 22:04:02', '2017-03-22 22:07:30', '2017-03-22T07:45:00-05:00', '2017-03-22T08:00:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(143, 'CALL CENTER', 1, '2017-03-22 22:07:58', '2017-03-22 22:44:15', '2017-03-23T07:15:00-05:00', '2017-03-23T07:30:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(144, 'Cita desde call center', 1, '2017-03-22 22:09:52', '2017-03-22 23:10:46', '2017-03-25T08:30:00-05:00', '2017-03-25T08:45:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(145, 'Esta es una cita desde el call center.', 1, '2017-03-22 22:14:39', '2017-03-22 23:10:53', '2017-03-23T07:45:00-05:00', '2017-03-23T08:00:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(146, 'DETALLE DE LA CITA', 1, '2017-03-22 22:26:24', '2017-03-22 22:26:24', '2017-03-23T07:00:00-05:00', '2017-03-23T07:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(147, 'DETALLE DE LA CITA', 1, '2017-03-22 22:27:43', '2017-03-22 22:27:43', '2017-03-23T08:45:00-05:00', '2017-03-23T09:30:00-05:00', 'Dr. Marco Del Pozo,Leonardo Armijos', NULL, 11, 1, NULL, 'PARTICULAR'),
+(148, 'DETALLE DE SU CITA', 1, '2017-03-22 22:34:09', '2017-03-22 22:34:09', '2017-03-22T07:15:00-05:00', '2017-03-22T07:30:00-05:00', 'Dr. Marco Del Pozo,Leonardo Armijos', NULL, 11, 1, NULL, 'PARTICULAR'),
+(149, 'CALL CENTER', 1, '2017-03-22 22:34:50', '2017-03-22 22:43:33', '2017-03-22T11:00:00-05:00', '2017-03-22T13:15:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(150, 'DETALLE CITA', 1, '2017-03-22 22:42:37', '2017-03-22 22:43:40', '2017-03-23T09:30:00-05:00', '2017-03-23T09:45:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(151, 'CALL CENTER', 1, '2017-03-22 22:44:36', '2017-03-22 23:11:13', '2017-03-23T09:45:00-05:00', '2017-03-23T10:00:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(152, 'adsfasdf', 1, '2017-03-22 22:47:04', '2017-03-22 22:47:04', '2017-03-22T08:00:00-05:00', '2017-03-22T09:00:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(153, 'dscdfsad', 1, '2017-03-22 23:10:31', '2017-03-22 23:11:04', '2017-03-24T08:00:00-05:00', '2017-03-24T09:45:00-05:00', 'Dr. Marco Del Pozo,Diana ', NULL, 11, 11, NULL, 'PARTICULAR'),
+(154, 'asdfasdf', 1, '2017-03-22 23:14:25', '2017-03-22 23:14:25', '2017-03-22T08:45:00-05:00', '2017-03-22T09:30:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR'),
+(155, 'fasdfasdfas', 1, '2017-03-22 23:17:04', '2017-03-22 23:17:04', '2017-03-22T10:45:00-05:00', '2017-03-22T09:45:00-05:00', 'Dr. Marco Del Pozo,PABLO DAVID', NULL, 11, 18, NULL, 'PARTICULAR');
 
 -- --------------------------------------------------------
 
@@ -993,7 +1020,12 @@ INSERT INTO `cms_logs` (`id`, `created_at`, `updated_at`, `ipaddress`, `useragen
 (683, '2017-03-21 23:29:32', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1),
 (684, '2017-03-21 23:30:26', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
 (685, '2017-03-21 23:42:51', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
-(686, '2017-03-21 23:44:20', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2);
+(686, '2017-03-21 23:44:20', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(687, '2017-03-22 15:35:38', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(688, '2017-03-22 18:00:15', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(689, '2017-03-22 18:51:25', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(690, '2017-03-22 20:20:02', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(691, '2017-03-22 22:25:43', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/edit-save/12', 'Actualizar datos  at Lista de médicos', 2);
 
 -- --------------------------------------------------------
 
@@ -1317,7 +1349,8 @@ INSERT INTO `convenio` (`id`, `cita_calendario_id`, `autorizacion`, `fecha_autor
 (3, 118, 'IESS23332', '2017-03-16', '2017-03-01'),
 (4, 122, '17cvs-2017-456786', '2017-03-05', '2017-06-05'),
 (6, 43, 'rfgsdgf21342345', '2017-03-09', '2017-03-18'),
-(7, 121, 'dfsd2343', '2017-03-01', '2017-03-10');
+(7, 121, 'dfsd2343', '2017-03-01', '2017-03-10'),
+(8, 129, 'fasdfasd12341324', '2017-03-08', '2017-03-22');
 
 -- --------------------------------------------------------
 
@@ -1353,7 +1386,7 @@ INSERT INTO `medico` (`id`, `titulo`, `especialidad`, `nombre`, `apellido`, `tel
 (9, 'Dra.', 'Traumatologia', 'Carla', 'Borja', '2333444', NULL, '2017-02-21 15:23:36', NULL, NULL),
 (10, 'Dr.', 'Cardiología', 'Pepe', 'Proaño', '2444556', NULL, '2017-02-21 15:24:06', '2017-03-07 19:27:55', NULL),
 (11, 'Dra.', 'Odontología', 'LUCY', 'PEREZ', '2333444', NULL, '2017-03-15 22:14:48', NULL, NULL),
-(12, 'Dr.', 'Ginecologia', 'Marco', 'Del Pozo', '0998919690', NULL, '2017-03-20 19:48:13', '2017-03-20 19:51:52', 21);
+(12, 'Dr.', 'Ginecologia', 'Marco', 'Del Pozo', '0998919690', 'pablodc002@gmail.com', '2017-03-20 19:48:13', '2017-03-22 22:25:43', 21);
 
 -- --------------------------------------------------------
 
@@ -1636,7 +1669,7 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT de la tabla `cita_calendario`
 --
 ALTER TABLE `cita_calendario`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 --
 -- AUTO_INCREMENT de la tabla `cms_apicustom`
 --
@@ -1666,7 +1699,7 @@ ALTER TABLE `cms_email_templates`
 -- AUTO_INCREMENT de la tabla `cms_logs`
 --
 ALTER TABLE `cms_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=687;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=692;
 --
 -- AUTO_INCREMENT de la tabla `cms_menus`
 --
@@ -1716,7 +1749,7 @@ ALTER TABLE `cms_users`
 -- AUTO_INCREMENT de la tabla `convenio`
 --
 ALTER TABLE `convenio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `medico`
 --
