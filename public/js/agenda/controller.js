@@ -1,27 +1,42 @@
-agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
+agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
+    /*function MainCtrlInitException(message) {
+        this.name = 'MainCtrlInitException';
+        this.message = message;
+    }
+    MainCtrlInitException.prototype = new Error();
+    MainCtrlInitException.prototype.constructor = MainCtrlInitException;
+    function initial() {
+        /!* We just reject the promise of this function. Only for the demo *!/
+        return $q.reject("Cannot init");
+    }
+    initial().
+    catch (
+        function(cause) {
+            throw new MainCtrlInitException(cause);
+        });*/
     /*variables de inicializacion*/
-    $scope.panel_default = {
-        title_panel: "Agendar nueva Cita",
-        class_heading: "panel-primary",
-        url: URL_MEDICO_AGENDA,
-        buttons: {
+    $scope.panel_default = function(){
+        this.title_panel= "Agendar nueva Cita";
+        this.class_heading= "panel-primary";
+        this.url= URL_MEDICO_AGENDA;
+        this.buttons= {
             agendar: true,
             trash: false,
             cancelar: false,
             modificar: false
         }
     };
-    $scope.panel_modify = {
-        title_panel: "Modificar Cita",
-        class_heading: "carrot",
-        style_body: "background-color:white",
-        url: URL_MEDICO_CITA,
-        method: {
+    $scope.panel_modify = function(){
+        this.title_panel= "Modificar Cita";
+        this.class_heading= "carrot";
+        this.style_body= "background-color:white";
+        this.url= URL_MEDICO_CITA;
+        this.method= {
             name: "_method",
             value: "PATCH"
-        },
-        class_text_title: "white-header",
-        buttons: {
+        };
+        this.class_text_title= "white-header";
+        this.buttons= {
             agendar: false,
             trash: true,
             cancelar: true,
@@ -45,8 +60,9 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
             defaultDate:moment(event.start).format('YYYY-MM-DD'),
             defaultView:'agendaDay'
         };
+        var panelModificar = new $scope.panel_modify();
         $("#calendar").fullCalendar( 'gotoDate', moment(event.start).format('YYYY-MM-DD'));
-        $scope.panel_modify.url = URL_MEDICO_CITA + "/" + event.id;
+        panelModificar.url = URL_MEDICO_CITA + "/" + event.id;
         $scope.cita_id = event.id;
         $("#select-paciente").val(event.paciente_id).trigger("change");
         $scope.cita = {
@@ -65,18 +81,22 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                 $scope.autorizacion = event.convenio.autorizacion;
                 $scope.fecha_autorizacion = moment(event.convenio.fecha_autorizacion,"YYYY-MM-DD").format("DD/MM/YYYY");
                 $scope.fecha_vence = moment(event.convenio.fecha_vence,"YYYY-MM-DD").format("DD/MM/YYYY");
-            }catch(err){}
+            }catch(e){
+                console.log(e);
+            }
         }else{
             $scope.resetAutorizacion();
         }
         //cambio de botones
         $scope.modificar = true;
         $scope.agendar = false;
-        $scope.panel = $scope.panel_modify;
+        $scope.panel = panelModificar;
         /*$scope.$watch('panel',function(){
             $scope.panel = $scope.panel_modify;
         });*/
-        try{$scope.$apply();}catch(err){}
+        try{$scope.$apply();}catch(e){
+
+        }
     };
     /*
      * Inicializacion
@@ -147,7 +167,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         *  Inicializar paneles
         * */
         if(CITA.id == ""){
-            $scope.panel =  $scope.panel_default;
+            $scope.panel =  new $scope.panel_default();
         }else {
             $scope.panelModCita(CITA);
         }
@@ -231,7 +251,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         $scope.horaFin = "";
         $scope.cita={fecha : $scope.fecha};
         $scope.resetAutorizacion();
-        $scope.panel = $scope.panel_default;
+        $scope.panel = new $scope.panel_default();
         /*$scope.$watch('panel',function(){
             $scope.panel = $scope.panel_default;
         });*/

@@ -10,7 +10,8 @@ use App\ModPaciente;
 use App\ModMedico;
 use App\ModAgenda;
 use App\ModCita;
-use App\Mail\CitaAgenda;
+use App\Mail\EmailPaciente;
+use App\Mail\EmailMedico;
 use Mail;
 use Carbon\Carbon;
 
@@ -94,14 +95,13 @@ class AdminAgendaController extends Controller
                  /*
                   * Envio de e-mail cuando se guarda la cita
                   * */
-                 $sendEmail = Mail::to($paciente->email)->send(new CitaAgenda($paciente));
+                 Mail::to($paciente->email)->send(new EmailPaciente($paciente,$medico,$cita));
+                 Mail::to($medico->email)->send(new EmailMedico($medico,$paciente,$cita));
             }
         }
-
         return response()->json([
             "response"=>$response,
             "cita"=>$cita,
-            "sendEmail"=>$sendEmail
         ]);
     }
 

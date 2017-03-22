@@ -12,6 +12,12 @@ $page_title = $agenda->nombre;
             margin: 0 auto;
             width: 100%;
         }
+        .fc-time span{
+            font-family: "museo-sans", "Book Antiqua", sans-serif;
+            color: black;
+            font-weight: bolder;
+            font-size: 14px;
+        }
     </style>
     {{--modal edicion de evento--}}
     <div ng-app="AppAgenda"
