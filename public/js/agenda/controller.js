@@ -127,14 +127,28 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
             height: 450, //alto del calendario
             defaultView: $scope.config.defaultView,
             locale: 'es', // tomado de locale
+            /*businessHours: {
+                // days of week. an array of zero-based day of week integers (0=Sunday)
+                dow: [ 1, 2, 3, 4, 5 ], // Monday - Thursday
+                start: '07:00', // a start time (10am in this example)
+                end: '14:00'// an end time (6pm in this example)
+            },*/
+            //businessHours: true, // display business hours
             buttonIcons: true,
             selectHelper: true,
             navLinks: true,
             editable: true,
             eventLimit: true,
+            businessHours:true,
             minTime: "7:00:00",
             maxTime: "20:00:00",
             aspectRatio: 2,
+            /*businessHours: {
+                // days of week. an array of zero-based day of week integers (0=Sunday)
+                dow: [ 1, 2, 3, 4 ], // Monday - Thursday
+                start: '10:00', // a start time (10am in this example)
+                end: '11:00' // an end time (6pm in this example)
+            },*/
             nowIndicator: true,
             slotDuration: '00:15:00',
             titleFormat: 'MMMM D YYYY',
@@ -143,7 +157,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
             //fixedWeekCount:true,
             //weekNumbers: true,
             timeFormat: 'H:mm',
-            events: {
+            dayBreakTime: "07:00",
+            events:{
                 url: URL_CITAS
             },
             eventResizeStop:function(){
@@ -151,21 +166,36 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
             },
             eventRender: function (event, element) {
                 element.click(function () {
-                    //cambiar color panel
                     $scope.panelModCita(event);
                 });
             },
             eventResize: function (event, delta, revertFunc) {
                 $scope.panelModCita(event);
             },
-            eventDrop: function (event, delta, revertFunc) {
+            eventDrop: function (event, delta, revertFunc, jsEvent, ui, view) {
+                    //console.log(view.options.businessHours);
                     $scope.panelModCita(event);
-                $scope.verify_time();
+                    $scope.verify_time();
+            },
+            eventClick: function(calEvent, jsEvent, view) {
+
+                alert('Event: ' + calEvent.title);
+                alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                alert('View: ' + view.name);
+
+                // change the border color just for fun
+                $(this).css('border-color', 'red');
+
             }
         });
         /*
         *  Inicializar paneles
         * */
+        $("#calendar").fullCalendar('businessHours',{
+            dow: [ 1, 2, 3, 4, 5 ], // Monday - Thursday
+            start: '07:00', // a start time (10am in this example)
+            end: '14:00'// an end time (6pm in this example)
+        });
         if(CITA.id == ""){
             $scope.panel =  new $scope.panel_default();
         }else {

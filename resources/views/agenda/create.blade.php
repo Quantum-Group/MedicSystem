@@ -12,11 +12,29 @@ $page_title = $agenda->nombre;
             margin: 0 auto;
             width: 100%;
         }
-        .fc-time span{
-            font-family: "museo-sans", "Book Antiqua", sans-serif;
-            color: black;
+        div.fc-time span{
+            font-family: "Century Schoolbook", sans-serif;
+            color: white;
             font-weight: bolder;
-            font-size: 14px;
+            font-size: 13px;
+
+
+        }
+        .fc-time-grid-event .fc-time{
+            padding: 3px;
+        }
+        div.fc-time{
+            text-align: center;
+
+        }
+        .fc-bgevent {
+            background: #2c3e50;
+        }
+        div.fc-title{
+            font-family: "Roboto",  sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.6pt;
+            text-align: center;
         }
     </style>
     {{--modal edicion de evento--}}

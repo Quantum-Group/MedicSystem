@@ -31,7 +31,6 @@ agenda.directive('horaInicio', function () {
                 '18:00 pm', '18:15 pm', '18:30 pm', '18:45 pm', '19:00 pm', '19:15 pm',
                 '19:30 pm', '19:45 pm', '20:00 pm'
             ];
-
         },
         template: '<select class="form-control" name="hora_inicio" id="horaInicio"><option value="[[time]]" ng-repeat="time in timings">[[time]]</option></select>'
     };
