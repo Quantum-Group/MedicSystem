@@ -15,6 +15,9 @@ Route::get('admin/verifyPaciente','PacienteController@verifyPaciente');
 Route::get('admin/getPaciente','PacienteController@getPaciente');
 Route::resource('admin/user','CmsUserController');
 
+//Start Route Laboratorio//
+
+Route::resource('admin/laboratorio/custom_laboratorio', 'AdminCustomLaboratorioController');
 
 
 
@@ -27,3 +30,9 @@ Route::resource('admin/user','CmsUserController');
 
 
 
+
+
+
+
+
+// ------  End Route laboratorio ----/////
