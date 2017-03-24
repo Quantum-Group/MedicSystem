@@ -111,6 +111,7 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
 		$data['return_url'] = Request::fullUrl();
 		return view('crudbooster::default.form',$data);
 	}
+  
   public function hook_after_add($id)
   {
       /*

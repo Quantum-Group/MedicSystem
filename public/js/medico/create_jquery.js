@@ -1,0 +1,29 @@
+$('#lunes').checkboxpicker({
+	html:true,
+	offLabel:'Lunes',
+	onLabel:'Lunes'
+});$('#martes').checkboxpicker({
+	html:true,
+	offLabel:'Martes',
+	onLabel:'Martes'
+});$('#miercoles').checkboxpicker({
+	html:true,
+	offLabel:'Miércoles',
+	onLabel:'Miércoles'
+});$('#jueves').checkboxpicker({
+	html:true,
+	offLabel:'Jueves',
+	onLabel:'Jueves'
+});$('#viernes').checkboxpicker({
+	html:true,
+	offLabel:'Viernes',
+	onLabel:'Viernes'
+});$('#sabado').checkboxpicker({
+	html:true,
+	offLabel:'Sábado',
+	onLabel:'Sábado'
+});$('#domingo').checkboxpicker({
+	html:true,
+	offLabel:'Domingo',
+	onLabel:'Domingo'
+});

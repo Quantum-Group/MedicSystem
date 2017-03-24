@@ -12,110 +12,110 @@ use App\CmsUser;
 class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBController
 {
 
-    public function cbInit()
-    {
+  public function cbInit()
+  {
         # START CONFIGURATION DO NOT REMOVE THIS LINE
-        $this->title_field = "id";
-        $this->limit = "20";
-        $this->orderby = "id,desc";
-        $this->global_privilege = false;
-        $this->button_table_action = true;
-        $this->button_action_style = "button_icon";
-        $this->button_add = true;
-        $this->button_edit = true;
-        $this->button_delete = true;
-        $this->button_detail = true;
-        $this->button_show = true;
-        $this->button_filter = true;
-        $this->button_import = false;
-        $this->button_export = false;
-        $this->table = "medico";
+    $this->title_field = "id";
+    $this->limit = "20";
+    $this->orderby = "id,desc";
+    $this->global_privilege = false;
+    $this->button_table_action = true;
+    $this->button_action_style = "button_icon";
+    $this->button_add = true;
+    $this->button_edit = true;
+    $this->button_delete = true;
+    $this->button_detail = true;
+    $this->button_show = true;
+    $this->button_filter = true;
+    $this->button_import = false;
+    $this->button_export = false;
+    $this->table = "medico";
         # END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
-			$this->col = [];
-			$this->col[] = ["label"=>"Titulo","name"=>"titulo"];
-			$this->col[] = ["label"=>"Nombre","name"=>"nombre"];
-			$this->col[] = ["label"=>"Apellido","name"=>"apellido"];
-			$this->col[] = ["label"=>"Especialidad","name"=>"especialidad"];
-			$this->col[] = ["label"=>"Telefono","name"=>"telefono"];
-			$this->col[] = ["label"=>"Email","name"=>"email"];
+    $this->col = [];
+    $this->col[] = ["label"=>"Titulo","name"=>"titulo"];
+    $this->col[] = ["label"=>"Nombre","name"=>"nombre"];
+    $this->col[] = ["label"=>"Apellido","name"=>"apellido"];
+    $this->col[] = ["label"=>"Especialidad","name"=>"especialidad"];
+    $this->col[] = ["label"=>"Telefono","name"=>"telefono"];
+    $this->col[] = ["label"=>"Email","name"=>"email"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
-			$this->form = [];
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => 'Ejem: Traumatología',
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Especialidad',
-  'name' => 'especialidad',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => 'Ejem: Dr.',
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Titulo',
-  'name' => 'titulo',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Nombre',
-  'name' => 'nombre',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Apellido',
-  'name' => 'apellido',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Teléfono',
-  'name' => 'telefono',
-  'type' => 'text',
-  'validation' => 'min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Email',
-  'name' => 'email',
-  'type' => 'email',
-  'validation' => NULL,
-  'width' => 'col-sm-9',
-);
+    $this->form = [];
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => 'Ejem: Traumatología',
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Especialidad',
+      'name' => 'especialidad',
+      'type' => 'text',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => 'Ejem: Dr.',
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Titulo',
+      'name' => 'titulo',
+      'type' => 'text',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Nombre',
+      'name' => 'nombre',
+      'type' => 'text',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Apellido',
+      'name' => 'apellido',
+      'type' => 'text',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Teléfono',
+      'name' => 'telefono',
+      'type' => 'text',
+      'validation' => 'min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Email',
+      'name' => 'email',
+      'type' => 'email',
+      'validation' => NULL,
+      'width' => 'col-sm-9',
+      );
 			# END FORM DO NOT REMOVE THIS LINE
 
 			/*
@@ -143,10 +143,10 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
         |
         */
         $this->addaction = array(['label' => 'Agenda',
-            'icon' => 'fa fa-list-alt',
-            'color' => 'danger',
-            'url' => CRUDBooster::mainpath($slug = 'agenda') . '/[id]/edit'
-        ]);
+          'icon' => 'fa fa-list-alt',
+          'color' => 'danger',
+          'url' => CRUDBooster::mainpath($slug = 'agenda') . '/[id]/edit'
+          ]);
 
 
         /*
@@ -226,9 +226,15 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
         |
         */
         $this->load_js = array();
-    }
+      }
 
-
+      public function getAdd(){
+          //Create an Auth
+        $data=[];
+        $data['page_title'] ="Agregar nuevo médico";
+        $this->cbView('medico.create',$data);
+      }
+      
     /*
     | ----------------------------------------------------------------------
     | Hook for button selected
@@ -290,11 +296,11 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
     */
     public function hook_after_add($id)
     {
-        $agenda = new ModAgenda;
-        $medico = ModMedico::find($id);
-        $agenda->nombre = "Agenda de " . $medico->titulo . " " . $medico->nombre . " " . $medico->apellido;
-        $agenda->medico_id = $id;
-        $agenda->save();
+      $agenda = new ModAgenda;
+      $medico = ModMedico::find($id);
+      $agenda->nombre = "Agenda de " . $medico->titulo . " " . $medico->nombre . " " . $medico->apellido;
+      $agenda->medico_id = $id;
+      $agenda->save();
     }
 
     /*
@@ -351,19 +357,19 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 
     //By the way, you can still create your own method in here... :)
     public function update(Request $req){
-        $user = CmsUser::orderBy('id','desc')->first();
-        $medico = ModMedico::findOrFail($req->get("medico_id"));
-        $medico->cms_user_id = $user->id;
-        $medico->save();
+      $user = CmsUser::orderBy('id','desc')->first();
+      $medico = ModMedico::findOrFail($req->get("medico_id"));
+      $medico->cms_user_id = $user->id;
+      $medico->save();
     }
     /*
      * @$id : id de usuario logueado
      *
      * */
     public function dashboard(){
-        $id = CRUDBooster::myId();
-        $user = CmsUser::find($id);
-        $medico = ModMedico::where("cms_user_id",$user->id)->first();
-        return view("medico.dashboard",["medico"=>$medico]);
+      $id = CRUDBooster::myId();
+      $user = CmsUser::find($id);
+      $medico = ModMedico::where("cms_user_id",$user->id)->first();
+      return view("medico.dashboard",["medico"=>$medico]);
     }
-}
+  }
