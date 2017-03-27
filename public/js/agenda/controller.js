@@ -1,19 +1,4 @@
 agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
-    /*function MainCtrlInitException(message) {
-        this.name = 'MainCtrlInitException';
-        this.message = message;
-    }
-    MainCtrlInitException.prototype = new Error();
-    MainCtrlInitException.prototype.constructor = MainCtrlInitException;
-    function initial() {
-        /!* We just reject the promise of this function. Only for the demo *!/
-        return $q.reject("Cannot init");
-    }
-    initial().
-    catch (
-        function(cause) {
-            throw new MainCtrlInitException(cause);
-        });*/
     /*variables de inicializacion*/
     $scope.panel_default = function(){
         this.title_panel= "Agendar nueva Cita";

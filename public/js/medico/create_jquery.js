@@ -1,29 +1,54 @@
+var procesar = function(el,dia){
+		var vm = angular.element('[ng-controller="CtrlApp as vm"]').scope();
+		el.getAttribute("checked") == null ? el.setAttribute("checked",true) :  el.removeAttribute("checked");
+		el.getAttribute("checked") == null ? vm.desactivar(dia) :  vm.activar(dia);
+	}
 $('#lunes').checkboxpicker({
 	html:true,
 	offLabel:'Lunes',
 	onLabel:'Lunes'
-});$('#martes').checkboxpicker({
+}).on('change', function() {
+	var change = new procesar(this,"lunes");
+});
+$('#martes').checkboxpicker({
 	html:true,
 	offLabel:'Martes',
 	onLabel:'Martes'
-});$('#miercoles').checkboxpicker({
+}).on('change', function() {
+	var change = new procesar(this,"martes");
+});
+$('#miercoles').checkboxpicker({
 	html:true,
-	offLabel:'Miércoles',
-	onLabel:'Miércoles'
-});$('#jueves').checkboxpicker({
+	offLabel:'Miércol.',
+	onLabel:'Miércol.'
+}).on('change', function() {
+	var change = new procesar(this,"miercoles");
+});
+$('#jueves').checkboxpicker({
 	html:true,
 	offLabel:'Jueves',
 	onLabel:'Jueves'
-});$('#viernes').checkboxpicker({
+}).on('change', function() {
+	var change = new procesar(this,"jueves");
+});
+$('#viernes').checkboxpicker({
 	html:true,
 	offLabel:'Viernes',
 	onLabel:'Viernes'
-});$('#sabado').checkboxpicker({
+}).on('change', function() {
+	var change = new procesar(this,"viernes");
+});
+$('#sabado').checkboxpicker({
 	html:true,
 	offLabel:'Sábado',
 	onLabel:'Sábado'
-});$('#domingo').checkboxpicker({
+}).on('change', function() {
+	var change = new procesar(this,"sabado");
+});
+$('#domingo').checkboxpicker({
 	html:true,
-	offLabel:'Domingo',
-	onLabel:'Domingo'
+	offLabel:'Domin.',
+	onLabel:'Domin.'
+}).on('change', function() {
+	var change = new procesar(this,"domingo");
 });

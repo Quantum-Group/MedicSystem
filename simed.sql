@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-03-2017 a las 23:08:58
+-- Tiempo de generación: 28-03-2017 a las 00:58:53
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -1061,7 +1061,11 @@ INSERT INTO `cms_logs` (`id`, `created_at`, `updated_at`, `ipaddress`, `useragen
 (718, '2017-03-24 18:00:05', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
 (719, '2017-03-24 18:00:15', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'javier@correo.com Inicia sesión con la dirección IP ::1', 13),
 (720, '2017-03-24 18:08:57', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'javier@correo.com cerrar sesión', 13),
-(721, '2017-03-24 18:08:59', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1);
+(721, '2017-03-24 18:08:59', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(722, '2017-03-27 15:05:33', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(723, '2017-03-27 18:44:53', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(724, '2017-03-27 21:00:51', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(725, '2017-03-27 21:00:58', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1);
 
 -- --------------------------------------------------------
 
@@ -1396,6 +1400,20 @@ INSERT INTO `convenio` (`id`, `cita_calendario_id`, `autorizacion`, `fecha_autor
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `horario_medico`
+--
+
+CREATE TABLE `horario_medico` (
+  `id` int(11) NOT NULL,
+  `medico_id` int(11) DEFAULT NULL,
+  `dow` varchar(1) DEFAULT NULL,
+  `start` varchar(5) DEFAULT NULL,
+  `end` varchar(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `medico`
 --
 
@@ -1428,7 +1446,12 @@ INSERT INTO `medico` (`id`, `titulo`, `especialidad`, `nombre`, `apellido`, `tel
 (10, 'Dr.', 'Cardiología', 'Pepe', 'Proaño', '2444556', 'andresdp83@hotmail.com', '2017-02-21 15:24:06', '2017-03-23 15:16:20', 23),
 (11, 'Dra.', 'Odontología', 'LUCY', 'PEREZ', '2333444', NULL, '2017-03-15 22:14:48', NULL, NULL),
 (12, 'Dr.', 'Ginecologia', 'Marco', 'Del Pozo', '0998919690', 'pablodc002@gmail.com', '2017-03-20 19:48:13', '2017-03-22 22:25:43', 21),
-(13, 'Dr.', 'Optometrìa', 'Veronica', 'Claudio', '098745236', 'contabilidad@oftamed.com.ec', '2017-03-23 17:25:04', '2017-03-23 17:27:26', 24);
+(13, 'Dr.', 'Optometrìa', 'Veronica', 'Claudio', '098745236', 'contabilidad@oftamed.com.ec', '2017-03-23 17:25:04', '2017-03-23 17:27:26', 24),
+(14, 'Dr.', 'Trauma', 'Ildemaro', 'Rodriguez', '2333222', NULL, '2017-03-27 21:03:29', '2017-03-27 21:03:29', NULL),
+(15, 'Dra.', 'Otra', 'Soraya', 'Racines', '2333222', NULL, '2017-03-27 21:19:28', '2017-03-27 21:19:28', NULL),
+(16, 'Dr.', 'Cirugia', 'Caballero', 'Unido', '2111222', NULL, '2017-03-27 21:23:37', '2017-03-27 21:23:37', NULL),
+(17, 'Dr.', 'Odontología', 'Marcia', 'Galindo', '2111222', NULL, '2017-03-27 21:51:13', '2017-03-27 21:51:13', NULL),
+(18, 'Dr.', 'Ginecologia', 'Carlos', 'Carlines', '2342332423', NULL, '2017-03-27 22:51:29', '2017-03-27 22:51:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -1666,6 +1689,12 @@ ALTER TABLE `convenio`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `horario_medico`
+--
+ALTER TABLE `horario_medico`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `medico`
 --
 ALTER TABLE `medico`
@@ -1741,7 +1770,7 @@ ALTER TABLE `cms_email_templates`
 -- AUTO_INCREMENT de la tabla `cms_logs`
 --
 ALTER TABLE `cms_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=722;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=726;
 --
 -- AUTO_INCREMENT de la tabla `cms_menus`
 --
@@ -1793,10 +1822,15 @@ ALTER TABLE `cms_users`
 ALTER TABLE `convenio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT de la tabla `horario_medico`
+--
+ALTER TABLE `horario_medico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
