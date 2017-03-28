@@ -7,12 +7,13 @@
     <meta name='robots' content='noindex,nofollow'/>
     <link rel="shortcut icon" href="{{ CRUDBooster::getSetting('favicon')?asset(CRUDBooster::getSetting('favicon')):asset('vendor/crudbooster/assets/logo_crudbooster.png') }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    
+    <title>Agenda Médica EL BATÁN</title>
     @include('crudbooster::admin_template_plugins')
             <!-- select2  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- fullcalendar css -->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css">
+    <link rel="stylesheet" href="{{asset('bower_resources/fullcalendar/dist/fullcalendar.min.css')}}">
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- Theme style -->
     <link href="{{ asset("vendor/crudbooster/assets/adminlte/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />    
@@ -166,8 +167,10 @@
       Both of these plugins are recommended to enhance the
       user experience -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/locale/es.js"></script>
+<script src="{{asset('bower_resources/fullcalendar/dist/fullcalendar.min.js')}}"></script>
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script> -->
+<script src="{{asset('bower_resources/fullcalendar/dist/locale/es.js')}}"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/locale/es.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script src="{{asset('js/masonry.pkgd.min.js')}}"></script>
 </body>

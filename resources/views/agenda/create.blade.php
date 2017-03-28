@@ -39,7 +39,7 @@ $page_title = $agenda->nombre;
     </style>
     {{--modal edicion de evento--}}
     <div ng-app="AppAgenda"
-         ng-init="fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);"
+         ng-init="cita.fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);"
          ng-controller="CtrlApp" ng-cloack>
         @include("agenda.modals")
         <div class="box">
@@ -106,8 +106,17 @@ $page_title = $agenda->nombre;
                 fecha_vence:'{{$cita->convenio->fecha_vence}}'
             }
         };
-        PANEL ={};
-        //console.log(CITA);
+        PANEL ={};        
+        HORARIO_TRABAJO = [
+            @foreach($horario_medico as $h)
+            {
+                    dow: [ '{{$h->dow}}' ], // Monday, Tuesday, Wednesday
+                    start: '{{$h->start}}', // 8am
+                    end: '{{$h->end}}' // 6pm
+            },
+            @endforeach    
+            ];
+        HORARIO_TRABAJO = HORARIO_TRABAJO.length > 0 ? HORARIO_TRABAJO :false;
         /*
          * -->
          */

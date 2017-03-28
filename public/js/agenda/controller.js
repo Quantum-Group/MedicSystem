@@ -37,11 +37,11 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
     /*
      * Panel de modificacion de la cita
      * */
-    $scope.panelModCita = function (event) {
+     $scope.panelModCita = function (event) {
         /*
          * Preparar el panel para modificar una cita
          * */
-        $scope.config = {
+         $scope.config = {
             defaultDate:moment(event.start).format('YYYY-MM-DD'),
             defaultView:'agendaDay'
         };
@@ -62,6 +62,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
         $scope.sel_convenio = event.sel_convenio;
         $("#sel_convenio").trigger("change");
         if($scope.sel_convenio == "I.E.S.S."){
+            $scope.tipo_convenio = true;
             try {
                 $scope.autorizacion = event.convenio.autorizacion;
                 $scope.fecha_autorizacion = moment(event.convenio.fecha_autorizacion,"YYYY-MM-DD").format("DD/MM/YYYY");
@@ -86,15 +87,18 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
     /*
      * Inicializacion
      */
-    $scope.init = function () {
+     
+     $scope.init = function () {
+
+        $scope.tipo_convenio = true;
         $scope.config = {
             defaultDate:$scope.fecha,
             defaultView:'agendaWeek'
         };
-        $scope.sel_convenio = "PARTICULAR";
+        $scope.sel_convenio = "I.E.S.S.";
         $scope.options_convenio = [
-            "PARTICULAR",
-            "I.E.S.S."
+        "I.E.S.S.",
+        "PARTICULAR"
         ];
         $(".select2").select2();
         $('#fecha, .datepicker').datepicker({
@@ -109,31 +113,19 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
                 right: 'month,agendaWeek,agendaDay'
             },
             defaultDate: $scope.config.defaultDate,
-            height: 450, //alto del calendario
+            height: 460, //alto del calendario
             defaultView: $scope.config.defaultView,
             locale: 'es', // tomado de locale
-            /*businessHours: {
-                // days of week. an array of zero-based day of week integers (0=Sunday)
-                dow: [ 1, 2, 3, 4, 5 ], // Monday - Thursday
-                start: '07:00', // a start time (10am in this example)
-                end: '14:00'// an end time (6pm in this example)
-            },*/
-            //businessHours: true, // display business hours
             buttonIcons: true,
             selectHelper: true,
             navLinks: true,
             editable: true,
             eventLimit: true,
-            businessHours:true,
+            // businessHours:true,
+            businessHours: HORARIO_TRABAJO,
             minTime: "7:00:00",
             maxTime: "20:00:00",
             aspectRatio: 2,
-            /*businessHours: {
-                // days of week. an array of zero-based day of week integers (0=Sunday)
-                dow: [ 1, 2, 3, 4 ], // Monday - Thursday
-                start: '10:00', // a start time (10am in this example)
-                end: '11:00' // an end time (6pm in this example)
-            },*/
             nowIndicator: true,
             slotDuration: '00:15:00',
             titleFormat: 'MMMM D YYYY',
@@ -161,12 +153,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
                     //console.log(view.options.businessHours);
                     $scope.panelModCita(event);
                     $scope.verify_time();
-            },
-            eventClick: function(calEvent, jsEvent, view) {
-
-                alert('Event: ' + calEvent.title);
-                alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                alert('View: ' + view.name);
+                },
+                eventClick: function(calEvent, jsEvent, view) {
 
                 // change the border color just for fun
                 $(this).css('border-color', 'red');
@@ -176,49 +164,51 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
         /*
         *  Inicializar paneles
         * */
-        $("#calendar").fullCalendar('businessHours',{
-            dow: [ 1, 2, 3, 4, 5 ], // Monday - Thursday
-            start: '07:00', // a start time (10am in this example)
-            end: '14:00'// an end time (6pm in this example)
-        });
-        if(CITA.id == ""){
-            $scope.panel =  new $scope.panel_default();
-        }else {
-            $scope.panelModCita(CITA);
-        }
-    };
-    $scope.verify_time = function () {
-        var hora1 = moment($scope.horaInicio, "H:mm a").format("H:mm");
-        var horaI = hora1.split(":",2);
-        var hora_inicio = horaI[0];
-        var min_inicio = horaI[1];
-        var hora2 = moment($scope.horaFin, "H:mm a").format("H:mm");
-        var horaF = hora2.split(":",2);
-        var hora_fin= horaF[0];
-        var min_fin = horaF[1];
-        var verified = false;
-        if(typeof hora_inicio == "undefined"){
-            verified = 'undefined';
-        }else{
-            if (hora_inicio <= 6.99 && min_inicio <= 59 || hora_fin >= 20 && min_fin >= 1) {
-                verified = false;
-                swal("El evento supera el horario permitido!");
-                $scope.resetPanelCita();
-                $scope.reloadCalendar();
-            } else  {
-                verified = true;
+        
+            if(CITA.id == ""){
+                $scope.panel =  new $scope.panel_default();
+            }else {
+                $scope.panelModCita(CITA);
             }
-        }
 
-        return verified;
-    };
+        };
+        $scope.verify_time = function () {
+            var hora1 = moment($scope.horaInicio, "H:mm a").format("H:mm");
+            var horaI = hora1.split(":",2);
+            var hora_inicio = horaI[0];
+            var min_inicio = horaI[1];
+            var hora2 = moment($scope.horaFin, "H:mm a").format("H:mm");
+            var horaF = hora2.split(":",2);
+            var hora_fin= horaF[0];
+            var min_fin = horaF[1];
+            var verified = false;
+            if(typeof hora_inicio == "undefined"){
+                verified = 'undefined';
+            }else{
+                if (hora_inicio <= 6.99 && min_inicio <= 59 || hora_fin >= 20 && min_fin >= 1) {
+                    verified = false;
+                    swal("El evento supera el horario permitido!");
+                    $scope.resetPanelCita();
+                    $scope.reloadCalendar();
+                } else  {
+                    verified = true;
+                }
+            }
+
+            return verified;
+        };
     $scope.init(); //inicializar
     /*
     * muestra los datos para ingresar fechas de autorizacion de convenio particular o iess
     * */
-    $scope.show_convenio = function(){
-        // mostrar modal si es IESS
-        $scope.sel_convenio == "I.E.S.S." ? $("#modal_autorizacion").modal("show") : null ;
+    $scope.eval_convenio = function(){
+        console.log($scope.sel_convenio)
+        if($scope.sel_convenio == 'I.E.S.S.'){
+        $scope.tipo_convenio = true;
+        }else {
+        $scope.tipo_convenio = false;
+            
+        }
     };
 
 
@@ -264,7 +254,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
         $scope.cita={descripcion:""};
         $scope.horaInicio = "";
         $scope.horaFin = "";
-        $scope.cita={fecha : $scope.fecha};
+        // $scope.cita={fecha : $scope.cita.fecha};
         $scope.resetAutorizacion();
         $scope.panel = new $scope.panel_default();
         /*$scope.$watch('panel',function(){
@@ -275,7 +265,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
     /*
      * Recarga la página actual
      */
-    $scope.reloadRoute = function () {
+     $scope.reloadRoute = function () {
         $window.location.reload();
     };
     /*
@@ -284,7 +274,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
     /*
      * Recarga la página actual
      */
-    $scope.reloadCalendar = function () {
+     $scope.reloadCalendar = function () {
         $("#calendar").fullCalendar("refetchEvents");
     };
     /*
@@ -293,7 +283,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
     /*
      * Cancelar la cita
      */
-    $scope.cancelarCita = function () {
+     $scope.cancelarCita = function () {
         $scope.setDateTime();
         swal({
             title: "¿Desea cancelar la cita?",
@@ -334,7 +324,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
     /*
      * -->
      */
-    $scope.showModalDate = function () {
+     $scope.showModalDate = function () {
         $("#mod_agregar_cita").modal("show");
     };
     $scope.setDateTime = function () {
@@ -355,7 +345,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
      *  Sincronizar agenda
      * */
 
-    $scope.agendaWorker = {
+     $scope.agendaWorker = {
         load: function () {
             $("#calendar").fullCalendar("refetchEvents");
         }
@@ -364,13 +354,13 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
      * -->
      *
      * */
-    $scope.submit = function (e) {
+     $scope.submit = function (e) {
         e.preventDefault();
         if($scope.verify_time() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
             $scope.setDateTime();
             var fd = $("#form-cita"),
-                url = fd.attr("action"),
-                data = fd.serialize();
+            url = fd.attr("action"),
+            data = fd.serialize();
             swal({
                 title: "Procesando",
                 text: 'Espere...',
@@ -411,9 +401,9 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
     // cambiar formato de fecha 01/11/2017 a 2017-01-11 // not used
     $scope.formatDate = function (date) {
         var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
         if (month.length < 2) month = '0' + month;
         if (day.length < 2) day = '0' + day;
         return [year, month, day].join('-');

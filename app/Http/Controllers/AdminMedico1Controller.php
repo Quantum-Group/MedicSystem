@@ -13,7 +13,6 @@ use App\HorarioMedico;
 
 class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBController
 {
-
   public function cbInit()
   {
         # START CONFIGURATION DO NOT REMOVE THIS LINE
@@ -45,82 +44,82 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
-			$this->form = [];
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => 'Ejem: Traumatología',
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Especialidad',
-  'name' => 'especialidad',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'dataenum' => 'Dr.;Dra.',
-  'datatable' => NULL,
-  'dataquery' => NULL,
-  'style' => NULL,
-  'help' => NULL,
-  'datatable_where' => NULL,
-  'datatable_format' => NULL,
-  'parent_select' => NULL,
-  'label' => 'Titulo',
-  'name' => 'titulo',
-  'type' => 'select',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Nombre',
-  'name' => 'nombre',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Apellido',
-  'name' => 'apellido',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Teléfono',
-  'name' => 'telefono',
-  'type' => 'text',
-  'validation' => 'min:3|max:255',
-  'width' => 'col-sm-10',
-);
-			$this->form[] = array (
-  'style' => NULL,
-  'help' => NULL,
-  'placeholder' => NULL,
-  'readonly' => NULL,
-  'disabled' => NULL,
-  'label' => 'Email',
-  'name' => 'email',
-  'type' => 'email',
-  'validation' => NULL,
-  'width' => 'col-sm-9',
-);
+    $this->form = [];
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => 'Ejem: Traumatología',
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Especialidad',
+      'name' => 'especialidad',
+      'type' => 'text',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'dataenum' => 'Dr.;Dra.',
+      'datatable' => NULL,
+      'dataquery' => NULL,
+      'style' => NULL,
+      'help' => NULL,
+      'datatable_where' => NULL,
+      'datatable_format' => NULL,
+      'parent_select' => NULL,
+      'label' => 'Titulo',
+      'name' => 'titulo',
+      'type' => 'select',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Nombre',
+      'name' => 'nombre',
+      'type' => 'text',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Apellido',
+      'name' => 'apellido',
+      'type' => 'text',
+      'validation' => 'required|min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Teléfono',
+      'name' => 'telefono',
+      'type' => 'text',
+      'validation' => 'min:3|max:255',
+      'width' => 'col-sm-10',
+      );
+    $this->form[] = array (
+      'style' => NULL,
+      'help' => NULL,
+      'placeholder' => NULL,
+      'readonly' => NULL,
+      'disabled' => NULL,
+      'label' => 'Email',
+      'name' => 'email',
+      'type' => 'email',
+      'validation' => NULL,
+      'width' => 'col-sm-9',
+      );
 			# END FORM DO NOT REMOVE THIS LINE
 
 			/*
@@ -233,12 +232,17 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
       }
 
       public function getAdd(){
-          //Create an Auth
         $data=[];
         $data['page_title'] ="Agregar nuevo médico";
         $this->cbView('medico.create',$data);
       }
-
+      public function getEdit($id){
+        $data=[];
+        $data['page_title'] ="Editar médico";
+        $data['medico'] = ModMedico::find($id);
+        $data['horario_medico'] = HorarioMedico::where("medico_id",$id)->get();
+        $this->cbView('medico.edit',$data);
+      }
       public function postAddSave(){
         $medico = new ModMedico;
         $medico->titulo= Input::get("titulo");
@@ -246,10 +250,172 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
         $medico->nombre= Input::get("nombre");
         $medico->apellido= Input::get("apellido");
         $medico->telefono= Input::get("telefono");
-        if($medico->save()){
-          
+        $medico->email= Input::get("email");
+        $medico->save();
+        if(Input::get("lunes") == "on"){
+          $horario_medico = new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=1;
+          $horario_medico->start=Input::get("lunes_start");
+          $horario_medico->end=Input::get("lunes_end");
+          $horario_medico->save();
+        }if(Input::get("martes") == "on"){
+          $horario_medico = new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=2;
+          $horario_medico->start=Input::get("martes_start");
+          $horario_medico->end=Input::get("martes_end");
+          $horario_medico->save();
+        }if(Input::get("miercoles") == "on"){
+          $horario_medico = new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=3;
+          $horario_medico->start=Input::get("miercoles_start");
+          $horario_medico->end=Input::get("miercoles_end");
+          $horario_medico->save();
+        }if(Input::get("jueves") == "on"){
+          $horario_medico = new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=4;
+          $horario_medico->start=Input::get("jueves_start");
+          $horario_medico->end=Input::get("jueves_end");
+          $horario_medico->save();
+        }if(Input::get("viernes") == "on"){
+          $horario_medico = new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=5;
+          $horario_medico->start=Input::get("viernes_start");
+          $horario_medico->end=Input::get("viernes_end");
+          $horario_medico->save();
+        }if(Input::get("sabado") == "on"){
+          $horario_medico = new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=6;
+          $horario_medico->start=Input::get("sabado_start");
+          $horario_medico->end=Input::get("sabado_end");
+          $horario_medico->save();
+        }if(Input::get("domingo") == "on"){
+          $horario_medico = new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=7;
+          $horario_medico->start=Input::get("domingo_start");
+          $horario_medico->end=Input::get("domingo_end");
+          $horario_medico->save();
+        }
+        return redirect('admin/medico');
+      }
+      public function postEditSave($id){
+        $medico = ModMedico::findOrFail($id);
+        $medico->titulo= Input::get("titulo");
+        $medico->especialidad= Input::get("especialidad");
+        $medico->nombre= Input::get("nombre");
+        $medico->apellido= Input::get("apellido");
+        $medico->telefono= Input::get("telefono");
+        $medico->email= Input::get("email");
+        $medico->save();
+
+
+        if(Input::get("lunes") == "on"){
+          $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>1])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>1])->first(): new HorarioMedico;
+           $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=1;
+          $horario_medico->start=Input::get("lunes_start");
+          $horario_medico->end=Input::get("lunes_end");
+          $horario_medico->save();
+        }elseif(is_null(Input::get("lunes"))){
+          $horario_medico = HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>1])->first();
+          if(count($horario_medico) > 0){
+            $horario_medico->delete();
+          }
         }
 
+
+        if(Input::get("martes") == "on"){
+          $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>2])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>2])->first(): new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=2;
+          $horario_medico->start=Input::get("martes_start");
+          $horario_medico->end=Input::get("martes_end");
+          $horario_medico->save();
+        }elseif(is_null(Input::get("martes"))){
+          $horario_medico = HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>2])->first();
+          if(count($horario_medico) > 0){
+            $horario_medico->delete();
+          }
+        }
+
+        if(Input::get("miercoles") == "on"){
+          $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>3])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>3])->first(): new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=3;
+          $horario_medico->start=Input::get("miercoles_start");
+          $horario_medico->end=Input::get("miercoles_end");
+          $horario_medico->save();
+        }elseif(is_null(Input::get("miercoles"))){
+          $horario_medico = HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>3])->first();
+          if(count($horario_medico) > 0){
+            $horario_medico->delete();
+          }
+        }
+
+        if(Input::get("jueves") == "on"){
+          $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>4])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>4])->first(): new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=4;
+          $horario_medico->start=Input::get("jueves_start");
+          $horario_medico->end=Input::get("jueves_end");
+          $horario_medico->save();
+        }elseif(is_null(Input::get("jueves"))){
+          $horario_medico = HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>4])->first();
+          if(count($horario_medico) > 0){
+            $horario_medico->delete();
+          }
+        }
+
+
+        if(Input::get("viernes") == "on"){
+          $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>5])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>5])->first(): new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=5;
+          $horario_medico->start=Input::get("viernes_start");
+          $horario_medico->end=Input::get("viernes_end");
+          $horario_medico->save();
+        }elseif(is_null(Input::get("viernes"))){
+          $horario_medico = HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>5])->first();
+          if(count($horario_medico) > 0){
+            $horario_medico->delete();
+          }
+        }
+
+
+        if(Input::get("sabado") == "on"){
+          $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>6])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>6])->first(): new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=6;
+          $horario_medico->start=Input::get("sabado_start");
+          $horario_medico->end=Input::get("sabado_end");
+          $horario_medico->save();
+        }elseif(is_null(Input::get("sabado"))){
+          $horario_medico = HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>6])->first();
+          if(count($horario_medico) > 0){
+            $horario_medico->delete();
+          }
+        }
+
+
+        if(Input::get("domingo") == "on"){
+          $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>7])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>7])->first(): new HorarioMedico;
+          $horario_medico->medico_id=$medico->id;
+          $horario_medico->dow=7;
+          $horario_medico->start=Input::get("domingo_start");
+          $horario_medico->end=Input::get("domingo_end");
+          $horario_medico->save();
+        }elseif(is_null(Input::get("domingo"))){
+          $horario_medico = HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>7])->first();
+          if(count($horario_medico) > 0){
+            $horario_medico->delete();
+          }
+        }
         return redirect('admin/medico');
       }
     /*
