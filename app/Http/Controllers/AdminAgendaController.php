@@ -96,8 +96,8 @@ class AdminAgendaController extends Controller
                  /*
                   * Envio de e-mail cuando se guarda la cita
                   * */
-                 $email_medico = !is_null($medico->email) ? : "pablodc002@gmail.com";
-                 $email_paciente = !is_null($paciente->email) ? : "pablodc002@gmail.com";
+                 $email_medico = !is_null($medico->email) ? $medico->email : "pablodc002@gmail.com";
+                 $email_paciente = !is_null($paciente->email) ? $paciente->email : "pablodc002@gmail.com";
                  try{
                     Mail::to(trim($email_paciente))->send(new EmailPaciente($paciente,$medico,$cita));
                     Mail::to(trim($email_medico))->send(new EmailMedico($medico,$paciente,$cita));
@@ -106,7 +106,7 @@ class AdminAgendaController extends Controller
         }
         return response()->json([
             "response"=>$response,
-            "cita"=>$cita,
+            "cita"=>$cita
         ]);
     }
 

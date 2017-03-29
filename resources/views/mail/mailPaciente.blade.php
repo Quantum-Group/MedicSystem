@@ -355,12 +355,12 @@ Sizes: [
                                                                                             <br>
                                                                                             <h3 style="color: #5f5f5f; line-height: 125%; font-family: Helvetica,Arial,sans-serif; font-size: 20px; font-weight: normal; margin-top: 0; margin-bottom: 3px; text-align: left;"></h3>
                                                                                             <?php setlocale(LC_TIME, 'es_ES'); ?>
-                                                                                            <div style="text-align: left; font-family: Helvetica,Arial,sans-serif; font-size: 15px; margin-bottom: 0; color: #5f5f5f; line-height: 135%;"><strong>Fecha: </strong>{{ Carbon\Carbon::parse($cita->start)->formatLocalized('%a %d %B %Y')}}</div>
+                                                                                            <div style="text-align: left; font-family: Helvetica,Arial,sans-serif; font-size: 15px; margin-bottom: 0; color: #5f5f5f; line-height: 135%;"><strong>Fecha: </strong>{{ Carbon\Carbon::parse($cita->start)->formatLocalized('%A %d %B %Y')}}</div>
                                                                                             <div style="text-align: left; font-family: Helvetica,Arial,sans-serif; font-size: 15px; margin-bottom: 0; color: #5f5f5f; line-height: 135%;"><strong>Hora: </strong>{{\Carbon\Carbon::parse($cita->start)->format('h:i:s A')}}</div>
                                                                                             <div style="text-align: left; font-family: Helvetica,Arial,sans-serif; font-size: 15px; margin-bottom: 0; color: #5f5f5f; line-height: 135%;"><strong>Observaciones: </strong>{{$cita->detalle_cita}}</div>
                                                                                             <br><br><br>
                                                                                             <div style="text-align: left; font-family: Helvetica,Arial,sans-serif; font-size: 15px; margin-bottom: 0; color: #5f5f5f; line-height: 135%;">Atentamente,
-                                                                                                <br><br> Call Center <br> <strong>OPTAMED</strong></div>
+                                                                                                <br><br> Call Center <br> <strong>CLÍNICA EL BATÁN</strong></div>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </tbody>
@@ -407,7 +407,7 @@ Sizes: [
                                                                         <tr>
                                                                             <td valign="top" bgcolor="#E1E1E1">
                                                                                 <div style="font-family: Helvetica,Arial,sans-serif; font-size: 13px; color: #828282; text-align: center; line-height: 120%;">
-                                                                                    <div>Copyright &copy;2017 <a style="text-decoration: none; color: #828282;" href="http://www.clinicaelbatan.com/" target="_blank"><span style="color: #828282;">OPTAMED</span></a>. Todos los derechos reservados.</div>
+                                                                                    <div>Copyright &copy;2017 <a style="text-decoration: none; color: #828282;" href="http://www.clinicaelbatan.com/" target="_blank"><span style="color: #828282;">CLÍNICA EL BATÁN</span></a>. Todos los derechos reservados.</div>
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
