@@ -371,7 +371,8 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
     $(function() {
     $('.datepicker').datepicker({
         language:'es',
-        format: 'yyyy-mm-dd'
+        format: 'yyyy-mm-dd',
+        autoclose:true
     }); // corregir error de doble calendario
         $('input:text').attr('readonly',false);
         //$('.datepicker').inputmask({'alias':'dd/mm/yyyy'});
