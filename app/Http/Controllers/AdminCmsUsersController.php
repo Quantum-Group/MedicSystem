@@ -10,7 +10,10 @@ use App\CmsUser;
 
 class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CBController {
 
+
+
 	public function cbInit() {
+
 		# START CONFIGURATION DO NOT REMOVE THIS LINE
 		$this->table               = 'cms_users';
 		$this->primary_key         = 'id';
@@ -146,4 +149,19 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
     }catch (\Error $x){
     }
   }
+
+
+    public function hook_query_index(&$query) {
+
+        //Los id=1  y id=2 pertenencen al superadmin y al distribuidor principal respectivamente.
+
+        $idUser = CRUDBooster::myId();
+        if($idUser == 2 || $idUser == 3 )
+        {
+            $query->where('cms_users.id','<>',1);
+        }
+
+
+
+    }
 }
