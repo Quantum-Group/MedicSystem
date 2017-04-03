@@ -126,7 +126,7 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
 );
 			$this->form[] = array (
   'style' => NULL,
-  'help' => NULL,
+  'help' => 'Formato: (año-mes-dia) aaaa-mm-dd',
   'placeholder' => NULL,
   'readonly' => NULL,
   'disabled' => NULL,
@@ -206,6 +206,11 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
   'width' => 'col-sm-10',
 );
 			$this->form[] = array (
+  'style' => NULL,
+  'help' => NULL,
+  'placeholder' => NULL,
+  'readonly' => NULL,
+  'disabled' => NULL,
   'label' => 'Dirección',
   'name' => 'direccion',
   'type' => 'text',
@@ -369,11 +374,12 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
         */
         $this->script_js = "
     $(function() {
-    $('.datepicker').datepicker({
+      $('.datepicker').datepicker({
         language:'es',
         format: 'yyyy-mm-dd',
         autoclose:true
-    }); // corregir error de doble calendario
+    });
+     // corregir error de doble calendario
         $('input:text').attr('readonly',false);
         //$('.datepicker').inputmask({'alias':'dd/mm/yyyy'});
     });
