@@ -173,13 +173,17 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
             }
         };
         $scope.verify_date = function(){
-            var verified = false;
-            console.log(moment($scope.cita.hoy,'DD/MM/YYYY').isAfter($scope.cita.fecha,'DD/MM/YYYY'));
-
-            return verified;
+            if(typeof $scope.cita.hoy == 'undefined')
+            {
+                $scope.cita.hoy = HOY;
+            }
+            var verified = false,equal =false,hoy = $scope.cita.hoy.toString(),fecha = $scope.cita.fecha.toString();
+            verified = !moment($scope.cita.hoy,'DD/MM/YYYY').isAfter($scope.cita.fecha);
+            equal = moment(hoy).isSame(fecha);
+            return verified == true || equal;
         };
         $scope.verify_time = function () {
-            var hora1 = moment($scope.horaInicio, "H:mm a").format("H:mm");
+           /* var hora1 = moment($scope.horaInicio, "H:mm a").format("H:mm");
             var horaI = hora1.split(":",2);
             var hora_inicio = horaI[0];
             var min_inicio = horaI[1];
@@ -199,9 +203,9 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
                 } else  {
                     verified = true;
                 }
-            }
+            }*/
 
-            return verified;
+            //return verified;
         };
     $scope.init(); //inicializar
     /*
@@ -362,45 +366,46 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
      * */
      $scope.submit = function (e) {
         e.preventDefault();
-        if($scope.verify_time() && $scope.verify_date() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
-            // $scope.setDateTime();
-            // var fd = $("#form-cita"),
-            // url = fd.attr("action"),
-            // data = fd.serialize();
-            // swal({
-            //     title: "Procesando",
-            //     text: 'Espere...',
-            //     showConfirmButton: false
-            // });
-            // $http({
-            //     url: url,
-            //     method: 'POST',
-            //     data: data,
-            //     headers: {
-            //         'Content-Type': 'application/x-www-form-urlencoded'
-            //     }
-            // }).then(function (data) {
-            //     if (data.data.response) {
-            //         swal({
-            //             title: "Correcto!",
-            //             text: 'Realizado con éxito!',
-            //             timer: 400,
-            //             type: "success",
-            //             showConfirmButton: true,
-            //             closeOnConfirm: true
-            //         }, function () {
-            //             $scope.reloadCalendar();
-            //             $scope.resetPanelCita();
-            //         });
-            //     } else {
-            //         swal("Error!", "Error en la transacción!", "error");
-            //     }
-            // });
+        if($scope.verify_date() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
+            $scope.setDateTime();
+            var fd = $("#form-cita"),
+            url = fd.attr("action"),
+            data = fd.serialize();
+            swal({
+                title: "Procesando",
+                text: 'Espere...',
+                showConfirmButton: false
+            });
+            $http({
+                url: url,
+                method: 'POST',
+                data: data,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(function (data) {
+                if (data.data.response) {
+                    swal({
+                        title: "Correcto!",
+                        text: 'Realizado con éxito!',
+                        timer: 400,
+                        type: "success",
+                        showConfirmButton: true,
+                        closeOnConfirm: true
+                    }, function () {
+                        $scope.reloadCalendar();
+                        $scope.resetPanelCita();
+                    });
+                } else {
+                    swal("Error!", "Error en la transacción!", "error");
+                }
+            });
         }else {
             swal({
                 type:"error",
                 title:"Error!",
-                text:"Revise que los campos no esten vacios y que las horas de inicio no sean las mismas que las de fin!"
+                html:true,
+                text:"<h3>Corrija los siguientes errores:</h3><br> <ol class='validate_hours'><li>Que la hora de inicio sea mayor o igual que la de fin.</li><li>Que los campos de horario no estén vacíos. </li><li>Que la cita esté dentro del horario de trabajo del médico seleccionado.</li></ul>"
             });
         }
     };

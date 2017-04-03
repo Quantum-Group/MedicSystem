@@ -36,6 +36,9 @@
             letter-spacing: 0.6pt;
             text-align: center;
         }
+        .validate_hours li{
+            text-align: left;
+        }
     </style>
     {{--modal edicion de evento--}}
     <div ng-app="AppAgenda"
@@ -117,6 +120,7 @@
             @endforeach    
             ];
         HORARIO_TRABAJO = HORARIO_TRABAJO.length > 0 ? HORARIO_TRABAJO :false;
+        HOY = '{{Carbon\Carbon::now()->format('d/m/Y')}}';
         /*
          * -->
          */
