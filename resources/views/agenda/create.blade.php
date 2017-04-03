@@ -39,7 +39,7 @@
     </style>
     {{--modal edicion de evento--}}
     <div ng-app="AppAgenda"
-         ng-init="cita.fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);"
+         ng-init="cita.fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);cita.hoy=('{{Carbon\Carbon::now()->format('d/m/Y')}}')"
          ng-controller="CtrlApp" ng-cloack>
         @include("agenda.modals")
         <div class="box">

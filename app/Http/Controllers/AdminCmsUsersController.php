@@ -6,6 +6,7 @@ use Request;
 use DB;
 use CRUDbooster;
 use App\ModMedico;
+use App\ModPaciente;
 use App\CmsUser;
 
 class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CBController {

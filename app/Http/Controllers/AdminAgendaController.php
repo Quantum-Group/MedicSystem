@@ -63,6 +63,7 @@ class AdminAgendaController extends Controller
             $cita->estado_cita = 1;
             $cita->start = $request->get("start");
             $cita->end = $request->get("end");
+            $cita->constraint = $request->get("constraint");
             $sel_convenio = explode(":",$request->get("sel_convenio"));
             $sel_convenio = $sel_convenio[1];
             $cita->sel_convenio = $sel_convenio;
