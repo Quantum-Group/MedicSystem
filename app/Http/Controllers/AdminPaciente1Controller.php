@@ -8,48 +8,48 @@ use CRUDBooster;
 class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\CBController
 {
 
-    public function cbInit()
-    {
+  public function cbInit()
+  {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
-			$this->title_field = "id";
-			$this->limit = "20";
-			$this->orderby = "id,desc";
-			$this->global_privilege = false;
-			$this->button_table_action = true;
-			$this->button_action_style = "button_icon";
-			$this->button_add = true;
-			$this->button_edit = true;
-			$this->button_delete = true;
-			$this->button_detail = true;
-			$this->button_show = true;
-			$this->button_filter = true;
-			$this->button_import = false;
-			$this->button_export = false;
-			$this->table = "paciente";
+   $this->title_field = "id";
+   $this->limit = "20";
+   $this->orderby = "id,desc";
+   $this->global_privilege = false;
+   $this->button_table_action = true;
+   $this->button_action_style = "button_icon";
+   $this->button_add = true;
+   $this->button_edit = true;
+   $this->button_delete = true;
+   $this->button_detail = true;
+   $this->button_show = true;
+   $this->button_filter = true;
+   $this->button_import = false;
+   $this->button_export = false;
+   $this->table = "paciente";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
-			$this->col = [];
-			$this->col[] = ["label"=>"Cedula","name"=>"cedula"];
-			$this->col[] = ["label"=>"Nombre","name"=>"nombre"];
-			$this->col[] = ["label"=>"Apellido","name"=>"apellido"];
-			$this->col[] = ["label"=>"Email","name"=>"email"];
-			$this->col[] = ["label"=>"Pasaporte","name"=>"pasaporte"];
+   $this->col = [];
+   $this->col[] = ["label"=>"Cedula","name"=>"cedula"];
+   $this->col[] = ["label"=>"Nombre","name"=>"nombre"];
+   $this->col[] = ["label"=>"Apellido","name"=>"apellido"];
+   $this->col[] = ["label"=>"Email","name"=>"email"];
+   $this->col[] = ["label"=>"Pasaporte","name"=>"pasaporte"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = array (
   'style' => NULL,
-  'help' => NULL,
+  'help' => '10 Dígitos (Ej: 1721345576)',
   'placeholder' => NULL,
   'readonly' => NULL,
   'disabled' => NULL,
   'label' => 'Cédula',
   'name' => 'cedula',
-  'type' => 'number',
-  'validation' => 'required|min:10|max:10',
+  'type' => 'text',
+  'validation' => 'required|min:10',
   'width' => 'col-sm-10',
 );
 			$this->form[] = array (
@@ -290,7 +290,7 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
 | @parent_columns = Sparate with comma, e.g : name,created_at
 |
 */
-        $this->sub_module = array();
+$this->sub_module = array();
 
 
         /*
@@ -373,17 +373,19 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
         |
         */
         $this->script_js = "
-    $(function() {
-      $('.datepicker').datepicker({
-        language:'es',
-        format: 'yyyy-mm-dd',
-        autoclose:true
-    });
+        $(function() {
+          $('.datepicker').datepicker({
+            language:'es',
+            format: 'yyyy-mm-dd',
+            autoclose:true
+          });
+          $('#cedula').inputmask('9999999999');
+          $('#cedula').attr('pattern','[0-9]{10}');
      // corregir error de doble calendario
-        $('input:text').attr('readonly',false);
+          $('input:text').attr('readonly',false);
         //$('.datepicker').inputmask({'alias':'dd/mm/yyyy'});
-    });
-";
+        });
+        ";
 
         /*
         | ----------------------------------------------------------------------
@@ -394,7 +396,7 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
         |
         */
         $this->load_js = array();
-    }
+      }
 
 
     /*
@@ -517,4 +519,4 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
     //By the way, you can still create your own method in here... :)
 
 
-}
+  }
