@@ -137,11 +137,13 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
   {
     try {
 			$user = CmsUser::with('privilege')->find($id);
-			if($user->privilege->id == 3){ // es paciente
+      $paciente = ModPaciente::where("cms_user_id",$id)->first();
+      $medico = ModMedico::where("cms_user_id",$id)->first();
+			if($user->privilege->id == 3 && count($paciente) > 0){ // es paciente
 				$p = ModPaciente::where("cms_user_id","=",$id)->first();
 				$p->cms_user_id = null;
 				$p->save();
-			}else if($user->privilege->id == 4){ // es medico
+			}else if($user->privilege->id == 4 && count($medico) > 0){ // es medico
 				$m = ModMedico::where("cms_user_id","=",$id)->first();
 				$m->cms_user_id = null;
 				$m->save();

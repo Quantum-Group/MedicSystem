@@ -174,7 +174,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
         };
         $scope.verify_date = function(){
             var verified = false;
-            console.log(moment($scope.cita.hoy,'DD/MM/YYYY').diff($scope.cita.fecha,'DD/MM/YYYY').format('HH:mm:ss'));
+            console.log(moment($scope.cita.hoy,'DD/MM/YYYY').isAfter($scope.cita.fecha,'DD/MM/YYYY'));
 
             return verified;
         };
