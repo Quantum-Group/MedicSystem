@@ -29,8 +29,7 @@ class AdminAgendaController extends Controller
         $agenda = ModAgenda::where("medico_id",$medico_id->id)->first();
         $paciente = ModPaciente::all();
         $medico = ModMedico::find($medico_id->id);
-        $page_title = "Agendar Cita";
-        return view('agenda.create',compact('page_title'),["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico]);
+        return view('agenda.create',["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico]);
     }
 
     /**

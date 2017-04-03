@@ -302,6 +302,10 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
           $horario_medico->end=Input::get("domingo_end");
           $horario_medico->save();
         }
+        $agenda = new ModAgenda;
+        $agenda->nombre = "Agenda de " . $medico->titulo . " " . $medico->nombre . " " . $medico->apellido;
+        $agenda->medico_id = $medico->id;
+        $agenda->save();
         return redirect('admin/medico');
       }
       public function postEditSave($id){
@@ -317,7 +321,7 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
 
         if(Input::get("lunes") == "on"){
           $horario_medico = count(HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>1])->first()) > 0 ? HorarioMedico::where(["medico_id"=>$medico->id,"dow"=>1])->first(): new HorarioMedico;
-           $horario_medico->medico_id=$medico->id;
+          $horario_medico->medico_id=$medico->id;
           $horario_medico->dow=1;
           $horario_medico->start=Input::get("lunes_start");
           $horario_medico->end=Input::get("lunes_end");
@@ -416,6 +420,10 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
             $horario_medico->delete();
           }
         }
+        $agenda = ModAgenda::where("medico_id",$id)->first();
+        $agenda->nombre = "Agenda de " . $medico->titulo . " " . $medico->nombre . " " . $medico->apellido;
+        $agenda->medico_id = $id;
+        $agenda->save();
         return redirect('admin/medico');
       }
     /*
@@ -478,11 +486,7 @@ class AdminMedico1Controller extends \crocodicstudio\crudbooster\controllers\CBC
     */
     public function hook_after_add($id)
     {
-      $agenda = new ModAgenda;
-      $medico = ModMedico::find($id);
-      $agenda->nombre = "Agenda de " . $medico->titulo . " " . $medico->nombre . " " . $medico->apellido;
-      $agenda->medico_id = $id;
-      $agenda->save();
+
     }
 
     /*

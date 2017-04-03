@@ -1,5 +1,6 @@
-<?php
-$page_title = $agenda->nombre;
+
+<?php 
+ $page_title = $agenda->nombre;
 ?>
 @extends("crudbooster::admin_template")
 @section("content")
@@ -7,7 +8,6 @@ $page_title = $agenda->nombre;
         .fc-time-grid .fc-slats td {
             height: 40px !important;
         }
-
         .container-full {
             margin: 0 auto;
             width: 100%;
