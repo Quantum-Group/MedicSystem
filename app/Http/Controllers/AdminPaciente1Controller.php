@@ -48,8 +48,8 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
   'disabled' => NULL,
   'label' => 'Cédula',
   'name' => 'cedula',
-  'type' => 'text',
-  'validation' => 'required|min:3|max:255',
+  'type' => 'number',
+  'validation' => 'required|min:10|max:10',
   'width' => 'col-sm-10',
 );
 			$this->form[] = array (
