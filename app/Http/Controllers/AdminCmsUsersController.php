@@ -75,7 +75,7 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
   'dataquery' => NULL,
   'style' => NULL,
   'help' => NULL,
-  'datatable_where' => NULL,
+  'datatable_where' => 'cms_privileges.name <> "Super Administrator" and cms_privileges.name <> "Paciente"',
   'datatable_format' => NULL,
   'parent_select' => NULL,
   'label' => 'Privilegio',
@@ -162,6 +162,7 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
         if($idUser == 2 || $idUser == 3 )
         {
             $query->where('cms_users.id','<>',1);
+
         }
 
     }
