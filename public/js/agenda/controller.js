@@ -89,7 +89,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
      */
      
      $scope.init = function () {
-
         $scope.tipo_convenio = true;
         $scope.config = {
             defaultDate:$scope.fecha,
@@ -159,13 +158,11 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
 
                 // change the border color just for fun
                 $(this).css('border-color', 'red');
-
             }
         });
         /*
         *  Inicializar paneles
         * */
-        
             if(CITA.id == ""){
                 $scope.panel =  new $scope.panel_default();
             }else {
@@ -183,31 +180,82 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
             return verified == true || equal;
         };
         $scope.verify_time = function () {
-           /* var hora1 = moment($scope.horaInicio, "H:mm a").format("H:mm");
-            var horaI = hora1.split(":",2);
-            var hora_inicio = horaI[0];
-            var min_inicio = horaI[1];
-            var hora2 = moment($scope.horaFin, "H:mm a").format("H:mm");
-            var horaF = hora2.split(":",2);
-            var hora_fin= horaF[0];
-            var min_fin = horaF[1];
-            var verified = false;
-            if(typeof hora_inicio == "undefined"){
-                verified = 'undefined';
-            }else{
-                if (hora_inicio <= 6.99 && min_inicio <= 59 || hora_fin >= 20 && min_fin >= 1) {
-                    verified = false;
-                    swal("El evento supera el horario permitido!");
-                    $scope.resetPanelCita();
-                    $scope.reloadCalendar();
-                } else  {
-                    verified = true;
-                }
-            }*/
-
-            //return verified;
+            var verified = false,
+            inicio = moment($scope.horaInicio.toString(),'H:mm a'),
+            fin = moment($scope.horaFin.toString(),'H:mm a');
+            verified = !inicio.isAfter(fin);
+            return verified;
         };
     $scope.init(); //inicializar
+    $scope.validate_hourMedic = function(){
+        var businessHours = HORARIO_TRABAJO;
+        var inicio = moment($scope.horaInicio.toString(),'H:mm a'),
+        fin= moment($scope.horaFin.toString(),'H:mm a'),
+        fecha = moment($scope.cita.fecha,'DD/MM/YYYY').format('dddd');
+        var verified = false;
+        // recorrer dias y horas
+        angular.forEach(businessHours,function(key,value){
+           var day_selected = fecha, // martes
+           day_business = $scope.map_day(parseInt(key.dow[0])); // martes
+           if(day_selected == day_business ){
+                // comparar horas
+                var hour_business_start = moment(key.start,'H:mm a');
+                var hour_business_end = moment(key.end,'H:mm a');
+                 // console.log(hour_business_start)
+                var val1 = inicio.isBetween(hour_business_start,hour_business_end);
+                // console.log("val1"+val1)
+                var val2 = fin.isBetween(hour_business_start,hour_business_end);
+                 // console.log("val2"+val2)
+
+                var val3 = inicio.isSame(hour_business_start);
+                 //console.log("val3"+val3)
+
+                var val4 = fin.isSame(hour_business_end);
+                // console.log("val4"+val4)
+
+                if((val1 == false && val2 == false && val3 == true && val4 == true) || (val1 == true && val2 == true && val3 == false && val4 == false) || (val1 == false && val2 == true && val3 == true && val4 == false)){
+                    verified = true;
+                    // console.log(true)
+                    return
+                }else {//if ((val1 == false && val2 == false && val3 == false && val4 == true) || (val1 == false && val2 == false && val3 == true && val4 == false)) {
+                    verified = false;
+                    // console.log(false)
+                    return
+                }
+           }
+        });
+        return verified;
+    };
+    
+    $scope.map_day = function(day){
+        var result ="";
+        switch(day){
+            case 1:
+                result = "lunes";
+            break;
+            case 2:
+                result = "martes";
+            break;
+            case 3:
+                result = "miércoles";
+            break;
+            case 4:
+                result = "jueves";
+            break;
+            case 5:
+                result = "viernes";
+            break;
+            case 6:
+                result = "sábado";
+            break;
+            case 7:
+                result = "domingo";
+            break;
+
+        }
+        return result;
+    };
+
     /*
     * muestra los datos para ingresar fechas de autorizacion de convenio particular o iess
     * */
@@ -366,7 +414,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout,$q) {
      * */
      $scope.submit = function (e) {
         e.preventDefault();
-        if($scope.verify_date() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
+         console.log($scope.verify_time());
+        if($scope.validate_hourMedic() && $scope.verify_time() && $scope.verify_date() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
             $scope.setDateTime();
             var fd = $("#form-cita"),
             url = fd.attr("action"),
