@@ -55,7 +55,7 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
   'label' => 'Email',
   'name' => 'email',
   'type' => 'email',
-  'validation' => 'required|email|unique:cms_users,email,11',
+  'validation' => 'required|email',
   'width' => 'col-sm-10',
 );
 			$this->form[] = array (
