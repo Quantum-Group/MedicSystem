@@ -465,7 +465,7 @@ $this->sub_module = array();
       }
     }else{
         //imprimimos en consola si la cedula tiene mas o menos de 10 digitos
-          $('#cedula').css('border-color','red').next().css('color','red').html('<b>La cédula:</b>' + cedula + ' debe tener solo 10 Dígitos');
+          $('#cedula').css('border-color','red').next().css('color','red').html('<b>La cédula:</b>' + cedula + ' debe tener 10 Dígitos');
     }    
   });
   
