@@ -18,10 +18,13 @@ cita.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
   */
 
   $scope.init = function () {
+    var date = moment(HOY,'YYYY-MM-DD').toDate();
+    date.setDate(date.getDate());
     $('#fecha').datepicker({
      language: 'es',
      autoclose: true,
-     format: 'dd/mm/yyyy'
+     format: 'dd/mm/yyyy',
+     startDate: date
    }).on("changeDate",function(e){
      $scope.citaDisponible(moment(e.date).format('YYYY-MM-DD H:mm'));
    });
@@ -45,7 +48,6 @@ cita.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
     '19:30 pm', '19:45 pm'
     ];*/
     $scope.timings =[];
-    //$();
     $("section.content-header").remove();
     $http({
       url: URL_ALL_MEDIC,
@@ -329,7 +331,7 @@ $scope.converBusinessHourstToTimings = function(fecha){
           });
                 // console.log($scope.timings)
 
-        });
+              });
       };
       $scope.map_day = function(day){
         var result ="";

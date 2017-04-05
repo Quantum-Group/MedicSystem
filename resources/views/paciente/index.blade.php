@@ -208,6 +208,7 @@ class="portlet light portlet-fit bordered">
   PATH_IMG = '{{asset('img/doctor.png')}}';
   URL_ALL_MEDIC = '{{CRUDBooster::adminPath()."/todoMedico"}}';
   PACIENTE_ID ='{{$paciente->id}}';
+  HOY = '{{\Carbon\Carbon::now()}}';
 
   //URL_MEDICO_CITA = '{{ CRUDBooster::adminPath('medico/cita')}}';
   /*
