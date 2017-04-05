@@ -15,12 +15,10 @@ Route::get('admin/verifyPaciente','PacienteController@verifyPaciente');
 Route::get('admin/getPaciente','PacienteController@getPaciente');
 Route::resource('admin/user','CmsUserController');
 
-//Start Route Laboratorio//
-
-Route::resource('admin/laboratorio/custom_laboratorio', 'AdminCustomLaboratorioController');
-
-
-
+//Start Route Orden_examen//
+Route::get('admin/orden_examenes/{id}/print', 'AdminOrdenExamenesController@printPDF');
+Route::post('admin/orden_examenes', 'AdminOrdenExamenesController@store');
+Route::put('admin/orden_examenes/{id}', 'AdminOrdenExamenesController@update');
 
 
 
@@ -35,4 +33,7 @@ Route::resource('admin/laboratorio/custom_laboratorio', 'AdminCustomLaboratorioC
 
 
 
-// ------  End Route laboratorio ----/////
+
+
+
+// ------  End Route orden_examen ----/////
