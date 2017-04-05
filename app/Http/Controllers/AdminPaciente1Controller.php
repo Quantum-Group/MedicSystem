@@ -47,7 +47,7 @@ class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\C
     'disabled' => NULL,
     'label' => 'Cédula',
     'name' => 'cedula',
-    'type' => 'text',
+    'type' => 'number',
     'validation' => 'required|min:10',
     'width' => 'col-sm-10',
     );
