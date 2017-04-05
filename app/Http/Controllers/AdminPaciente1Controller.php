@@ -395,6 +395,7 @@ $this->sub_module = array();
       format: 'yyyy-mm-dd',
       autoclose:true
     });
+    var cedula_valida = false;
     //$('#cedula').inputmask('9999999999');
     $('#cedula').keyup(function(){
      var cedula = $(this).val();
@@ -452,23 +453,33 @@ $this->sub_module = array();
           //Si el digito validador es = a 10 toma el valor de 0
         if(digito_validador == 10)
           var digito_validador = 0;
-
           //Validamos que el digito validador sea igual al de la cedula
         if(digito_validador == ultimo_digito){
           $('#cedula').css('border-color','green').next().css('color','green').html('<b>La cédula:</b>' + cedula + ' es correcta');
+          cedula_valida = true;
+
         }else{
           $('#cedula').css('border-color','red').next().html('<b>La cédula:</b>' + cedula + ' es incorrecta');
+          cedula_valida = false;
         }
       }else{
           // imprimimos en consola si la region no pertenece
-          $('#cedula').css('border-color','red').next().css('color','red').html('<b>La cédula:</b>' + cedula + ' no pertenece a ninguna region');
+        $('#cedula').css('border-color','red').next().css('color','red').html('<b>La cédula:</b>' + cedula + ' no pertenece a ninguna region');
+        cedula_valida = false;
       }
     }else{
         //imprimimos en consola si la cedula tiene mas o menos de 10 digitos
-          $('#cedula').css('border-color','red').next().css('color','red').html('<b>La cédula:</b>' + cedula + ' debe tener 10 Dígitos');
+      $('#cedula').css('border-color','red').next().css('color','red').html('<b>La cédula:</b>' + cedula + ' debe tener 10 Dígitos');
+      cedula_valida = false;
     }    
   });
-  
+  $('#form').submit(function(e){
+    if(cedula_valida == false){
+      e.preventDefault();
+      $(window).scrollTop(0,0);
+      $('#cedula').focus();
+    }
+  });
   $('#cedula').attr('pattern','[0-9]{10}');
      // corregir error de doble calendario
   $('input:text').attr('readonly',false);
