@@ -10,6 +10,7 @@ Route::get('admin/buscarMedico','PacienteController@search');
 Route::post('admin/medico/update','AdminMedico1Controller@update');
 Route::get('admin/todoMedico','PacienteController@allMedic');
 Route::get('admin/citaDisponible','PacienteController@citaDisponible');
+Route::get('admin/citaDisponible/businessHours','PacienteController@getBusinessHours');
 Route::resource('/admin/paciente/registro', 'RegistroController');
 Route::get('admin/verifyPaciente','PacienteController@verifyPaciente');
 Route::get('admin/getPaciente','PacienteController@getPaciente');

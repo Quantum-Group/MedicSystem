@@ -8,6 +8,7 @@ use App\ModMedico;
 use App\ModAgenda;
 use App\ModPaciente;
 use Carbon\Carbon;
+use App\HorarioMedico;
 
 class PacienteController extends Controller
 {
@@ -112,6 +113,13 @@ class PacienteController extends Controller
                                     }])->get();
         return response()->json([
             "agenda"=>$resultado
+        ]);
+    }
+    public function getBusinessHours(Request $request){
+        $fecha = Carbon::parse($request->get('fecha'))->format('Y-m-d');
+        $resultado = HorarioMedico::where("medico_id",$request->get('medico_id'))->get();
+        return response()->json([
+            "businessHours"=>$resultado
         ]);
     }
     public function verifyPaciente (Request $r){

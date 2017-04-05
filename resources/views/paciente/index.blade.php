@@ -136,12 +136,10 @@ class="portlet light portlet-fit bordered">
                             <div style="padding: 0px;" class="container-fluid">
                                 <div class="row" style="padding-left: 15px">
                                     <div class="col-md-6" style="margin-top:10px">
-                                        <h3 class="ng-binding" style="font-size: 16px;"><i class="fa fa-user-md"></i>&nbsp; Dr. Mario Palacios &nbsp; &nbsp; |&nbsp; &nbsp;
+                                        <h3 class="ng-binding" style="font-size: 16px;"><i class="fa fa-user-md"></i>&nbsp; [[medico_titulo + medico_nombre + medico_apellido]] &nbsp; &nbsp; |&nbsp; &nbsp;
                                             <i class="fa fa-calendar"></i>&nbsp;&nbsp;FECHA: &nbsp; &nbsp; [[ show_fecha ]]
                                         </h3>
                                     </div>
-
-
                                     <div class="col-md-6 " style="margin-top:20px">
                                         <div class="row">
                                             <div class="col-md-1">
@@ -163,9 +161,7 @@ class="portlet light portlet-fit bordered">
                                         <!--<a href="javascript:void(0)" class="btn btn-succes" role="button"><i
                                                     class="fa fa-chevron-right" aria-hidden="true"></i>
                                             Calendario</a>-->
-
                                     </div>
-
                                 </div>
                             </div>
                             <div id="selContent" class="panel-body">
@@ -207,10 +203,12 @@ class="portlet light portlet-fit bordered">
   * GLOBALS
   */
   URL_CITA_DISPONIBLE = '{{CRUDBooster::adminPath()."/citaDisponible"}}';
+  URL_BUSINESS_HOURS= '{{CRUDBooster::adminPath()."/citaDisponible/businessHours"}}';
   URL_AGENDA = '{{ CRUDBooster::adminPath('medico/agenda/') }}';
   PATH_IMG = '{{asset('img/doctor.png')}}';
   URL_ALL_MEDIC = '{{CRUDBooster::adminPath()."/todoMedico"}}';
   PACIENTE_ID ='{{$paciente->id}}';
+
   //URL_MEDICO_CITA = '{{ CRUDBooster::adminPath('medico/cita')}}';
   /*
   * -->
