@@ -7,7 +7,6 @@ use CRUDBooster;
 
 class AdminPaciente1Controller extends \crocodicstudio\crudbooster\controllers\CBController
 {
-
   public function cbInit()
   {
 			# START CONFIGURATION DO NOT REMOVE THIS LINE

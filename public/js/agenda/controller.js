@@ -209,18 +209,18 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
                 // console.log("val2"+val2)
 
                 var val3 = inicio.isSame(hour_business_start);
-                //console.log("val3"+val3)
+                // console.log("val3"+val3)
 
                 var val4 = fin.isSame(hour_business_end);
                 // console.log("val4"+val4)
 
                 if ((val1 == false && val2 == false && val3 == true && val4 == true) || (val1 == true && val2 == true && val3 == false && val4 == false) || (val1 == false && val2 == true && val3 == true && val4 == false)) {
                     verified = true;
-                    // console.log(true)
+                    console.log(true)
                     return
                 } else {//if ((val1 == false && val2 == false && val3 == false && val4 == true) || (val1 == false && val2 == false && val3 == true && val4 == false)) {
                     verified = false;
-                    // console.log(false)
+                    console.log(false)
                     return
                 }
             }
@@ -229,9 +229,10 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
     };
 
     $scope.validHours = function () {
+       // debugger;
         var inicio = moment($scope.horaInicio.toString(), 'H:mm a');
         fecha = moment($scope.cita.fecha.toString(), 'DD/MM/YYYY');
-        var compareDate = fecha.isSame(moment().format("DD/MM/YYYY")); //la fecha de la cita es igual a la fecha actual?
+        var compareDate = moment(fecha.format("DD/MM/YYYY")).isSame(moment().format("DD/MM/YYYY")); //la fecha de la cita es igual a la fecha actual?
         var result = false;
         if (compareDate) {
             if (parseInt(inicio.format('H')) > parseInt(moment().format("H")) + 1 ) { //la hora de inicio elegida para la cita es mayor que la fecha actual + 1 ?
@@ -241,8 +242,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
                 result = false;
             }
         }
+        // console.log(result)
         return result;
-
     }
 
     $scope.map_day = function (day) {
@@ -433,7 +434,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
      * */
     $scope.submit = function (e) {
         e.preventDefault();
-
         if( $scope.validHours() &&  $scope.validate_hourMedic() && $scope.verify_time() && $scope.verify_date() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
             $scope.setDateTime();
             var fd = $("#form-cita"),
@@ -464,7 +464,9 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
                         $scope.reloadCalendar();
                         $scope.resetPanelCita();
                     });
-                } else {
+                } else if (data.status == 500){
+                    swal("Error!", "Contacte al administrador!", "error");
+                }else {
                     swal("Error!", "Error en la transacción!", "error");
                 }
             });
