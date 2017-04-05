@@ -351,6 +351,7 @@ use App\ModPaciente;
 	      //$examenes = json_decode($examenes,true);
 	      //dd($tipo);
 	      //return view('vista',['examenes' => $examenes]);
+	      $pdf = \PDF::loadView('pdf',['examenes' => $examenes,'tipos' => $tipos]);
 	      $pdf->setPaper('A5');
 	      return $pdf->stream();
 	    }
