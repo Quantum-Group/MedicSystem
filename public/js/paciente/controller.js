@@ -292,6 +292,10 @@ $scope.citaDisponible = function (fecha) {
         }
       });
       $scope.cDisponible = citasDisp;
+      if($scope.cDisponible.length == 0){
+          $("#msg").html("<h1 style='margin-top:15px;'>No existen horario disponible para agendar cita</h1>");
+      }
+      else{  $("#msg").html("");}
     });
   $scope.functionIsRunning = false;
     $scope.count++; // usado para inicializar el timeout una sola vez

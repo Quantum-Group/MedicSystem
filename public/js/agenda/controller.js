@@ -1,4 +1,4 @@
-agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
+﻿agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
     /*variables de inicializacion*/
     $scope.panel_default = function () {
         this.title_panel = "Agendar nueva Cita";
@@ -229,11 +229,11 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
     };
 
     $scope.validHours = function () {
-       // debugger;
+        //debugger;
         var inicio = moment($scope.horaInicio.toString(), 'H:mm a');
         fecha = moment($scope.cita.fecha.toString(), 'DD/MM/YYYY');
         var compareDate = moment(fecha.format("DD/MM/YYYY")).isSame(moment().format("DD/MM/YYYY")); //la fecha de la cita es igual a la fecha actual?
-        var result = false;
+        var result = true;
         if (compareDate) {
             if (parseInt(inicio.format('H')) > parseInt(moment().format("H")) + 1 ) { //la hora de inicio elegida para la cita es mayor que la fecha actual + 1 ?
                 result = true;
@@ -242,7 +242,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
                 result = false;
             }
         }
-        // console.log(result)
+         console.log(result)
         return result;
     }
 
