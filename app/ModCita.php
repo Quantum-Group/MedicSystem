@@ -18,7 +18,8 @@ class ModCita extends Model
         "title",
         "color",
         "trash",
-        "sel_convenio"
+        "sel_convenio",
+        "constraint"
     ];
     public function agenda(){
         return $this->belongsTo('\App\ModAgenda');

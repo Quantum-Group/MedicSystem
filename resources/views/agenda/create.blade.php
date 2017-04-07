@@ -1,5 +1,6 @@
-<?php
-$page_title = $agenda->nombre;
+
+<?php 
+ $page_title = $agenda->nombre;
 ?>
 @extends("crudbooster::admin_template")
 @section("content")
@@ -7,15 +8,41 @@ $page_title = $agenda->nombre;
         .fc-time-grid .fc-slats td {
             height: 40px !important;
         }
-
         .container-full {
             margin: 0 auto;
             width: 100%;
         }
+        div.fc-time span{
+            font-family: "Century Schoolbook", sans-serif;
+            color: white;
+            font-weight: bolder;
+            font-size: 13px;
+
+
+        }
+        .fc-time-grid-event .fc-time{
+            padding: 3px;
+        }
+        div.fc-time{
+            text-align: center;
+
+        }
+        .fc-bgevent {
+            background: #2c3e50;
+        }
+        div.fc-title{
+            font-family: "Roboto",  sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.6pt;
+            text-align: center;
+        }
+        .validate_hours li{
+            text-align: left;
+        }
     </style>
     {{--modal edicion de evento--}}
     <div ng-app="AppAgenda"
-         ng-init="fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);"
+         ng-init="cita.fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);cita.hoy=('{{Carbon\Carbon::now()->format('d/m/Y')}}')"
          ng-controller="CtrlApp" ng-cloack>
         @include("agenda.modals")
         <div class="box">
@@ -82,8 +109,18 @@ $page_title = $agenda->nombre;
                 fecha_vence:'{{$cita->convenio->fecha_vence}}'
             }
         };
-        PANEL ={};
-        //console.log(CITA);
+        PANEL ={};        
+        HORARIO_TRABAJO = [
+            @foreach($horario_medico as $h)
+            {
+                    dow: [ '{{$h->dow}}' ], // Monday, Tuesday, Wednesday
+                    start: '{{$h->start}}', // 8am
+                    end: '{{$h->end}}' // 6pm
+            },
+            @endforeach    
+            ];
+        HORARIO_TRABAJO = HORARIO_TRABAJO.length > 0 ? HORARIO_TRABAJO :false;
+        HOY = '{{Carbon\Carbon::now()->format('d/m/Y')}}';
         /*
          * -->
          */

@@ -111,8 +111,11 @@ class CBController extends Controller {
 		$this->data['parent_id'] 		 	 = (g('parent_id'))?:$this->parent_id;			
 
         view()->share($this->data);
-	} 
-
+	}
+	public function cbView($template,$data) {
+			$this->cbLoader();
+			echo view($template,$data);
+	}
 	private function checkHideForm() {
 		if(count($this->hide_form)) {
 			foreach($this->form as $i=>$f) {

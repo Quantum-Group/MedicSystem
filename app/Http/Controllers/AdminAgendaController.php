@@ -10,7 +10,9 @@ use App\ModPaciente;
 use App\ModMedico;
 use App\ModAgenda;
 use App\ModCita;
-use App\Mail\CitaAgenda;
+use App\Mail\EmailPaciente;
+use App\Mail\EmailMedico;
+use App\HorarioMedico;
 use Mail;
 use Carbon\Carbon;
 
@@ -27,8 +29,7 @@ class AdminAgendaController extends Controller
         $agenda = ModAgenda::where("medico_id",$medico_id->id)->first();
         $paciente = ModPaciente::all();
         $medico = ModMedico::find($medico_id->id);
-        $page_title = "Agendar Cita";
-        return view('agenda.create',compact('page_title'),["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico]);
+        return view('agenda.create',["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico]);
     }
 
     /**
@@ -62,6 +63,7 @@ class AdminAgendaController extends Controller
             $cita->estado_cita = 1;
             $cita->start = $request->get("start");
             $cita->end = $request->get("end");
+            $cita->constraint = $request->get("constraint");
             $sel_convenio = explode(":",$request->get("sel_convenio"));
             $sel_convenio = $sel_convenio[1];
             $cita->sel_convenio = $sel_convenio;
@@ -74,7 +76,7 @@ class AdminAgendaController extends Controller
                 $cita->agenda_id = $agenda_id;
             }
             $medico = ModMedico::find($request->get("medico_id"));
-            $cita->title = ($medico->titulo . " " . $medico->nombre . " " . $medico->apellido . "," . $paciente->nombre . " " . $paciente->apellido);
+            $cita->title = ($medico->titulo . " " . $medico->nombre . " " . $medico->apellido . ", " . $paciente->nombre . " " . $paciente->apellido);
             $response = $cita->save();
 
             if($response){// si se guarda la cita
@@ -94,14 +96,17 @@ class AdminAgendaController extends Controller
                  /*
                   * Envio de e-mail cuando se guarda la cita
                   * */
-                 $sendEmail = Mail::to($paciente->email)->send(new CitaAgenda($paciente));
+                 $email_medico = !is_null($medico->email) ? $medico->email : "pablodc002@gmail.com";
+                 $email_paciente = !is_null($paciente->email) ? $paciente->email : "pablodc002@gmail.com";
+                 try{
+                    Mail::to(trim($email_paciente))->send(new EmailPaciente($paciente,$medico,$cita));
+                    Mail::to(trim($email_medico))->send(new EmailMedico($medico,$paciente,$cita));
+                 }catch(\Error $x){}
             }
         }
-
         return response()->json([
             "response"=>$response,
-            "cita"=>$cita,
-            "sendEmail"=>$sendEmail
+            "cita"=>$cita
         ]);
     }
 
@@ -128,8 +133,9 @@ class AdminAgendaController extends Controller
         $agenda = ModAgenda::where("medico_id",$id)->first();
         $paciente = ModPaciente::all();
         $medico = ModMedico::find($id);
+        $horario_medico = HorarioMedico::where("medico_id",$medico->id)->get();
         $page_title = "Agendar Cita";
-        return view('agenda.create',compact('page_title'),["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico]);
+        return view('agenda.create',compact('page_title'),["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico,"horario_medico"=>$horario_medico]);
     }
 
     /**

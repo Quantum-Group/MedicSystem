@@ -6,11 +6,15 @@ use Request;
 use DB;
 use CRUDbooster;
 use App\ModMedico;
+use App\ModPaciente;
 use App\CmsUser;
 
 class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CBController {
 
+
+
 	public function cbInit() {
+
 		# START CONFIGURATION DO NOT REMOVE THIS LINE
 		$this->table               = 'cms_users';
 		$this->primary_key         = 'id';
@@ -51,7 +55,7 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
   'label' => 'Email',
   'name' => 'email',
   'type' => 'email',
-  'validation' => 'required|email|unique:cms_users,email,11',
+  'validation' => 'required|email',
   'width' => 'col-sm-10',
 );
 			$this->form[] = array (
@@ -71,7 +75,7 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
   'dataquery' => NULL,
   'style' => NULL,
   'help' => NULL,
-  'datatable_where' => NULL,
+  'datatable_where' => 'cms_privileges.name <> "Super Administrator" and cms_privileges.name <> "Paciente"',
   'datatable_format' => NULL,
   'parent_select' => NULL,
   'label' => 'Privilegio',
@@ -111,6 +115,7 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
 		$data['return_url'] = Request::fullUrl();
 		return view('crudbooster::default.form',$data);
 	}
+  
   public function hook_after_add($id)
   {
       /*
@@ -132,11 +137,13 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
   {
     try {
 			$user = CmsUser::with('privilege')->find($id);
-			if($user->privilege->id == 3){ // es paciente
+      $paciente = ModPaciente::where("cms_user_id",$id)->first();
+      $medico = ModMedico::where("cms_user_id",$id)->first();
+			if($user->privilege->id == 3 && count($paciente) > 0){ // es paciente
 				$p = ModPaciente::where("cms_user_id","=",$id)->first();
 				$p->cms_user_id = null;
 				$p->save();
-			}else if($user->privilege->id == 4){ // es medico
+			}else if($user->privilege->id == 4 && count($medico) > 0){ // es medico
 				$m = ModMedico::where("cms_user_id","=",$id)->first();
 				$m->cms_user_id = null;
 				$m->save();
@@ -145,4 +152,22 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
     }catch (\Error $x){
     }
   }
+
+
+    public function hook_query_index(&$query) {
+
+        //Los id=1  y id=2 pertenencen al superadmin y al distribuidor principal respectivamente.
+
+        $idUser = CRUDBooster::myId();
+        if($idUser == 2 || $idUser == 3 )
+        {
+            $query->where('cms_users.id','<>',1);
+
+        }
+
+    }
+
+
+
+
 }

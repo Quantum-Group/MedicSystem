@@ -1,7 +1,18 @@
 agenda.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
     $scope.init = function () {
         $scope.uno = 0;
+        $scope.modalCita = function(){
+            this.modalTitle ="";
+            this.fechaInicio ="";
+            this.horaInicio ="";
+            this.paciente ="";
+            this.observ ="";
+            this.sel_convenio ="";
+            this.autorizacion ="";
+            this.fecha_autorizacion ="";
+            this.fecha_vence ="";
 
+        };
         $('#calendar').fullCalendar({
                 header: {
                     left: 'prev,next, today',
@@ -27,25 +38,21 @@ agenda.controller("CtrlApp", function ($scope, $http, $window,$timeout) {
             element.click(function () {
                 $("#mod_mostrar_cita").modal('show');
                 // colocar titulo
-                $scope.modalTitle ="";
-                $scope.modalTitle = 'Cita Agendada - '+event.title;
-                $scope.fechaInicio ="";
-                $scope.fechaInicio = moment(event.start).format('DD/MM/YYYY');
-                $scope.horaInicio ="";
-                $scope.horaInicio = moment(event.start).format('h:mm a');
-                $scope.paciente ="";
-                $scope.paciente = moment(event.start).format('h:mm a');
-                $scope.observ ="";
-                $scope.observ = event.detalle_cita;
-                $scope.sel_convenio ="";
-                $scope.sel_convenio = event.sel_convenio;
-                $scope.autorizacion ="";
-                $scope.autorizacion = event.convenio.autorizacion;
-                $scope.fecha_autorizacion ="";
-                $scope.fecha_autorizacion = event.convenio.fecha_autorizacion;
-                $scope.fecha_vence ="";
-                $scope.fecha_vence = event.convenio.fecha_vence;
-                $scope.$apply(); //refrescar el objeto $scope
+                $scope.$apply(function () {
+                    var cita = new $scope.modalCita();
+                    cita.modalTitle = 'Cita Agendada - '+event.title;
+                    cita.fechaInicio = moment(event.start).format('DD/MM/YYYY');
+                    cita.horaInicio = moment(event.start).format('h:mm a');
+                    cita.paciente = moment(event.start).format('h:mm a');
+                    cita.observ = event.detalle_cita;
+                    cita.sel_convenio = event.sel_convenio;
+                    try{
+                        cita.autorizacion = event.convenio.autorizacion ;
+                        cita.fecha_autorizacion = event.convenio.fecha_autorizacion;
+                        cita.fecha_vence = event.convenio.fecha_vence;
+                    }catch(e){}
+                    $scope.cita = cita;
+                });
             });
         }
     });

@@ -1,27 +1,27 @@
-agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
+﻿agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout, $q) {
     /*variables de inicializacion*/
-    $scope.panel_default = {
-        title_panel: "Agendar nueva Cita",
-        class_heading: "panel-primary",
-        url: URL_MEDICO_AGENDA,
-        buttons: {
+    $scope.panel_default = function () {
+        this.title_panel = "Agendar nueva Cita";
+        this.class_heading = "panel-primary";
+        this.url = URL_MEDICO_AGENDA;
+        this.buttons = {
             agendar: true,
             trash: false,
             cancelar: false,
             modificar: false
         }
     };
-    $scope.panel_modify = {
-        title_panel: "Modificar Cita",
-        class_heading: "carrot",
-        style_body: "background-color:white",
-        url: URL_MEDICO_CITA,
-        method: {
+    $scope.panel_modify = function () {
+        this.title_panel = "Modificar Cita";
+        this.class_heading = "carrot";
+        this.style_body = "background-color:white";
+        this.url = URL_MEDICO_CITA;
+        this.method = {
             name: "_method",
             value: "PATCH"
-        },
-        class_text_title: "white-header",
-        buttons: {
+        };
+        this.class_text_title = "white-header";
+        this.buttons = {
             agendar: false,
             trash: true,
             cancelar: true,
@@ -29,7 +29,7 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         }
     };
     // Borra los campos del ingreso de datos de actualizacion
-    $scope.resetAutorizacion= function(){
+    $scope.resetAutorizacion = function () {
         $scope.autorizacion = "";
         $scope.fecha_autorizacion = "";
         $scope.fecha_vence = "";
@@ -42,16 +42,17 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
          * Preparar el panel para modificar una cita
          * */
         $scope.config = {
-            defaultDate:moment(event.start).format('YYYY-MM-DD'),
-            defaultView:'agendaDay'
+            defaultDate: moment(event.start).format('YYYY-MM-DD'),
+            defaultView: 'agendaDay'
         };
-        $("#calendar").fullCalendar( 'gotoDate', moment(event.start).format('YYYY-MM-DD'));
-        $scope.panel_modify.url = URL_MEDICO_CITA + "/" + event.id;
+        var panelModificar = new $scope.panel_modify();
+        $("#calendar").fullCalendar('gotoDate', moment(event.start).format('YYYY-MM-DD'));
+        panelModificar.url = URL_MEDICO_CITA + "/" + event.id;
         $scope.cita_id = event.id;
         $("#select-paciente").val(event.paciente_id).trigger("change");
         $scope.cita = {
-            descripcion:event.detalle_cita,
-            fecha:moment(event.start).format('DD/MM/YYYY')
+            descripcion: event.detalle_cita,
+            fecha: moment(event.start).format('DD/MM/YYYY')
         };
         $scope.horaInicio = moment(event.start).format('H:mm a');
         $scope.horaFin = moment(event.end).format('H:mm a');
@@ -60,36 +61,45 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         //convenio assign
         $scope.sel_convenio = event.sel_convenio;
         $("#sel_convenio").trigger("change");
-        if($scope.sel_convenio == "I.E.S.S."){
+        if ($scope.sel_convenio == "I.E.S.S.") {
+            $scope.tipo_convenio = true;
             try {
                 $scope.autorizacion = event.convenio.autorizacion;
-                $scope.fecha_autorizacion = moment(event.convenio.fecha_autorizacion,"YYYY-MM-DD").format("DD/MM/YYYY");
-                $scope.fecha_vence = moment(event.convenio.fecha_vence,"YYYY-MM-DD").format("DD/MM/YYYY");
-            }catch(err){}
-        }else{
+                $scope.fecha_autorizacion = moment(event.convenio.fecha_autorizacion, "YYYY-MM-DD").format("DD/MM/YYYY");
+                $scope.fecha_vence = moment(event.convenio.fecha_vence, "YYYY-MM-DD").format("DD/MM/YYYY");
+            } catch (e) {
+                console.log(e);
+            }
+        } else {
             $scope.resetAutorizacion();
         }
         //cambio de botones
         $scope.modificar = true;
         $scope.agendar = false;
-        $scope.panel = $scope.panel_modify;
+        $scope.panel = panelModificar;
         /*$scope.$watch('panel',function(){
-            $scope.panel = $scope.panel_modify;
-        });*/
-        try{$scope.$apply();}catch(err){}
+         $scope.panel = $scope.panel_modify;
+         });*/
+        try {
+            $scope.$apply();
+        } catch (e) {
+
+        }
     };
     /*
      * Inicializacion
      */
+
     $scope.init = function () {
+        $scope.tipo_convenio = true;
         $scope.config = {
-            defaultDate:$scope.fecha,
-            defaultView:'agendaWeek'
+            defaultDate: $scope.fecha,
+            defaultView: 'agendaWeek'
         };
-        $scope.sel_convenio = "PARTICULAR";
+        $scope.sel_convenio = "I.E.S.S.";
         $scope.options_convenio = [
-            "PARTICULAR",
-            "I.E.S.S."
+            "I.E.S.S.",
+            "PARTICULAR"
         ];
         $(".select2").select2();
         $('#fecha, .datepicker').datepicker({
@@ -104,14 +114,17 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                 right: 'month,agendaWeek,agendaDay'
             },
             defaultDate: $scope.config.defaultDate,
-            height: 450, //alto del calendario
+            height: 460, //alto del calendario
             defaultView: $scope.config.defaultView,
             locale: 'es', // tomado de locale
             buttonIcons: true,
             selectHelper: true,
             navLinks: true,
+            businessHours: HORARIO_TRABAJO,
+            //eventConstraint:'businessHours',
             editable: true,
             eventLimit: true,
+            //businessHours:true,
             minTime: "7:00:00",
             maxTime: "20:00:00",
             aspectRatio: 2,
@@ -123,70 +136,157 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
             //fixedWeekCount:true,
             //weekNumbers: true,
             timeFormat: 'H:mm',
+            //dayBreakTime: "07:00",
             events: {
                 url: URL_CITAS
             },
-            eventResizeStop:function(){
+            eventResizeStop: function () {
                 $scope.verify_time();
             },
             eventRender: function (event, element) {
                 element.click(function () {
-                    //cambiar color panel
                     $scope.panelModCita(event);
                 });
             },
             eventResize: function (event, delta, revertFunc) {
                 $scope.panelModCita(event);
             },
-            eventDrop: function (event, delta, revertFunc) {
-                    $scope.panelModCita(event);
+            eventDrop: function (event, delta, revertFunc, jsEvent, ui, view) {
+                //console.log(view.options.businessHours);
+                $scope.panelModCita(event);
                 $scope.verify_time();
+            },
+            eventClick: function (calEvent, jsEvent, view) {
+
+                // change the border color just for fun
+                $(this).css('border-color', 'red');
             }
         });
         /*
-        *  Inicializar paneles
-        * */
-        if(CITA.id == ""){
-            $scope.panel =  $scope.panel_default;
-        }else {
+         *  Inicializar paneles
+         * */
+        if (CITA.id == "") {
+            $scope.panel = new $scope.panel_default();
+        } else {
             $scope.panelModCita(CITA);
         }
     };
-    $scope.verify_time = function () {
-        var hora1 = moment($scope.horaInicio, "H:mm a").format("H:mm");
-        var horaI = hora1.split(":",2);
-        var hora_inicio = horaI[0];
-        var min_inicio = horaI[1];
-        var hora2 = moment($scope.horaFin, "H:mm a").format("H:mm");
-        var horaF = hora2.split(":",2);
-        var hora_fin= horaF[0];
-        var min_fin = horaF[1];
-        var verified = false;
-        if(typeof hora_inicio == "undefined"){
-            verified = 'undefined';
-        }else{
-            if (hora_inicio <= 6.99 && min_inicio <= 59 || hora_fin >= 20 && min_fin >= 1) {
-                verified = false;
-                swal("El evento supera el horario permitido!");
-                $scope.resetPanelCita();
-                $scope.reloadCalendar();
-            } else  {
-                verified = true;
-            }
+    $scope.verify_date = function () {
+        if (typeof $scope.cita.hoy == 'undefined') {
+            $scope.cita.hoy = HOY;
         }
-
+        var verified = false, equal = false, hoy = $scope.cita.hoy.toString(), fecha = $scope.cita.fecha.toString();
+        verified = !moment($scope.cita.hoy, 'DD/MM/YYYY').isAfter($scope.cita.fecha);
+        equal = moment(hoy).isSame(fecha);
+        return verified == true || equal;
+    };
+    $scope.verify_time = function () {
+        var verified = false,
+            inicio = moment($scope.horaInicio.toString(), 'H:mm a'),
+            fin = moment($scope.horaFin.toString(), 'H:mm a');
+        verified = !inicio.isAfter(fin);
         return verified;
     };
     $scope.init(); //inicializar
-    /*
-    * muestra los datos para ingresar fechas de autorizacion de convenio particular o iess
-    * */
-    $scope.show_convenio = function(){
-        // mostrar modal si es IESS
-        $scope.sel_convenio == "I.E.S.S." ? $("#modal_autorizacion").modal("show") : null ;
+    $scope.validate_hourMedic = function () {
+        var businessHours = HORARIO_TRABAJO;
+        var inicio = moment($scope.horaInicio.toString(), 'H:mm a'),
+            fin = moment($scope.horaFin.toString(), 'H:mm a'),
+            fecha = moment($scope.cita.fecha, 'DD/MM/YYYY').format('dddd');
+        var verified = false;
+        // recorrer dias y horas
+        angular.forEach(businessHours, function (key, value) {
+            var day_selected = fecha, // martes
+                day_business = $scope.map_day(parseInt(key.dow[0])); // martes
+            if (day_selected == day_business) {
+                // comparar horas
+                var hour_business_start = moment(key.start, 'H:mm a');
+                var hour_business_end = moment(key.end, 'H:mm a');
+                // console.log(hour_business_start)
+                var val1 = inicio.isBetween(hour_business_start, hour_business_end);
+                // console.log("val1"+val1)
+                var val2 = fin.isBetween(hour_business_start, hour_business_end);
+                // console.log("val2"+val2)
+
+                var val3 = inicio.isSame(hour_business_start);
+                // console.log("val3"+val3)
+
+                var val4 = fin.isSame(hour_business_end);
+                // console.log("val4"+val4)
+
+                if ((val1 == false && val2 == false && val3 == true && val4 == true) || (val1 == true && val2 == true && val3 == false && val4 == false) || (val1 == false && val2 == true && val3 == true && val4 == false)) {
+                    verified = true;
+                    console.log(true)
+                    return
+                } else {//if ((val1 == false && val2 == false && val3 == false && val4 == true) || (val1 == false && val2 == false && val3 == true && val4 == false)) {
+                    verified = false;
+                    console.log(false)
+                    return
+                }
+            }
+        });
+        return verified;
     };
 
+    $scope.validHours = function () {
+        //debugger;
+        var inicio = moment($scope.horaInicio.toString(), 'H:mm a');
+        fecha = moment($scope.cita.fecha.toString(), 'DD/MM/YYYY');
+        var compareDate = moment(fecha.format("DD/MM/YYYY")).isSame(moment().format("DD/MM/YYYY")); //la fecha de la cita es igual a la fecha actual?
+        var result = true;
+        if (compareDate) {
+            if (parseInt(inicio.format('H')) > parseInt(moment().format("H")) + 1 ) { //la hora de inicio elegida para la cita es mayor que la fecha actual + 1 ?
+                result = true;
+            }
+            else {
+                result = false;
+            }
+        }
+         console.log(result)
+        return result;
+    }
 
+    $scope.map_day = function (day) {
+        var result = "";
+        switch (day) {
+            case 1:
+                result = "lunes";
+                break;
+            case 2:
+                result = "martes";
+                break;
+            case 3:
+                result = "miércoles";
+                break;
+            case 4:
+                result = "jueves";
+                break;
+            case 5:
+                result = "viernes";
+                break;
+            case 6:
+                result = "sábado";
+                break;
+            case 7:
+                result = "domingo";
+                break;
+
+        }
+        return result;
+    };
+
+    /*
+     * muestra los datos para ingresar fechas de autorizacion de convenio particular o iess
+     * */
+    $scope.eval_convenio = function () {
+        console.log($scope.sel_convenio)
+        if ($scope.sel_convenio == 'I.E.S.S.') {
+            $scope.tipo_convenio = true;
+        } else {
+            $scope.tipo_convenio = false;
+
+        }
+    };
     $scope.eliminarCita = function () {
         swal({
             title: '¿Mover a la papelera?',
@@ -226,16 +326,20 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
         });
     };
     $scope.resetPanelCita = function () {
-        $scope.cita={descripcion:""};
+        $scope.cita = {descripcion: ""};
         $scope.horaInicio = "";
         $scope.horaFin = "";
-        $scope.cita={fecha : $scope.fecha};
+        // $scope.cita={fecha : $scope.cita.fecha};
         $scope.resetAutorizacion();
-        $scope.panel = $scope.panel_default;
+        $scope.panel = new $scope.panel_default();
         /*$scope.$watch('panel',function(){
-            $scope.panel = $scope.panel_default;
-        });*/
-        try{$scope.$apply();}catch(err){console.log(err);}
+         $scope.panel = $scope.panel_default;
+         });*/
+        try {
+            $scope.$apply();
+        } catch (err) {
+            console.log(err);
+        }
     };
     /*
      * Recarga la página actual
@@ -319,7 +423,6 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
     /*
      *  Sincronizar agenda
      * */
-
     $scope.agendaWorker = {
         load: function () {
             $("#calendar").fullCalendar("refetchEvents");
@@ -331,11 +434,11 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
      * */
     $scope.submit = function (e) {
         e.preventDefault();
-        if($scope.verify_time() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
+        if( $scope.validHours() &&  $scope.validate_hourMedic() && $scope.verify_time() && $scope.verify_date() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
             $scope.setDateTime();
             var fd = $("#form-cita"),
-                url = fd.attr("action"),
-                data = fd.serialize();
+            url = fd.attr("action"),
+            data = fd.serialize();
             swal({
                 title: "Procesando",
                 text: 'Espere...',
@@ -361,7 +464,9 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
                         $scope.reloadCalendar();
                         $scope.resetPanelCita();
                     });
-                } else {
+                } else if (data.status == 500){
+                    swal("Error!", "Contacte al administrador!", "error");
+                }else {
                     swal("Error!", "Error en la transacción!", "error");
                 }
             });
@@ -369,7 +474,8 @@ agenda.controller("CtrlApp", function ($scope, $http, $window, $timeout) {
             swal({
                 type:"error",
                 title:"Error!",
-                text:"Revise que los campos no esten vacios y que las horas de inicio no sean las mismas que las de fin!"
+                html:true,
+                text:"<h3>Corrija los siguientes errores:</h3><br> <ol class='validate_hours'><li>Que la hora de inicio sea mayor o igual que la de fin.</li><li>Que los campos de horario no estén vacíos. </li><li>Que la cita esté dentro del horario de trabajo del médico seleccionado.</li></ul>"
             });
         }
     };

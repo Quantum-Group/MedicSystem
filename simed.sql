@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2017 a las 00:45:31
+-- Tiempo de generación: 29-03-2017 a las 01:14:12
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -34,23 +34,6 @@ CREATE TABLE `agenda` (
   `medico_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `agenda`
---
-
-INSERT INTO `agenda` (`id`, `nombre`, `created_at`, `updated_at`, `medico_id`) VALUES
-(1, 'Agenda de Dr. Mario Palacios', '2017-02-07 16:28:48', '2017-02-07 16:28:48', 2),
-(2, 'Agenda de Dra. Maria Palacios', '2017-02-14 14:59:53', '2017-02-14 14:59:53', 3),
-(3, 'Agenda de Dr. Francisco Silva', '2017-02-14 15:16:27', '2017-02-14 15:16:27', 4),
-(4, 'Agenda de Dr. Julio Jaramillo', '2017-02-16 21:21:57', '2017-02-16 21:21:57', 5),
-(5, 'Agenda de Dra. Juana Herrera', '2017-02-16 21:22:33', '2017-02-16 21:22:33', 6),
-(6, 'Agenda de Dra. Leti Santos', '2017-02-16 21:23:06', '2017-02-16 21:23:06', 7),
-(7, 'Agenda de Dra. Celia Camaño', '2017-02-17 17:12:24', '2017-02-17 17:12:24', 8),
-(8, 'Agenda de Dra. Carla Borja', '2017-02-21 15:23:36', '2017-02-21 15:23:36', 9),
-(9, 'Agenda de Dr. Pepe Proaño', '2017-02-21 15:24:06', '2017-02-21 15:24:06', 10),
-(10, 'Agenda de Dra. LUCY PEREZ', '2017-03-15 22:14:48', '2017-03-15 22:14:48', 11),
-(11, 'Agenda de Dr. Marco Del Pozo', '2017-03-20 19:48:13', '2017-03-20 19:48:13', 12);
-
 -- --------------------------------------------------------
 
 --
@@ -70,106 +53,23 @@ CREATE TABLE `cita_calendario` (
   `agenda_id` int(10) UNSIGNED DEFAULT NULL,
   `paciente_id` int(10) UNSIGNED DEFAULT NULL,
   `trash` tinyint(1) DEFAULT NULL,
-  `sel_convenio` varchar(12) CHARACTER SET utf8 DEFAULT NULL
+  `sel_convenio` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
+  `constraint` varchar(13) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `cita_calendario`
 --
 
-INSERT INTO `cita_calendario` (`id`, `detalle_cita`, `estado_cita`, `created_at`, `updated_at`, `start`, `end`, `title`, `color`, `agenda_id`, `paciente_id`, `trash`, `sel_convenio`) VALUES
-(8, 'OTRA COSA', 0, '2017-02-10 16:04:34', '2017-02-13 17:37:01', '2017-02-09T08:45:00-05:00', '2017-02-09T09:00:00-05:00', 'Dr. Mario Palacios,Pablo Chamba', NULL, 1, 2, NULL, NULL),
-(9, 'NOTA CAMBIADA DE FECHA', 0, '2017-02-10 16:08:54', '2017-02-17 22:26:35', '2017-02-17T06:15:00-05:00', '2017-02-17T06:30:00-05:00', 'Dr. Mario Palacios,Leonardo Armijos', NULL, 1, 1, NULL, NULL),
-(10, 'OBSERVACION', 0, '2017-02-10 16:14:56', '2017-02-10 20:02:32', '2017-02-10T07:15:00-05:00', '2017-02-10T08:30:00-05:00', 'Dr. Mario Palacios,Leonardo Armijos', NULL, 1, 1, NULL, NULL),
-(12, 'cita lesnier', 0, '2017-02-13 15:41:57', '2017-02-13 15:41:57', '2017-02-13T07:00:00-05:00', '2017-02-13T07:30:00-05:00', 'Dr. Mario Palacios,Leonardo Armijos', NULL, 1, 1, NULL, NULL),
-(13, 'ALGO MAS', 0, '2017-02-13 15:42:45', '2017-02-13 17:14:00', '2017-02-13T07:30:00-05:00', '2017-02-13T07:45:00-05:00', 'Dr. Mario Palacios,Pablo Chamba', NULL, 1, 2, NULL, NULL),
-(14, 'Observaciones del call center', 0, '2017-02-14 15:42:59', '2017-02-14 22:41:05', '2017-02-14T09:00:00-05:00', '2017-02-14T10:00:00-05:00', 'Dr. Francisco Silva,Leonardo Armijos', NULL, 3, 1, NULL, NULL),
-(15, 'cita normal', 0, '2017-02-20 18:22:53', '2017-02-23 16:20:14', '2017-02-23T07:00:00-05:00', '2017-02-23T07:15:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, NULL),
-(16, 'CITA CON PABLO', 0, '2017-02-20 19:06:02', '2017-02-23 16:20:09', '2017-02-23T07:15:00-05:00', '2017-02-23T07:30:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(17, 'Hola', 0, '2017-02-20 22:10:18', '2017-02-23 16:19:43', '2017-02-23T07:30:00-05:00', '2017-02-23T08:00:00-05:00', 'Dra. Celia Camaño,Juan jou', NULL, 7, 3, NULL, NULL),
-(18, 'lesnier', 0, '2017-02-20 22:10:54', '2017-02-23 22:36:30', '2017-02-23T08:00:00-05:00', '2017-02-23T08:15:00-05:00', 'Dra. Celia Camaño,Lesnier Gonzalez', NULL, 7, 4, NULL, NULL),
-(21, 'otra cita', 0, '2017-02-21 16:10:57', '2017-02-23 16:18:01', '2017-02-23T08:30:00-05:00', '2017-02-23T08:45:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, NULL),
-(22, 'SIGUIENTE CITA EN EL DIA', 0, '2017-02-21 17:47:54', '2017-02-23 22:44:39', '2017-02-23T08:45:00-05:00', '2017-02-23T09:45:00-05:00', 'Dra. Celia Camaño,Juan jou', NULL, 7, 3, NULL, NULL),
-(23, 'asldfahs', 0, '2017-02-21 20:32:52', '2017-02-23 22:44:00', '2017-02-23T08:15:00-05:00', '2017-02-23T08:30:00-05:00', 'Dra. Celia Camaño,Lesnier Gonzalez', NULL, 7, 4, NULL, NULL),
-(25, 'otro evento', 0, '2017-02-22 23:12:16', '2017-02-23 15:38:31', '2017-02-23T13:00:00-05:00', '2017-02-23T13:15:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(26, 'cita de urgencia', 0, '2017-02-23 17:06:39', '2017-02-23 22:45:45', '2017-02-23T09:45:00-05:00', '2017-02-23T10:15:00-05:00', 'Dra. Celia Camaño,Lesnier Gonzalez', NULL, 7, 4, NULL, NULL),
-(27, NULL, 0, '2017-02-24 20:56:23', '2017-02-24 20:56:23', '2017-02-24T07:00:00-05:00', '2017-02-24T07:15:00-05:00', 'Dra. Celia Camaño,Juan jou', NULL, NULL, 3, NULL, NULL),
-(28, 'Realizado por el usuario', 0, '2017-02-24 21:02:55', '2017-02-24 21:02:55', '2017-02-24T07:00:00-05:00', '2017-02-24T07:15:00-05:00', 'Dra. Celia Camaño,Juan jou', NULL, NULL, 3, NULL, NULL),
-(29, 'Realizado por el usuario', 0, '2017-03-01 16:00:06', '2017-03-01 16:00:06', '2017-03-01T07:00:00-05:00', '2017-03-01T07:15:00-05:00', 'Dr. Julio Jaramillo,Juan jou', NULL, NULL, 3, NULL, NULL),
-(37, 'Realizado por el usuario', 0, '2017-03-03 18:32:18', '2017-03-03 18:32:18', '2017-03-03T07:00:00-05:00', '2017-03-03T07:15:00-05:00', 'Dra. Celia Camaño,Juanco ', NULL, 7, 10, NULL, NULL),
-(38, 'Realizado por el usuario', 0, '2017-03-03 18:49:35', '2017-03-03 18:49:35', '2017-03-03T07:15:00-05:00', '2017-03-03T07:30:00-05:00', 'Dra. Celia Camaño,Diana ', NULL, 7, 11, NULL, NULL),
-(40, 'Realizado por el usuario', 0, '2017-03-06 19:53:20', '2017-03-06 19:55:44', '2017-03-06T07:00:00-05:00', '2017-03-06T07:15:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(41, 'Realizado por el usuario', 0, '2017-03-07 17:30:09', '2017-03-07 17:30:09', '2017-03-07T07:15:00-05:00', '2017-03-07T07:30:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(43, 'FUUUUUUUULLLLIIIIIIASFDAS111', 1, '2017-03-07 17:40:55', '2017-03-21 21:15:16', '2017-03-21T07:30:00-05:00', '2017-03-21T07:45:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, 'I.E.S.S.'),
-(44, 'desde medico', 0, '2017-03-07 17:42:08', '2017-03-07 18:05:07', '2017-03-07T07:45:00-05:00', '2017-03-07T08:00:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, NULL),
-(45, 'Realizado por el usuario', 0, '2017-03-07 17:48:46', '2017-03-07 17:48:46', '2017-03-07T07:00:00-05:00', '2017-03-07T07:15:00-05:00', 'Dr. Francisco Silva,Pablo Chamba', NULL, 3, 2, NULL, NULL),
-(46, 'Realizado por el usuario', 0, '2017-03-07 17:49:11', '2017-03-07 17:49:11', '2017-03-08T08:00:00-05:00', '2017-03-08T08:15:00-05:00', 'Dr. Mario Palacios,Pablo Chamba', NULL, 1, 2, NULL, NULL),
-(48, 'Realizado por el usuario', 0, '2017-03-07 19:49:39', '2017-03-07 19:49:39', '2017-03-07T08:15:00-05:00', '2017-03-07T08:30:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(54, 'cadsfasd', 1, '2017-03-09 15:35:16', '2017-03-10 21:51:57', '2017-03-09T07:00:00-05:00', '2017-03-09T08:15:00-05:00', 'Dra. Leti Santos,Leonardo Armijos', '#7f8c8d', 6, 1, NULL, NULL),
-(55, 'call center', 1, '2017-03-09 18:05:58', '2017-03-09 23:15:17', '2017-03-06T07:30:00-05:00', '2017-03-06T08:00:00-05:00', 'Dr. Pepe Proaño,Leonardo Armijos', '#7f8c8d', 9, 1, NULL, NULL),
-(56, 'Realizado por el usuario', 1, '2017-03-09 18:39:51', '2017-03-09 23:10:21', '2017-03-09T07:45:00-05:00', '2017-03-09T08:00:00-05:00', 'Dr. Pepe Proaño,Pablo Chamba', '#7f8c8d', 9, 2, 1, NULL),
-(63, '452342314132', 1, '2017-03-09 23:11:47', '2017-03-09 23:13:37', '2017-03-09T07:00:00-05:00', '2017-03-09T07:15:00-05:00', 'Dr. Pepe Proaño,Leonardo Armijos', '#7f8c8d', 9, 1, 1, NULL),
-(65, 'Realizado por el usuario', 1, '2017-03-10 17:10:20', '2017-03-10 17:11:25', '2017-03-10T07:00:00-05:00', '2017-03-10T07:15:00-05:00', 'Dra. Leti Santos,Pablo Chamba', NULL, 6, 2, 1, NULL),
-(66, 'call center', 1, '2017-03-10 17:16:26', '2017-03-10 17:16:40', '2017-03-10T07:00:00-05:00', '2017-03-10T07:15:00-05:00', 'Dra. Leti Santos,Juanco ', NULL, 6, 10, 1, NULL),
-(67, 'call center', 1, '2017-03-10 17:17:34', '2017-03-10 20:23:04', '2017-03-10T07:45:00-05:00', '2017-03-10T08:00:00-05:00', 'Dra. Leti Santos,Diana ', '#7f8c8d', 6, 11, NULL, NULL),
-(68, 'fasdfasdasdaa adsfasd afa233423f adsfasdasd asfas', 1, '2017-03-10 17:20:13', '2017-03-10 20:22:45', '2017-03-10T07:15:00-05:00', '2017-03-10T07:30:00-05:00', 'Dra. Leti Santos,Lesnier Gonzalez', '#7f8c8d', 6, 4, 1, NULL),
-(69, 'Realizado por el usuario', 1, '2017-03-10 17:21:42', '2017-03-10 20:22:38', '2017-03-06T07:45:00-05:00', '2017-03-06T08:00:00-05:00', 'Dra. Leti Santos,Pablo Chamba', '#7f8c8d', 6, 2, 1, NULL),
-(70, 'call center', 1, '2017-03-10 20:23:32', '2017-03-10 21:53:30', '2017-03-11T08:45:00-05:00', '2017-03-11T10:00:00-05:00', 'Dra. Leti Santos,Pablo Chamba', '#7f8c8d', 6, 2, NULL, NULL),
-(71, 'call center', 1, '2017-03-10 20:25:29', '2017-03-10 21:54:09', '2017-03-11T11:15:00-05:00', '2017-03-11T12:00:00-05:00', 'Dra. Leti Santos,Gabriel Vanegas', '#7f8c8d', 6, 12, NULL, NULL),
-(72, 'casadsfasd', 1, '2017-03-10 20:30:12', '2017-03-10 21:47:29', '2017-03-10T19:45:00-05:00', '2017-03-10T20:00:00-05:00', 'Dra. Leti Santos,Leonardo Armijos', NULL, 6, 1, NULL, NULL),
-(73, NULL, 1, '2017-03-10 21:49:29', '2017-03-10 21:52:50', '2017-03-10T00:00:00-05:00', '2017-03-10T00:00:00-05:00', 'Dra. Leti Santos,Leonardo Armijos', NULL, 6, 1, 1, NULL),
-(74, 'asdfasd', 1, '2017-03-10 21:53:52', '2017-03-10 21:53:52', '2017-03-11T10:15:00-05:00', '2017-03-11T11:15:00-05:00', 'Dra. Leti Santos,Pablo Chamba', NULL, 6, 2, NULL, NULL),
-(75, NULL, 1, '2017-03-10 22:01:49', '2017-03-10 22:03:14', '2017-03-06T07:00:00-05:00', '2017-03-06T07:45:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(76, 'asdfasd', 1, '2017-03-10 22:03:37', '2017-03-10 22:03:41', '2017-03-07T07:00:00-05:00', '2017-03-07T07:45:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(77, 'caasdfasd', 1, '2017-03-10 22:04:10', '2017-03-10 22:04:26', '2017-03-08T07:00:00-05:00', '2017-03-08T07:45:00-05:00', 'Dra. Celia Camaño,Juanco ', NULL, 7, 10, NULL, NULL),
-(78, 'dafsdafads', 1, '2017-03-10 22:05:02', '2017-03-10 22:05:02', '2017-03-09T07:00:00-05:00', '2017-03-09T07:45:00-05:00', 'Dra. Celia Camaño,Juanco ', NULL, 7, 10, NULL, NULL),
-(79, 'dfasdfasdfas', 1, '2017-03-10 22:05:30', '2017-03-10 22:22:20', '2017-03-10T07:00:00-05:00', '2017-03-10T07:45:00-05:00', 'Dra. Celia Camaño,Juanco ', NULL, 7, 10, NULL, NULL),
-(80, 'dafadsf', 1, '2017-03-10 22:07:47', '2017-03-10 22:24:07', '2017-03-11T07:00:00-05:00', '2017-03-11T07:45:00-05:00', 'Dra. Celia Camaño,Juanco ', NULL, 7, 10, NULL, NULL),
-(81, 'Realizado por el usuario', 1, '2017-03-10 22:26:17', '2017-03-10 22:27:58', '2017-03-11T07:45:00-05:00', '2017-03-11T09:15:00-05:00', 'Dra. Celia Camaño,Pablo Chamba', NULL, 7, 2, NULL, NULL),
-(82, 'asdfasd', 1, '2017-03-10 23:00:58', '2017-03-10 23:03:21', '2017-03-11T19:45:00-05:00', '2017-03-11T20:00:00-05:00', 'Dr. Pepe Proaño,Leonardo Armijos', NULL, 9, 1, 1, NULL),
-(83, 'fsdgf', 1, '2017-03-10 23:04:10', '2017-03-10 23:05:29', '2017-03-10T14:15:00-05:00', '2017-03-10T14:30:00-05:00', 'Dr. Pepe Proaño,Leonardo Armijos', '#7f8c8d', 9, 1, 1, NULL),
-(84, 'call center', 1, '2017-03-13 23:06:47', '2017-03-13 23:06:47', '2017-03-13T07:00:00-05:00', '2017-03-13T07:15:00-05:00', 'Dr. Pepe Proaño,Leonardo Armijos', NULL, 9, 1, NULL, NULL),
-(85, 'call center', 1, '2017-03-14 19:14:32', '2017-03-14 19:14:32', '2017-03-14T07:00:00-05:00', '2017-03-14T07:15:00-05:00', 'Dr. Pepe Proaño,Pablo Chamba', NULL, 9, 2, NULL, NULL),
-(86, 'call center', 1, '2017-03-14 19:40:05', '2017-03-14 19:40:05', '2017-03-14T07:30:00-05:00', '2017-03-14T07:45:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(87, 'cafasdfasdfas', 1, '2017-03-14 20:53:26', '2017-03-14 22:04:12', '2017-03-14T08:45:00-05:00', '2017-03-14T09:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, 1, NULL),
-(88, 'dsfasdfa', 1, '2017-03-14 20:55:49', '2017-03-14 22:04:29', '2017-03-14T10:00:00-05:00', '2017-03-14T10:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, 1, NULL),
-(89, 'sdasdafsd', 1, '2017-03-14 20:57:57', '2017-03-14 23:18:08', '2017-03-14T11:15:00-05:00', '2017-03-14T11:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(90, 'afdssdfasd', 1, '2017-03-14 21:02:07', '2017-03-14 21:02:07', '2017-03-14T14:45:00-05:00', '2017-03-14T15:00:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(91, 'asdfasd', 1, '2017-03-14 21:15:55', '2017-03-14 21:15:55', '2017-03-14T19:00:00-05:00', '2017-03-14T19:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(92, 'dsfasdfas', 1, '2017-03-14 21:17:18', '2017-03-14 22:04:18', '2017-03-14T09:30:00-05:00', '2017-03-14T10:00:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, 1, NULL),
-(93, 'asdfasdf', 1, '2017-03-14 21:27:55', '2017-03-14 21:27:55', '2017-03-14T07:45:00-05:00', '2017-03-14T08:00:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(94, 'asdfads', 1, '2017-03-14 21:41:49', '2017-03-14 21:41:49', '2017-03-14T18:30:00-05:00', '2017-03-14T18:45:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(95, 'asdfasdfa', 1, '2017-03-14 21:42:34', '2017-03-14 22:04:08', '2017-03-14T08:15:00-05:00', '2017-03-14T08:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, 1, NULL),
-(96, 'dsafasdfas', 1, '2017-03-14 22:04:56', '2017-03-14 23:07:55', '2017-03-14T09:30:00-05:00', '2017-03-14T10:00:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, 1, NULL),
-(97, 'asdfasd', 1, '2017-03-14 22:12:56', '2017-03-14 23:19:24', '2017-03-14T10:00:00-05:00', '2017-03-14T11:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, 1, NULL),
-(98, 'asdfasd', 1, '2017-03-14 22:13:57', '2017-03-14 22:13:57', '2017-03-14T08:30:00-05:00', '2017-03-14T08:45:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(99, 'asdfasdfa', 1, '2017-03-14 22:14:51', '2017-03-14 22:14:51', '2017-03-14T09:00:00-05:00', '2017-03-14T09:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(100, 'asdfasdfasd', 1, '2017-03-14 22:17:27', '2017-03-14 22:17:27', '2017-03-14T11:30:00-05:00', '2017-03-14T11:45:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(101, 'asdfasdfads', 1, '2017-03-14 22:25:43', '2017-03-14 22:25:43', '2017-03-14T13:30:00-05:00', '2017-03-14T13:45:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(102, 'dfsgdfgsdfg', 1, '2017-03-14 22:30:16', '2017-03-14 22:30:16', '2017-03-14T14:00:00-05:00', '2017-03-14T14:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(103, 'sdafadsfas', 1, '2017-03-14 22:34:24', '2017-03-14 22:34:24', '2017-03-14T12:00:00-05:00', '2017-03-14T12:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(104, 'asdfasdfa', 1, '2017-03-14 22:57:46', '2017-03-14 22:57:46', '2017-03-14T08:00:00-05:00', '2017-03-14T08:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(105, 'asdfasdfas', 1, '2017-03-14 23:03:46', '2017-03-15 22:57:30', '2017-03-14T14:15:00-05:00', '2017-03-14T14:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(106, 'asdfasdf', 1, '2017-03-14 23:08:12', '2017-03-14 23:08:12', '2017-03-14T09:30:00-05:00', '2017-03-14T10:00:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(107, 'asdfasdfa', 1, '2017-03-14 23:10:54', '2017-03-14 23:10:54', '2017-03-14T14:15:00-05:00', '2017-03-14T14:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(108, 'asdfasdfasd', 1, '2017-03-14 23:12:08', '2017-03-14 23:12:08', '2017-03-14T15:00:00-05:00', '2017-03-14T15:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(109, 'adfasd', 1, '2017-03-14 23:13:57', '2017-03-14 23:13:57', '2017-03-14T12:15:00-05:00', '2017-03-14T12:30:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, NULL),
-(110, 'Realizado por el usuario', 1, '2017-03-15 16:26:36', '2017-03-15 16:26:36', '2017-03-06T17:00:00-05:00', '2017-03-06T17:15:00-05:00', 'Dra. Maria Palacios,Pablo Chamba', NULL, 2, 2, NULL, NULL),
-(111, 'call center', 1, '2017-03-16 17:08:50', '2017-03-16 17:08:50', '2017-03-16T07:00:00-05:00', '2017-03-16T07:15:00-05:00', 'Dr. Julio Jaramillo,PABLO DAVID', NULL, 4, 18, NULL, NULL),
-(112, 'con autorizacion', 1, '2017-03-17 20:52:30', '2017-03-17 20:52:30', '2017-03-17T07:00:00-05:00', '2017-03-17T07:15:00-05:00', 'Dra. LUCY PEREZ,Leonardo Armijos', NULL, 10, 1, NULL, NULL),
-(113, 'CALL CENTER', 1, '2017-03-17 21:18:12', '2017-03-17 21:37:17', '2017-03-17T07:15:00-05:00', '2017-03-17T07:30:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, 1, NULL),
-(114, 'call center', 1, '2017-03-17 21:38:11', '2017-03-17 22:03:34', '2017-03-17T07:15:00-05:00', '2017-03-17T07:30:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, 1, NULL),
-(115, 'CALL CENTER', 1, '2017-03-17 22:04:12', '2017-03-17 22:04:12', '2017-03-17T07:15:00-05:00', '2017-03-17T07:30:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, NULL, NULL),
-(116, 'call', 1, '2017-03-20 16:28:18', '2017-03-20 16:28:18', '2017-03-20T07:00:00-05:00', '2017-03-20T07:15:00-05:00', 'Dra. LUCY PEREZ,Leonardo Armijos', NULL, 10, 1, NULL, 'PARTICULAR'),
-(117, 'CALL CENTER', 1, '2017-03-20 16:34:26', '2017-03-20 17:08:32', '2017-03-20T07:15:00-05:00', '2017-03-20T07:30:00-05:00', 'Dra. LUCY PEREZ,Leonardo Armijos', NULL, 10, 1, 1, 'I.E.S.S.'),
-(118, 'CALL CENTER ASDKFJAS', 1, '2017-03-20 17:12:01', '2017-03-21 22:13:22', '2017-03-20T07:15:00-05:00', '2017-03-20T07:30:00-05:00', 'Dra. LUCY PEREZ,Diana ', '#7f8c8d', 10, 11, NULL, 'I.E.S.S.'),
-(119, 'CALL CENTER', 1, '2017-03-20 17:52:12', '2017-03-20 17:52:12', '2017-03-20T08:00:00-05:00', '2017-03-20T08:15:00-05:00', 'Dra. LUCY PEREZ,Pablo Chamba', NULL, 10, 2, NULL, 'PARTICULAR'),
-(120, 'CALL CENTER', 1, '2017-03-20 17:54:02', '2017-03-21 22:13:27', '2017-03-20T07:30:00-05:00', '2017-03-20T07:45:00-05:00', 'Dra. LUCY PEREZ,PABLO DAVID', NULL, 10, 18, 1, 'PARTICULAR'),
-(121, 'call center', 1, '2017-03-20 18:06:18', '2017-03-21 22:12:37', '2017-03-20T07:45:00-05:00', '2017-03-20T08:00:00-05:00', 'Dra. LUCY PEREZ,PABLO DAVID', NULL, 10, 18, NULL, 'I.E.S.S.'),
-(122, 'Paciente con autorizacion para cirugia histerectomia', 1, '2017-03-20 19:57:54', '2017-03-20 19:57:54', '2017-03-21T08:00:00-05:00', '2017-03-21T08:15:00-05:00', 'Dr. Marco Del Pozo,Leonardo Armijos', NULL, 11, 1, NULL, 'I.E.S.S.'),
-(126, 'asdfasdfasdfasd', 1, '2017-03-21 22:48:25', '2017-03-21 22:48:25', '2017-03-21T09:15:00-05:00', '2017-03-21T10:45:00-05:00', 'Dra. Celia Camaño,Leonardo Armijos', NULL, 7, 1, NULL, 'I.E.S.S.'),
-(127, 'dsgfsdfgdsf', 1, '2017-03-21 22:51:48', '2017-03-21 23:01:58', '2017-03-20T08:15:00-05:00', '2017-03-20T08:45:00-05:00', 'Dra. LUCY PEREZ,PABLO DAVID', NULL, 10, 18, 1, 'I.E.S.S.'),
-(128, 'fdsdgsdf', 1, '2017-03-21 23:16:29', '2017-03-21 23:18:30', '2017-03-22T07:00:00-05:00', '2017-03-22T07:15:00-05:00', 'Dr. Pepe Proaño,PABLO DAVID', NULL, 9, 18, NULL, 'PARTICULAR');
+INSERT INTO `cita_calendario` (`id`, `detalle_cita`, `estado_cita`, `created_at`, `updated_at`, `start`, `end`, `title`, `color`, `agenda_id`, `paciente_id`, `trash`, `sel_convenio`, `constraint`) VALUES
+(1, 'CALL CENTER', 1, '2017-03-28 22:48:26', '2017-03-28 22:49:04', '2017-03-28T15:00:00-05:00', '2017-03-28T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, 1, 'I.E.S.S.', NULL),
+(2, 'CALL CENTER', 1, '2017-03-28 22:49:55', '2017-03-28 22:51:35', '2017-03-28T15:00:00-05:00', '2017-03-28T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, 1, 'I.E.S.S.', NULL),
+(3, 'HOLA', 1, '2017-03-28 22:52:06', '2017-03-28 22:55:07', '2017-03-28T15:00:00-05:00', '2017-03-28T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, 1, 'I.E.S.S.', NULL),
+(4, 'CALL CENTER', 1, '2017-03-28 22:57:23', '2017-03-28 22:58:58', '2017-03-28T15:00:00-05:00', '2017-03-28T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, 1, 'PARTICULAR', NULL),
+(5, 'CALL CENTER', 1, '2017-03-28 23:00:20', '2017-03-28 23:03:58', '2017-03-28T15:00:00-05:00', '2017-03-28T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, 1, 'PARTICULAR', NULL),
+(6, 'CALL CENTER', 1, '2017-03-28 23:05:31', '2017-03-28 23:08:05', '2017-03-29T15:00:00-05:00', '2017-03-29T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, 1, 'I.E.S.S.', NULL),
+(7, 'asdfasd', 1, '2017-03-28 23:08:24', '2017-03-28 23:09:35', '2017-03-28T15:00:00-05:00', '2017-03-28T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, 1, 'I.E.S.S.', NULL),
+(8, 'gsdfgds', 1, '2017-03-28 23:10:23', '2017-03-28 23:10:23', '2017-03-28T15:00:00-05:00', '2017-03-28T15:15:00-05:00', 'Dr. Juan Perez, Pablo David', NULL, NULL, 1, NULL, 'I.E.S.S.', NULL);
 
 -- --------------------------------------------------------
 
@@ -993,7 +893,71 @@ INSERT INTO `cms_logs` (`id`, `created_at`, `updated_at`, `ipaddress`, `useragen
 (683, '2017-03-21 23:29:32', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1),
 (684, '2017-03-21 23:30:26', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
 (685, '2017-03-21 23:42:51', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
-(686, '2017-03-21 23:44:20', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2);
+(686, '2017-03-21 23:44:20', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(687, '2017-03-22 15:35:38', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(688, '2017-03-22 18:00:15', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(689, '2017-03-22 18:51:25', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(690, '2017-03-22 20:20:02', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(691, '2017-03-22 22:25:43', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/edit-save/12', 'Actualizar datos  at Lista de médicos', 2),
+(692, '2017-03-23 15:01:46', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(693, '2017-03-23 15:07:23', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/edit-save/10', 'Actualizar datos  at Lista de médicos', 2),
+(694, '2017-03-23 15:14:18', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(695, '2017-03-23 15:14:25', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'javier@correo.com Inicia sesión con la dirección IP ::1', 13),
+(696, '2017-03-23 15:16:20', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/users/add-save', 'Agregar nuevos datos Pepe Proaño at Users', 13),
+(697, '2017-03-23 15:49:32', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'javier@correo.com cerrar sesión', 13),
+(698, '2017-03-23 15:52:34', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(699, '2017-03-23 17:15:41', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/login', 'javier@correo.com Inicia sesión con la dirección IP 192.168.4.106', 13),
+(700, '2017-03-23 17:17:05', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(701, '2017-03-23 17:17:13', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(702, '2017-03-23 17:25:04', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/medico/add-save', 'Agregar nuevos datos 13 at Lista de médicos', 13),
+(703, '2017-03-23 17:27:26', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/users/add-save', 'Agregar nuevos datos Veronica Claudio at Users', 13),
+(704, '2017-03-23 17:28:18', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/logout', 'javier@correo.com cerrar sesión', 13),
+(705, '2017-03-23 17:28:38', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP 192.168.4.106', 2),
+(706, '2017-03-23 17:49:26', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(707, '2017-03-23 17:50:10', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/login', 'javier@correo.com Inicia sesión con la dirección IP 192.168.4.106', 13),
+(708, '2017-03-23 17:54:00', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/users/add-save', 'Agregar nuevos datos GABRIEL VANEGAS ALTAMIRANO at Users', 13),
+(709, '2017-03-23 17:54:21', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/logout', 'javier@correo.com cerrar sesión', 13),
+(710, '2017-03-23 17:54:50', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/login', 'gdvanegas@hotmail.com Inicia sesión con la dirección IP 192.168.4.106', 25),
+(711, '2017-03-23 18:00:47', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1),
+(712, '2017-03-23 18:01:03', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'pablo@correo.com Inicia sesión con la dirección IP ::1', 19),
+(713, '2017-03-23 18:17:21', NULL, '192.168.4.106', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://192.168.4.101/MedicSystem/public/admin/logout', 'gdvanegas@hotmail.com cerrar sesión', 25),
+(714, '2017-03-23 18:54:45', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(715, '2017-03-24 15:52:30', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(716, '2017-03-24 16:38:30', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(717, '2017-03-24 17:20:07', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'fer@correo.com Inicia sesión con la dirección IP ::1', 2),
+(718, '2017-03-24 18:00:05', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'fer@correo.com cerrar sesión', 2),
+(719, '2017-03-24 18:00:15', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'javier@correo.com Inicia sesión con la dirección IP ::1', 13),
+(720, '2017-03-24 18:08:57', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'javier@correo.com cerrar sesión', 13),
+(721, '2017-03-24 18:08:59', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(722, '2017-03-27 15:05:33', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(723, '2017-03-27 18:44:53', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(724, '2017-03-27 21:00:51', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(725, '2017-03-27 21:00:58', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1),
+(726, '2017-03-28 14:54:51', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(727, '2017-03-28 15:24:47', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/18', 'Eliminar datos 18 at Lista de médicos', 1),
+(728, '2017-03-28 15:24:52', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/17', 'Eliminar datos 17 at Lista de médicos', 1),
+(729, '2017-03-28 15:24:56', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/16', 'Eliminar datos 16 at Lista de médicos', 1),
+(730, '2017-03-28 15:25:01', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/15', 'Eliminar datos 15 at Lista de médicos', 1),
+(731, '2017-03-28 15:46:38', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/19', 'Eliminar datos 19 at Lista de médicos', 1),
+(732, '2017-03-28 15:53:47', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/20', 'Eliminar datos 20 at Lista de médicos', 1),
+(733, '2017-03-28 16:05:35', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/21', 'Eliminar datos 21 at Lista de médicos', 1),
+(734, '2017-03-28 16:07:17', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/22', 'Eliminar datos 22 at Lista de médicos', 1),
+(735, '2017-03-28 16:14:29', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/action-selected', 'Eliminar datos 23,14 at Lista de médicos', 1),
+(736, '2017-03-28 16:16:35', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/24', 'Eliminar datos 24 at Lista de médicos', 1),
+(737, '2017-03-28 18:02:15', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/26', 'Eliminar datos 26 at Lista de médicos', 1),
+(738, '2017-03-28 18:02:18', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/25', 'Eliminar datos 25 at Lista de médicos', 1),
+(739, '2017-03-28 18:06:14', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/27', 'Eliminar datos 27 at Lista de médicos', 1),
+(740, '2017-03-28 20:46:04', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/28', 'Eliminar datos 28 at Lista de médicos', 1),
+(741, '2017-03-28 20:47:39', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/8', 'Eliminar datos 8 at Lista de médicos', 1),
+(742, '2017-03-28 20:48:10', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/2', 'Eliminar datos 2 at Lista de médicos', 1),
+(743, '2017-03-28 20:49:21', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/medico/delete/29', 'Eliminar datos 29 at Lista de médicos', 1),
+(744, '2017-03-28 22:30:59', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/users/delete/25', 'Eliminar datos GABRIEL VANEGAS ALTAMIRANO at Users', 1);
+INSERT INTO `cms_logs` (`id`, `created_at`, `updated_at`, `ipaddress`, `useragent`, `url`, `description`, `id_cms_users`) VALUES
+(745, '2017-03-28 22:31:05', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/users/delete/24', 'Eliminar datos Veronica Claudio at Users', 1),
+(746, '2017-03-28 22:35:36', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1),
+(747, '2017-03-28 22:35:53', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1),
+(748, '2017-03-28 22:35:57', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/logout', 'admin@crudbooster.com cerrar sesión', 1),
+(749, '2017-03-28 22:39:23', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36', 'http://localhost/MedicSystem/public/admin/login', 'admin@crudbooster.com Inicia sesión con la dirección IP ::1', 1);
 
 -- --------------------------------------------------------
 
@@ -1213,7 +1177,7 @@ INSERT INTO `cms_settings` (`id`, `created_at`, `updated_at`, `name`, `content`,
 (9, '2017-02-07 15:43:09', NULL, 'smtp_password', '', 'text', NULL, NULL, 'Email Setting', 'SMTP Password'),
 (10, '2017-02-07 15:43:09', NULL, 'appname', 'Agenda Médica', 'text', NULL, NULL, 'Application Setting', 'Application Name'),
 (11, '2017-02-07 15:43:09', NULL, 'default_paper_size', 'A4', 'text', NULL, 'Paper size, ex : A4, Legal, etc', 'Application Setting', 'Default Paper Print Size'),
-(12, '2017-02-07 15:43:09', NULL, 'logo', 'uploads/2017-03/de886a158089703308ed56f72cd741b6.jpg', 'upload_image', NULL, NULL, 'Application Setting', 'Logo'),
+(12, '2017-02-07 15:43:09', NULL, 'logo', 'uploads/2017-03/1af5e9595be556a528a1e780a55d739c.png', 'upload_image', NULL, NULL, 'Application Setting', 'Logo'),
 (13, '2017-02-07 15:43:09', NULL, 'favicon', 'uploads/2017-02/955a91c65623000bd6232030d2cbf273.png', 'upload_image', NULL, NULL, 'Application Setting', 'Favicon'),
 (14, '2017-02-07 15:43:09', NULL, 'api_debug_mode', 'true', 'select', 'true,false', NULL, 'Application Setting', 'API Debug Mode'),
 (15, '2017-02-07 15:43:09', NULL, 'google_api_key', NULL, 'text', NULL, NULL, 'Application Setting', 'Google API Key'),
@@ -1282,16 +1246,7 @@ CREATE TABLE `cms_users` (
 --
 
 INSERT INTO `cms_users` (`id`, `created_at`, `updated_at`, `name`, `photo`, `email`, `password`, `id_cms_privileges`, `status`) VALUES
-(1, '2017-02-07 15:43:07', NULL, 'Super Admin', NULL, 'admin@crudbooster.com', '$2y$10$nDiNC6mPBtEavlgOtfLLlOlYvOBVmvnjEIiu2l0esZyNxRvfqHRX2', 1, 'Active'),
-(2, '2017-02-07 16:08:35', NULL, 'Fernanda Pérez', 'uploads/2017-02/b2f1b6f7c72d3941b4a6233918b13c4f.jpg', 'fer@correo.com', '$2y$10$Ja6y.ufwyTHCfHqlNjtpo.q6UV0khTfEs0OrRFW88TJ1nHBaQcMZ.', 2, NULL),
-(11, '2017-03-03 17:35:44', '2017-03-03 17:35:44', 'Juanco', NULL, 'juan@correo.com', '$2y$10$nAZ/mD/gOZzSf4bI6wAn...pA246juyFuyPkHkpG/JE8Mi8T3WCb6', 3, NULL),
-(12, '2017-03-03 18:48:19', '2017-03-03 18:48:19', 'Diana', NULL, 'diana@gmail.com', '$2y$10$mxgAFlE2ybSnsSKQCtRSCuKKHdd/zU0cdhQfzgL59wFRSLetKciNC', 3, NULL),
-(13, '2017-03-03 18:56:56', NULL, 'Javier', 'uploads/2017-03/365ba2ddc481a9c736268ee85e8a6236.jpg', 'javier@correo.com', '$2y$10$SV.080NIoZFiMj46OgdWg.FH3LepAPOFjc7Ag2kBU3INdxl8n5EkS', 5, NULL),
-(14, '2017-03-06 17:56:48', NULL, 'Celia Camaño', '', 'celia@correo.com', '$2y$10$VzAqvHCSmC/p36XAoQIILOD/LOexwT.HiRmJlPY.cTBpl.kMhTrde', 4, NULL),
-(19, '2017-03-06 19:51:26', '2017-03-06 19:51:26', 'Pablo David', NULL, 'pablo@correo.com', '$2y$10$J86alU0EfO91/q3iKg5AKOWz6Pj4RvTRwxzZfEjFeIKZwIysu8A3e', 3, NULL),
-(20, '2017-03-16 17:07:54', NULL, 'Julio Jaramillo', '', 'julio@correo.com', '$2y$10$B0MTcX7ZQ/3fR2jCWizHfuZw0jT8DRSzdvNXcdnSCqipxrbGhMXFO', 4, NULL),
-(21, '2017-03-20 19:51:52', NULL, 'Marco Del Pozo', '', 'marco@correo.com', '$2y$10$eBmwSs9lG23MnG9v/1fwveldvxPjLPTtUpIYY18GJpGcPTnQuhD3e', 4, NULL),
-(22, '2017-03-20 19:54:05', '2017-03-20 20:37:37', 'Ana maria Lopez', '', 'anamaria@correo.com', '$2y$10$Xobtf0E4WtVo7bgyXCTJu.14mN51s/NBdFZPz40.R2NZtfo91wQ.W', 2, NULL);
+(1, '2017-02-07 15:43:07', NULL, 'Super Admin', NULL, 'admin@crudbooster.com', '$2y$10$nDiNC6mPBtEavlgOtfLLlOlYvOBVmvnjEIiu2l0esZyNxRvfqHRX2', 1, 'Active');
 
 -- --------------------------------------------------------
 
@@ -1307,17 +1262,27 @@ CREATE TABLE `convenio` (
   `fecha_vence` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `convenio`
+-- Estructura de tabla para la tabla `horario_medico`
 --
 
-INSERT INTO `convenio` (`id`, `cita_calendario_id`, `autorizacion`, `fecha_autorizacion`, `fecha_vence`) VALUES
-(1, 115, 'E4JALKSK', '2017-03-08', '2017-03-01'),
-(2, 117, 'IESS49293', '2017-03-21', '2017-03-28'),
-(3, 118, 'IESS23332', '2017-03-16', '2017-03-01'),
-(4, 122, '17cvs-2017-456786', '2017-03-05', '2017-06-05'),
-(6, 43, 'rfgsdgf21342345', '2017-03-09', '2017-03-18'),
-(7, 121, 'dfsd2343', '2017-03-01', '2017-03-10');
+CREATE TABLE `horario_medico` (
+  `id` int(11) NOT NULL,
+  `medico_id` int(11) DEFAULT NULL,
+  `dow` varchar(1) DEFAULT NULL,
+  `start` varchar(5) DEFAULT NULL,
+  `end` varchar(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `horario_medico`
+--
+
+INSERT INTO `horario_medico` (`id`, `medico_id`, `dow`, `start`, `end`) VALUES
+(1, 1, '1', '15:00', '20:00'),
+(2, 1, '2', '15:00', '20:00');
 
 -- --------------------------------------------------------
 
@@ -1331,7 +1296,7 @@ CREATE TABLE `medico` (
   `especialidad` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `apellido` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `telefono` varchar(155) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(155) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -1343,17 +1308,7 @@ CREATE TABLE `medico` (
 --
 
 INSERT INTO `medico` (`id`, `titulo`, `especialidad`, `nombre`, `apellido`, `telefono`, `email`, `created_at`, `updated_at`, `cms_user_id`) VALUES
-(2, 'Dr.', 'Odontólogo', 'Mario', 'Palacios', '2333444', NULL, '2017-02-07 16:28:48', '2017-03-06 17:00:16', NULL),
-(3, 'Dra.', 'Cirugia', 'Maria', 'Palacios', '2333999', NULL, '2017-02-14 14:59:53', '2017-03-06 17:01:12', NULL),
-(4, 'Dr.', 'Traumatologìa', 'Francisco', 'Silva', '2555666', NULL, '2017-02-14 15:16:27', '2017-03-03 22:53:12', NULL),
-(5, 'Dr.', 'Urologo', 'Julio', 'Jaramillo', '2333444', NULL, '2017-02-16 21:21:57', '2017-03-16 17:07:54', 20),
-(6, 'Dra.', 'Cirugia', 'Juana', 'Herrera', '2333444', NULL, '2017-02-16 21:22:33', '2017-03-03 22:34:34', 13),
-(7, 'Dra.', 'Laboratorio', 'Leti', 'Santos', '2556666', NULL, '2017-02-16 21:23:06', NULL, NULL),
-(8, 'Dra.', 'Odontología', 'Celia', 'Camaño', '2333444', NULL, '2017-02-17 17:12:24', '2017-03-06 17:56:48', 14),
-(9, 'Dra.', 'Traumatologia', 'Carla', 'Borja', '2333444', NULL, '2017-02-21 15:23:36', NULL, NULL),
-(10, 'Dr.', 'Cardiología', 'Pepe', 'Proaño', '2444556', NULL, '2017-02-21 15:24:06', '2017-03-07 19:27:55', NULL),
-(11, 'Dra.', 'Odontología', 'LUCY', 'PEREZ', '2333444', NULL, '2017-03-15 22:14:48', NULL, NULL),
-(12, 'Dr.', 'Ginecologia', 'Marco', 'Del Pozo', '0998919690', NULL, '2017-03-20 19:48:13', '2017-03-20 19:51:52', 21);
+(1, 'Dr.', 'Odontología', 'Juan', 'Perez', NULL, 'pdavid211@hotmail.com', '2017-03-28 22:40:38', '2017-03-28 22:58:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -1439,13 +1394,7 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`id`, `cedula`, `nombre`, `apellido`, `email`, `created_at`, `updated_at`, `pasaporte`, `medico_id`, `otro`, `num_historia`, `fecha_nac`, `lugar_nac`, `lugar_resid`, `sexo`, `estado_civil`, `instruccion`, `autorizacion`, `fecha`, `fecha_v`, `condicion_paciente`, `direccion`, `telf_domicilio`, `telf_trabajo`, `celular`, `referencia`, `telf_referencia`, `cms_user_id`) VALUES
-(1, '1103187710', 'Leonardo', 'Armijos', 'nicorex_arm@hotmail.com', '2017-02-07 17:06:14', NULL, 'yyy', NULL, 'yyyuuuutttrr', 'yyy', '1980-05-07', 'yyyyyy', 'yyyy', 'yyyy', 'yyy', 'yyyy', 'yyyy', '2017-02-07', '2017-02-16', 'yyyy', 'yyy', '777777777', '6566666', '777777777', 'ytui', '65477', NULL),
-(2, '1732229900', 'Pablo', 'Chamba', 'pablodc002@gmail.com', '2017-02-07 22:13:44', '2017-03-14 19:13:54', '1777222', NULL, 'asdfasd', 'asdfasd', NULL, 'kjh', 'kjh', 'kjh', 'kjhkjh', 'kljhk', 'ljh', NULL, NULL, 'kljh', 'kjfdsasdsda', 'hkasdfasd', 'jhasdfasd', 'kjh', 'kljhkjh', 'kjhkjhk', 19),
-(4, '1723445567', 'Lesnier', 'Gonzalez', 'lesnier@gmail.com', '2017-02-13 15:35:24', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'FEMENINO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, '1721326754', 'Juanco', NULL, 'juan@correo.com', '2017-03-03 17:35:43', '2017-03-03 17:35:44', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11),
-(11, '1728990088', 'Diana', NULL, 'diana@gmail.com', '2017-03-03 18:48:19', '2017-03-03 18:48:19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12),
-(12, '2100369863', 'Gabriel', 'Vanegas', 'gdvanegas@hotmail.com', '2017-03-07 19:22:31', '2017-03-08 20:20:20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'SOLTERO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 71),
-(18, '1732229901', 'PABLO', 'DAVID', 'pdavid211@hotmail.com', '2017-03-08 19:37:46', '2017-03-14 19:07:15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 65);
+(1, '1772221111', 'Pablo', 'David', 'pablodc002@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1591,6 +1540,12 @@ ALTER TABLE `convenio`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `horario_medico`
+--
+ALTER TABLE `horario_medico`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `medico`
 --
 ALTER TABLE `medico`
@@ -1631,12 +1586,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `cita_calendario`
 --
 ALTER TABLE `cita_calendario`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `cms_apicustom`
 --
@@ -1666,7 +1621,7 @@ ALTER TABLE `cms_email_templates`
 -- AUTO_INCREMENT de la tabla `cms_logs`
 --
 ALTER TABLE `cms_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=687;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=750;
 --
 -- AUTO_INCREMENT de la tabla `cms_menus`
 --
@@ -1711,17 +1666,22 @@ ALTER TABLE `cms_statistic_components`
 -- AUTO_INCREMENT de la tabla `cms_users`
 --
 ALTER TABLE `cms_users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT de la tabla `convenio`
 --
 ALTER TABLE `convenio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `horario_medico`
+--
+ALTER TABLE `horario_medico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
@@ -1731,7 +1691,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
