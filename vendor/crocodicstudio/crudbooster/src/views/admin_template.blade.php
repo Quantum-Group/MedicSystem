@@ -7,7 +7,7 @@
     <meta name='robots' content='noindex,nofollow'/>
     <link rel="shortcut icon" href="{{ CRUDBooster::getSetting('favicon')?asset(CRUDBooster::getSetting('favicon')):asset('vendor/crudbooster/assets/logo_crudbooster.png') }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    
+
     @include('crudbooster::admin_template_plugins')
             <!-- select2  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- Theme style -->
-    <link href="{{ asset("vendor/crudbooster/assets/adminlte/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />    
-    <link href="{{ asset("vendor/crudbooster/assets/adminlte/dist/css/skins/_all-skins.min.css")}}" rel="stylesheet" type="text/css" />      
+    <link href="{{ asset("vendor/crudbooster/assets/adminlte/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("vendor/crudbooster/assets/adminlte/dist/css/skins/_all-skins.min.css")}}" rel="stylesheet" type="text/css" />
     <!-- estilos propios-->
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('css/_all-skins.css')}}">
@@ -25,13 +25,13 @@
 {{--    <script src="{{asset("bower_resources/angular/angular.min.js")}}"></script>--}}
     <script src="{{asset('js/angular-animate.js')}}"></script>
     {{--<script src="{{asset("bower_resources/angular/angular.min.js")}}"></script>--}}
-
+    <script src="{{asset("js/jquery.validate.min.js")}}"></script>
     <!-- load js -->
     <script type="text/javascript">
       var site_url = "{{url('/')}}" ;
       @if($script_js)
         {!! $script_js !!}
-      @endif 
+      @endif
     </script>
     @if($load_js)
       @foreach($load_js as $js)
@@ -45,7 +45,7 @@
         .sub-module-tab li {background: #F9F9F9;cursor:pointer;}
         .sub-module-tab li.active {background: #ffffff;box-shadow: 0px -5px 10px #cccccc}
         .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {border:none;}
-        .nav-tabs>li>a {border:none;}                
+        .nav-tabs>li>a {border:none;}
         .breadcrumb {
             margin:0 0 0 0;
             padding:0 0 0 0;
@@ -54,7 +54,7 @@
     </style>
 </head>
 <body class="<?php echo (Session::get('theme_color'))?:'skin-blue'?>" >
-<div id='app' class="wrapper">    
+<div id='app' class="wrapper">
 
     <!-- Header -->
     @include('crudbooster::header')
@@ -66,15 +66,15 @@
     <div class="content-wrapper">
 
         <section class="content-header">
-          <?php 
+          <?php
             $module = CRUDBooster::getCurrentModule();
           ?>
           @if($module)
           <h1>
             <i class='{{$module->icon}}'></i>  {{($page_title)?:$module->name}} &nbsp;&nbsp;
-            
-            <!--START BUTTON -->         
-                                        
+
+            <!--START BUTTON -->
+
             @if(CRUDBooster::getCurrentMethod() == 'getIndex')
             @if($button_show)
             <a href="{{ CRUDBooster::mainpath().'?'.http_build_query(Request::all()) }}" id='btn_show_data' class="btn btn-sm btn-primary" title="{{trans('crudbooster.action_show_data')}}">
@@ -82,14 +82,14 @@
             </a>
             @endif
 
-            @if($button_add && CRUDBooster::isCreate())                          
+            @if($button_add && CRUDBooster::isCreate())
             <a href="{{ CRUDBooster::mainpath('add').'?return_url='.urlencode(Request::fullUrl()).'&parent_id='.g('parent_id').'&parent_field='.$parent_field }}" id='btn_add_new_data' class="btn btn-sm btn-success" title="{{trans('crudbooster.action_add_data')}}">
               <i class="fa fa-plus-circle"></i> {{trans('crudbooster.action_add_data')}}
             </a>
-            @endif                          
+            @endif
             @endif
 
-              
+
             @if($button_export)
             <a href="javascript:void(0)" id='btn_export_data' data-url-parameter='{{$build_query}}' title='Export Data' class="btn btn-sm btn-primary btn-export-data">
               <i class="fa fa-upload"></i> {{trans("crudbooster.button_export")}}
@@ -103,10 +103,10 @@
             @endif
 
             <!--ADD ACTIon-->
-             @if(count($index_button))                          
-               
+             @if(count($index_button))
+
                     @foreach($index_button as $ib)
-                     <a href='{{$ib["url"]}}' id='{{str_slug($ib["label"])}}' class='btn {{($ib['color'])?'btn-'.$ib['color']:'btn-primary'}} btn-sm' 
+                     <a href='{{$ib["url"]}}' id='{{str_slug($ib["label"])}}' class='btn {{($ib['color'])?'btn-'.$ib['color']:'btn-primary'}} btn-sm'
                       @if($ib['onClick']) onClick='return {{$ib["onClick"]}}' @endif
                       @if($ib['onMouseOever']) onMouseOever='return {{$ib["onMouseOever"]}}' @endif
                       @if($ib['onMoueseOut']) onMoueseOut='return {{$ib["onMoueseOut"]}}' @endif
@@ -115,7 +115,7 @@
                       >
                         <i class='{{$ib["icon"]}}'></i> {{$ib["label"]}}
                       </a>
-                    @endforeach                                                          
+                    @endforeach
             @endif
             <!-- END BUTTON -->
           </h1>
@@ -128,14 +128,14 @@
           @else
           <h1>{{CRUDBooster::getSetting('appname')}} <small>Information</small></h1>
           @endif
-        </section>	
-		
+        </section>
+
 
         <!-- Main content -->
         <section id='content_section' class="content">
         	@if(@$alerts)
         		@foreach(@$alerts as $alert)
-        			<div class='callout callout-{{$alert[type]}}'>        				
+        			<div class='callout callout-{{$alert[type]}}'>
         					{!! $alert['message'] !!}
         			</div>
         		@endforeach

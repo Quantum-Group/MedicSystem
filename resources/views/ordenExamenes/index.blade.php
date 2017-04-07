@@ -5,6 +5,14 @@
             max-height: auto;
         }
         #fecha { z-index : 900; }
+        .has-error .select2-selection {
+            border: 1px solid #a94442;
+            border-radius: 4px;
+        }
+        #message{
+          color:#fff;
+          background-color: #d73925;
+        }
 
        .modal {
            position: fixed;
@@ -54,7 +62,8 @@
        </style>
 
 
-    <p><a title="Volver" id = "volver" href=""><i class="fa fa-chevron-circle-left"></i>&nbsp; Volver a la Lista de Ordenes</a></p>
+    <p><a title="Volver" id = "volver" href=""><i class="fa fa-chevron-circle-left"></i>&nbsp; Volver a la Lista de Ordenes</a><div id="message">
+    </div></p>
 
     <div class = "box" ng-app="MyApp" ng-controller="controllerLaboratorio">
 
@@ -64,7 +73,7 @@
     			{{ csrf_field() }}
     			  <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#medicoPaciente">Medico/Paciente</a></li>
+                    <li class="active"><a data-toggle="tab" href="#medicoPaciente">Paciente</a></li>
                     <li class="laboratorio"><a data-toggle="tab" href="#laboratorio">Laboratorio</a></li>
                     <li><a data-toggle="tab" href="#imagen3d">Imagen 3D</a></li>
                 </ul>
@@ -72,8 +81,9 @@
                 <div class="tab-content">
                     <!--Inicio pestaña medicoPaciente-->
                     <div id="medicoPaciente" class="tab-pane fade in active ">
-                        <div class="form-group col-md-3">
-                            <label for="paciente">Paciente</label>
+                        <div class="form-group ">
+                          <div class="col-md-3">
+                            <label for="id_paciente" class="control-label">Paciente</label>
 
                             <select class="form-control" id="id_paciente" placeholder="Select a state"  ng-model="id_paciente" name="id_paciente">
                                 <option value="" >Seleccione un paciente:</option>
@@ -81,9 +91,10 @@
                                <option value="{{$p->id}}" >{{$p->nombre." ".$p->apellido}}</option>
                               @endforeach
                            </select>
+                          </div>
                         </div>
 
-                        <div class="form-group col-md-3">
+                        <!--div class="form-group col-md-3">
                           <label for="paciente">Fecha</label>
                           <div class="input-group date">
                             <input  data-date-format="yyyy-mm-dd"   class="form-control" id="fecha"  ng-model="fecha" name="fecha">
@@ -91,7 +102,7 @@
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
                           </div>
-                        </div>
+                        </div-->
                     </div>
                     <!--Fin pestaña medicoPaciente-->
 
@@ -1739,7 +1750,7 @@
     	</div>
       <div class = "panel-footer">
         <div >
-              <input class = "btn btn-success  " type = "button" style = "margin-left: 10px" value = "Guardar"ng-click = "toggle('{{$operation}}')">
+              <input class = "btn btn-success" id="btnSave" type = "button" style = "margin-left: 10px" value = "Guardar"ng-click = "toggle('{{$operation}}')">
         </div>
 
       </div>
@@ -1762,32 +1773,82 @@
     <script type="text/javascript">
 
         $(document).ready(function() {
+          $.validator.setDefaults( {
+    				submitHandler: function () {
+    					alert( "submitted!" );
+    				}
+    			} );
+
+
+    			$( "#form_laboratorio" ).validate( {
+    				rules: {
+    					id_paciente: "required",
+              fecha:"required"
+
+    				},
+    				messages: {
+    					id_paciente: "Seleccione el Paciente",
+    					fecha: "Debe Seleccionar una Fecha",
+
+    				},
+    				errorElement: "em",
+    				errorPlacement: function ( error, element ) {
+
+    					error.addClass( "help-block" );
+              // Add the `help-block` class to the error element
+              if (element.hasClass('select2-hidden-accessible')) {
+                  error.insertAfter(element.closest('.has-error').find('.select2'));
+              } else if (element.parent('.input-group').length) {
+                  error.insertAfter(element.parent());
+              } else {
+                  error.insertAfter(element);
+              }
+
+    				},
+    				highlight: function ( element, errorClass, validClass ) {
+    					$( element ).parents( ".col-md-6" ).addClass( "has-error" ).removeClass( "has-success" );
+                                            $( element ).parents( ".col-md-12" ).addClass( "has-error" ).removeClass( "has-success" );
+              $( element ).parents( ".col-md-3" ).addClass( "has-error" ).removeClass( "has-success" );
+                                            $( element ).parents( ".col-md-12" ).addClass( "has-error" ).removeClass( "has-success" );
+    				},
+    				unhighlight: function (element, errorClass, validClass) {
+    					$( element ).parents( ".col-md-6" ).addClass( "has-success" ).removeClass( "has-error" );
+                                            $( element ).parents( ".col-md-12" ).addClass( "has-success" ).removeClass( "has-error" );
+              $( element ).parents( ".col-md-3" ).addClass( "has-success" ).removeClass( "has-error" );
+                                            $( element ).parents( ".col-md-12" ).addClass( "has-success" ).removeClass( "has-error" );
+    				}
+    			} );
+          $('.select2-hidden-accessible').on('change', function() {
+              if($(this).valid()) {
+                  $(this).next('span').removeClass('error').addClass('valid');
+              }
+          });
           $(':checkbox').click(checked);
           $(":checkbox:checked").each(checked);
           $("input:text, textarea").keyup(checked);
           $("input:text, textarea").each(checked);
 
-                $(document).on('mouseenter.collapse', '[data-toggle=collapse]', function(e) {
-                    var $this = $(this),
-                        href,
-                        target = $this.attr('data-target')
-                            || e.preventDefault()
-                            || (href = $this.attr('href'))
-                            && href.replace(/.*(?=#[^\s]+$)/, ''), //strip for ie7
-                        option = $(target).hasClass('in') ? 'hide' : "show"
+          $(document).on('mouseenter.collapse', '[data-toggle=collapse]', function(e) {
+              var $this = $(this),
+                  href,
+                  target = $this.attr('data-target')
+                      || e.preventDefault()
+                      || (href = $this.attr('href'))
+                      && href.replace(/.*(?=#[^\s]+$)/, ''), //strip for ie7
+                  option = $(target).hasClass('in') ? 'hide' : "show"
 
-                    $('.panel-collapse').not(target).collapse("hide")
-                    $(target).collapse(option);
-                });
-
-
-                $('#fecha').datepicker({
-
-                   autoclose: true,
-                   language: "es",
+              $('.panel-collapse').not(target).collapse("hide")
+              $(target).collapse(option);
+          });
 
 
-                }).trigger('blur');
+          $('#fecha').datepicker({
+
+             autoclose: true,
+             language: "es",
+
+
+          }).trigger('blur');
 
 
 
@@ -1850,10 +1911,15 @@
            if(existe == 1 || allchecked >=1 || allchecked2 >=1){// algún texarea tiene valor, o existe algún checked.
              $("."+divpadre).attr("style","border-top-color: #008d4c"); //cambio de color
              $("."+divpadre2).attr("style","border-top-color: #008d4c");//de pestaña seteando el atributo style
+             //$("#btnSave").removeAttr('disabled').removeAttr('title');
+             //$("#btnSave").attr("value","Guardar")
+             $("#message").html("");
            }
            else{// de lo contrario removemos el atributo style.
-               $("."+divpadre).removeAttr('style');
-               $("."+divpadre2).removeAttr('style');
+             $("."+divpadre).removeAttr('style');
+             $("."+divpadre2).removeAttr('style');
+             //$("#btnSave").attr("value","Seleccione algún examen.").attr("disabled","disabled").attr("title","Debe seleccionar algún examen para poder Generar la Orden.");
+
            }
 
            // Validación para cambiar color de tipo de examen
@@ -1863,6 +1929,7 @@
            }
            else {// de lo contrario removemos el atributo style.
              $("#"+div2).prev().removeAttr('style');
+
              $("#"+div).prev().removeAttr('style');
            }
 
@@ -1961,80 +2028,97 @@
         //add o update
 
         $scope.toggle = function (operation)
-        {
-          switch (operation) {
-            case 'add':
+          {
 
-              $(".modal").modal('show');
-              console.log($scope.serializeObject($("#form_laboratorio")));
-              $http({
-                url    : API_URL + 'orden_examenes',
-                method : 'POST',
-                params : $scope.serializeObject($("#form_laboratorio")),
-                headers: {
-                  'Content-Type': 'application/x-www-form-urlencoded'
+             var allchecked = $("#form_laboratorio input:checked").length;
+             var textall = 0;
+              //Se itera sobre todos los textarea para ver si alguno tiene valor.
+              $('#form_laboratorio .textarea').each(function(){
+                if($.trim($(this).val())){
+                 textall = 1;//si al menos uno tiene algun valor diferente a espacios en blanco, existe será igual a 1
+                console.log($(this).attr("id"));
+              }
+             });
+
+               if($("#form_laboratorio").valid()){
+                if(allchecked >= 1 || textall ==1 ){
+                switch (operation) {
+                  case 'add':
+
+                    $(".modal").modal('show');
+                    console.log($scope.serializeObject($("#form_laboratorio")));
+                    $http({
+                      url    : API_URL + 'orden_examenes',
+                      method : 'POST',
+                      params : $scope.serializeObject($("#form_laboratorio")),
+                      headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      }
+                    }).then(function (response)
+                    {
+                      $(".modal").modal('hide');
+                      if (response.data.response) {
+                        swal({
+                          title: "Buen trabajo!",
+                          text: "Se ha guardado exitosamente!",
+                          type: "success",
+                          showCancelButton: false,
+                          confirmButtonClass: "btn-succes",
+                          confirmButtonText: "OK",
+                          closeOnConfirm: false,
+                          showLoaderOnConfirm: true
+                        },
+                        function(){
+                          //$(".modal").modal('show');
+                          window.location = "{{ url('/admin/orden_examenes?m=33') }}";
+                        });
+                      } else {
+                        swal("Error", "¡No se guardó!", "error");
+                      }
+                    });
+
+                    break;
+
+                  case 'update':
+
+                    $(".modal").modal('show');
+
+                    $http({
+                      url    : API_URL + 'orden_examenes/{{$orden->id_orden}}',
+                      method : 'PUT',
+                      params : $scope.serializeObject($("#form_laboratorio")),
+                      headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      }
+                    }).then(function (response)
+                    {
+                      $(".modal").modal('hide');
+                      if (response.data.response) {
+                        swal({
+                          title: "Buen trabajo!",
+                          text: "Actualización exitosa!",
+                          type: "success",
+                          showCancelButton: false,
+                          confirmButtonClass: "btn-succes",
+                          confirmButtonText: "OK",
+                          closeOnConfirm: false,
+                          showLoaderOnConfirm: true
+                        },
+                        function(){
+                          //$(".modal").modal('show');
+                          window.location = "{{ url('/admin/orden_examenes?m=33') }}";
+                        });
+                        } else {
+                          swal("Error", "No se actualizó", "error");
+                        }
+                      });
+                      break;
                 }
-              }).then(function (response)
-              {
-                $(".modal").modal('hide');
-                if (response.data.response) {
-                  swal({
-                    title: "Buen trabajo!",
-                    text: "Se ha guardado exitosamente!",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonClass: "btn-succes",
-                    confirmButtonText: "OK",
-                    closeOnConfirm: false,
-                    showLoaderOnConfirm: true
-                  },
-                  function(){
-                    //$(".modal").modal('show');
-                    window.location = "{{ url('/admin/orden_examenes?m=33') }}";
-                  });
-                } else {
-                  swal("Error", "¡No se guardó!", "error");
-                }
-              });
-
-              break;
-
-            case 'update':
-
-              $(".modal").modal('show');
-
-              $http({
-                url    : API_URL + 'orden_examenes/{{$orden->id_orden}}',
-                method : 'PUT',
-                params : $scope.serializeObject($("#form_laboratorio")),
-                headers: {
-                  'Content-Type': 'application/x-www-form-urlencoded'
-                }
-              }).then(function (response)
-              {
-                $(".modal").modal('hide');
-                if (response.data.response) {
-                  swal({
-                    title: "Buen trabajo!",
-                    text: "Actualización exitosa!",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonClass: "btn-succes",
-                    confirmButtonText: "OK",
-                    closeOnConfirm: false,
-                    showLoaderOnConfirm: true
-                  },
-                  function(){
-                    //$(".modal").modal('show');
-                    window.location = "{{ url('/admin/orden_examenes?m=33') }}";
-                  });
-                  } else {
-                    swal("Error", "No se actualizó", "error");
-                  }
-                });
-                break;
+              }else{
+                swal("Error", "Debe seleccionar algún examen para generar la orden.", "error");              
+            }
+              }
           }
-        }
     });
 
 
