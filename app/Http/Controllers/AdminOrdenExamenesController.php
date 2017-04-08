@@ -345,7 +345,8 @@ class AdminOrdenExamenesController extends \crocodicstudio\crudbooster\controlle
 	}
 
 	public function printPDF($id){
-		$orden = ModOrdenExamenes::where('id_orden', '=' ,$id)->firstOrFail();
+		$medico_id = ModMedico::where("cms_user_id",CRUDBooster::myId())->first();
+		$orden = ModOrdenExamenes::where('id_orden',$id)->where('id_medico',$medico_id->id)->firstOrFail();
 		$tipos =DB::table('orden_pdf')->select('tipo_id')->where(['id' => $id])->groupBy('tipo_id')->get();
 		$examenes= DB::table('orden_pdf')->select('*')->where(['id' => $id])->get();
 		$pdf = \PDF::loadView('pdf',['examenes' => $examenes,'tipos' => $tipos]);
