@@ -2115,7 +2115,7 @@
                       break;
                 }
               }else{
-                swal("Error", "Debe seleccionar algún examen para generar la orden.", "error");              
+                swal("Error", "Debe seleccionar algún examen para generar la orden.", "error");
             }
               }
           }
