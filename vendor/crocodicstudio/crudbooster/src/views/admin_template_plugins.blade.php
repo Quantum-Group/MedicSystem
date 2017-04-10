@@ -1,20 +1,25 @@
+<!-- Server configuration -->
+<script src="{{ asset ('js/configServer.js') }}"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
 	<!-- Bootstrap 3.3.2 -->
     <link href="{{ asset("vendor/crudbooster/assets/adminlte/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="{{asset("vendor/crudbooster/assets/adminlte/font-awesome/css")}}/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-      	    
+
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> 
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-	
+
 	<!-- REQUIRED JS SCRIPTS -->
 
 	<!-- jQuery 2.1.3 -->
 	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
-	
+
 	<!-- Bootstrap 3.3.2 JS -->
 	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 	<!-- AdminLTE App -->
@@ -48,17 +53,17 @@
 
 	<script src="{{asset('vendor/crudbooster/jquery.price_format.2.0.min.js')}}"></script>
 
-	<!--DATATABLE-->	
+	<!--DATATABLE-->
   	<link rel="stylesheet" href="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datatables/dataTables.bootstrap.css')}}">
 	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
 
-	<script>			
+	<script>
 		var ASSET_URL           = "{{asset('/')}}";
-		var APP_NAME            = "{{CRUDBooster::getSetting('appname')}}";		
+		var APP_NAME            = "{{CRUDBooster::getSetting('appname')}}";
 		var ADMIN_PATH          = '{{url(config("crudbooster.ADMIN_PATH")) }}';
 		var NOTIFICATION_JSON   = "{{route('NotificationsControllerGetLatestJson')}}";
-		var NOTIFICATION_INDEX  = "{{route('NotificationsControllerGetIndex')}}";		
+		var NOTIFICATION_INDEX  = "{{route('NotificationsControllerGetIndex')}}";
 
 		$(function() {
 			$('.datatables-simple').DataTable();
@@ -67,4 +72,4 @@
 	<script src="{{asset('vendor/crudbooster/assets/js/main.js')}}"></script>
 	<link rel='stylesheet' href='{{asset("vendor/crudbooster/assets/css/main.css")}}'/>
 
-	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>

@@ -16,15 +16,8 @@ Route::get('admin/verifyPaciente','PacienteController@verifyPaciente');
 Route::get('admin/getPaciente','PacienteController@getPaciente');
 Route::resource('admin/user','CmsUserController');
 
-
-
-
-
-
-
-
-
-
-
-
-
+//----- Start Route Orden_examen -----//
+Route::get('admin/orden_examenes/{id}/print', 'AdminOrdenExamenesController@printPDF');
+Route::post('admin/orden_examenes', 'AdminOrdenExamenesController@store');
+Route::put('admin/orden_examenes/{id}', 'AdminOrdenExamenesController@update');
+// ------  End Route orden_examen ----/////

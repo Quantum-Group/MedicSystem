@@ -17,7 +17,7 @@
         </div>
 
 
-        
+
             <div class='main-menu'>
 
             <!-- Sidebar Menu -->
@@ -31,6 +31,15 @@
                 @endif
 
                 @foreach(CRUDBooster::sidebarMenu() as $menu)
+                @if(substr($menu->name, 0,9)== 'separator' )
+
+                   <li class="header ">
+                    <i class='{{$menu->icon}}'></i> &nbsp;{{substr($menu->name, 9)}}</li>
+
+
+                    @continue
+
+                @endif
                     <li data-id='{{$menu->id}}' class='{{(count($menu->children))?"treeview":""}} {{(CRUDBooster::getCurrentMenuId()==$menu->id && CRUDBooster::getCurrentDashboardId()!=$menu->id )?"active":""}}'><a href='{{ ($menu->is_broken)?"javascript:alert('Controller / Route Not Found')":$menu->url."?m=".$menu->id }}' class='{{($menu->color)?"text-".$menu->color:""}}'><i class='{{$menu->icon}} {{($menu->color)?"text-".$menu->color:""}}'></i> <span>{{$menu->name}}</span>
                             @if(count($menu->children))<i class="fa fa-angle-left pull-right"></i>@endif
                         </a>
