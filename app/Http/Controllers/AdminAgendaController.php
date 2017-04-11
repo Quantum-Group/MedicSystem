@@ -26,10 +26,13 @@ class AdminAgendaController extends Controller
     public function index()
     {
         $medico_id = ModMedico::where("cms_user_id",CRUDBooster::myId())->first();
-        $agenda = ModAgenda::where("medico_id",$medico_id->id)->first();
         $paciente = ModPaciente::all();
         $medico = ModMedico::find($medico_id->id);
-        return view('agenda.create',["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico]);
+        $page_title = "Agendar Cita";
+        $horario_medico = HorarioMedico::where("medico_id",$medico->id)->get();
+        $agenda = ModAgenda::where("medico_id",$medico->id)->first();
+
+        return view('agenda.create',compact('page_title'),["paciente"=>$paciente,"agenda"=>$agenda,"medico"=>$medico,"horario_medico"=>$horario_medico]);
     }
 
     /**

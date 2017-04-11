@@ -1,6 +1,6 @@
 
 <?php 
- $page_title = $agenda->nombre;
+ $page_title = $agenda->nombre ? :"Agendar Cita";
 ?>
 @extends("crudbooster::admin_template")
 @section("content")
