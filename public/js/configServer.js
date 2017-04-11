@@ -1,1 +1,1 @@
-var URL_BASE='http://54.190.32.238/MedicSystem/public/admin/';
+var URL_BASE='http://172.31.27.159/MedicSystem/public/admin/';
