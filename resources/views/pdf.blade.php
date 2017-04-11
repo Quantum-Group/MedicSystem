@@ -32,7 +32,7 @@
     td{ padding-top: 5px !important;}
   </style>
 
-  <title>Home</title>
+  <title>{{$examenes[0]->paciente}}</title>
 </head>
 <body>
 
