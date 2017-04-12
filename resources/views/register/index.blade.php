@@ -74,10 +74,9 @@
             <label class="control-label" for="signupName">Cédula del paciente * {{--<small ng-show="verifyCedula" style="font-size: 16px;" class="fa fa-spinner fa-spin fa-3x fa-fw"></small>--}}</label>
             <input required name="cedula" ng-model="newUser.cedula" id="cedula"
             type="number" ng-minlength="10" ng-maxlength="10" class="form-control">
-
           </div>
           <div class="form-group">
-            <label class="control-label" for="signupName">Nombre de usuario *</label>
+            <label class="control-label" for="signupName">Nombre *</label>
             <input ng-model="newUser.SUnombre" required id="username" type="text" ng-minlength="3"
             ng-maxlength="50" class="form-control">
           </div>

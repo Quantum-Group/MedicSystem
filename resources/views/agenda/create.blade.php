@@ -1,91 +1,70 @@
-<?php
-$page_title = $agenda->nombre;
+
+<?php 
+ $page_title = $agenda->nombre ? :"Agendar Cita";
 ?>
 @extends("crudbooster::admin_template")
 @section("content")
     <style>
-        .fc-time-grid .fc-slats td{ height: 40px !important; }
+        .fc-time-grid .fc-slats td {
+            height: 40px !important;
+        }
+        .container-full {
+            margin: 0 auto;
+            width: 100%;
+        }
+        div.fc-time span{
+            font-family: "Century Schoolbook", sans-serif;
+            color: white;
+            font-weight: bolder;
+            font-size: 13px;
+
+
+        }
+        .fc-time-grid-event .fc-time{
+            padding: 3px;
+        }
+        div.fc-time{
+            text-align: center;
+
+        }
+        .fc-bgevent {
+            background: #2c3e50;
+        }
+        div.fc-title{
+            font-family: "Roboto",  sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.6pt;
+            text-align: center;
+        }
+        .validate_hours li{
+            text-align: left;
+        }
     </style>
     {{--modal edicion de evento--}}
     <div ng-app="AppAgenda"
-         ng-init="fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);"
+         ng-init="cita.fecha=('{{Carbon\Carbon::now()->format('d/m/Y')}}');descripcion=('');agendar=(true);cita.hoy=('{{Carbon\Carbon::now()->format('d/m/Y')}}')"
          ng-controller="CtrlApp" ng-cloack>
-        <div id="mod_agregar_cita" class="modal fade bd-example-modal-md" tabindex="-1" role="dialog"
-             aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
-                        <h3 class="modal-title" id="modalTitle"><i class="fa fa-clock-o" aria-hidden="true"></i> Fecha y
-                            Hora</h3>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label for="">Fecha: </label>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="input-group date">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input ng-model="fecha" id="fecha" type="text" class="form-control pull-right"
-                                               id="datepicker">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label for="">Hora de Inicio:</label>
-                                </div>
-                                <div class="col-xs-6">
-                                    <hora-inicio ng-model="horaInicio"></hora-inicio>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label for="">Hora de Fin:</label>
-                                </div>
-                                <div class="col-xs-6">
-                                    <hora_fin ng-model="horaFin"></hora_fin>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="form-group">
-                            <div class="pull-right">
-                                <button data-dismiss="modal" class="btn btn-success btn-sm"><i
-                                            class="fa fa-plus-circle"></i> Aceptar
-                                </button>
-                                <button data-dismiss="modal" class="btn btn-default btn-sm"><i class="fa fa-close"></i>
-                                    Cerrar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{--fin modal edicion de evento--}}
+        @include("agenda.modals")
         <div class="box">
             <div class="box-header">
-                <button ng-click="resetPanelCita()" type="button" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Nueva Cita</button>
+                <button ng-click="resetPanelCita()" type="button" class="btn btn-default btn-sm"><i
+                            class="fa fa-plus"></i> Nueva Cita
+                </button>
                 <a href="{{CRUDBooster::adminPath().'/paciente/add?m=3'}}">
                     <button class="btn btn-default btn-sm"><i class="fa fa-male"></i> Nuevo paciente</button>
                 </a>
-                <button type="button" ng-click="agendaWorker.load()" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i> Actualizar</button>
+                <button type="button" ng-click="agendaWorker.load()" class="btn btn-default btn-sm"><i
+                            class="fa fa-refresh"></i> Actualizar
+                </button>
             </div>
-            <div class="col-xs-8">
+            <div class="col-xs-12 col-sm-8">
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <div style="background: white;" id="calendar"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-12 col-sm-4">
                 {{--Panel de gestion de citas--}}
                 <panel-cita></panel-cita>
                 {{--FIN Panel de gestion de citas--}}
@@ -94,20 +73,57 @@ $page_title = $agenda->nombre;
         </div>
     </div>
     <script type="text/javascript">
-    /*
-    * GLOBALS
-    */
-    AGENDA_ID = '{{$agenda->id}}';
-    MEDICO_ID = '{{$medico->id}}';
-      URL_CITAS = '{{ CRUDBooster::adminPath('medico/cita/'.$medico->id) }}';
-      URL_MEDICO_CITA = '{{ CRUDBooster::adminPath('medico/cita')}}';
-      URL_MEDICO_AGENDA = '{{ CRUDBooster::adminPath('medico/agenda')}}';
-      OPTIONS_PACIENTE = '@foreach($paciente as $p)'+
-          '<option value="{{$p->id}}">{{$p->nombre." ".$p->apellido}}</option>'+
-          '@endforeach';
-      /*
-      * -->
-      */
+        /*
+         * GLOBALS
+         */
+        AGENDA_ID = '{{$agenda->id}}';
+        MEDICO_ID = '{{$medico->id}}';
+        URL_CITAS = '{{ CRUDBooster::adminPath('medico/cita/'.$medico->id) }}';
+        URL_MEDICO_CITA = '{{ CRUDBooster::adminPath('medico/cita')}}';
+        URL_MEDICO_AGENDA = '{{ CRUDBooster::adminPath('medico/agenda')}}';
+        OPTIONS_PACIENTE = '@foreach($paciente as $p)' +
+            '<option value="{{$p->id}}">{{$p->nombre." ".$p->apellido}}</option>' +
+            '@endforeach';
+        /*
+        * Si viene por historial rellenar la variable cita
+        * */
+        CITA ={
+            id:'{{$cita->id}}',
+            detalle_cita:'{{$cita->detalle_cita}}',
+            estado_cita:'{{$cita->estado_cita}}',
+            created_at:'{{$cita->created_at}}',
+            updated_at:'{{$cita->updated_at}}',
+            start:'{{$cita->start}}',
+            end:'{{$cita->end}}',
+            title:'{{$cita->title}}',
+            color:'{{$cita->color}}',
+            agenda_id:'{{$cita->agenda_id}}',
+            paciente_id:'{{$cita->paciente_id}}',
+            trash:'{{$cita->trash}}',
+            sel_convenio:'{{$cita->sel_convenio}}',
+            convenio:{
+                id:'{{$cita->convenio->id}}',
+                cita_calendario_id:'{{$cita->convenio->cita_calendario_id}}',
+                autorizacion:'{{$cita->convenio->autorizacion}}',
+                fecha_autorizacion:'{{$cita->convenio->fecha_autorizacion}}',
+                fecha_vence:'{{$cita->convenio->fecha_vence}}'
+            }
+        };
+        PANEL ={};        
+        HORARIO_TRABAJO = [
+            @foreach($horario_medico as $h)
+            {
+                    dow: [ '{{$h->dow}}' ], // Monday, Tuesday, Wednesday
+                    start: '{{$h->start}}', // 8am
+                    end: '{{$h->end}}' // 6pm
+            },
+            @endforeach    
+            ];
+        HORARIO_TRABAJO = HORARIO_TRABAJO.length > 0 ? HORARIO_TRABAJO :false;
+        HOY = '{{Carbon\Carbon::now()->format('d/m/Y')}}';
+        /*
+         * -->
+         */
     </script>
     <!--  ANGULAR APP -->
     <script src="{{asset('js/agenda/app.js')}}"></script>
