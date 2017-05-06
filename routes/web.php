@@ -21,3 +21,15 @@ Route::get('admin/orden_examenes/{id}/print', 'AdminOrdenExamenesController@prin
 Route::post('admin/orden_examenes', 'AdminOrdenExamenesController@store');
 Route::put('admin/orden_examenes/{id}', 'AdminOrdenExamenesController@update');
 // ------  End Route orden_examen ----/////
+
+//----- Start Route anamnesis_hospitalizacion -----//
+//Route::get('admin/orden_examenes/{id}/print', 'AdminAnamnesisHospitalizacionController@printPDF');
+Route::post('admin/anamnesis_hospitalizacion', 'AdminAnamnesisHospitalizacionController@store');
+Route::put('admin/anamnesis_hospitalizacion/{id}', 'AdminAnamnesisHospitalizacionController@update');
+// ------  End Route anamnesis_hospitalizacion ----/////
+
+//----- Start Route consulta -----//
+//Route::get('admin/orden_examenes/{id}/print', 'AdminAnamnesisHospitalizacionController@printPDF');
+Route::post('admin/consulta', 'AdminConsultasController@store');
+Route::put('admin/consulta/{id}', 'AdminConsultasController@update');
+// ------  End Route consulta ----/////

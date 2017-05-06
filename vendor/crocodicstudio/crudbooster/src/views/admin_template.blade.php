@@ -28,6 +28,7 @@
     <script src="{{asset('js/angular-animate.js')}}"></script>
     {{--<script src="{{asset("bower_resources/angular/angular.min.js")}}"></script>--}}
     <script src="{{asset("js/jquery.validate.min.js")}}"></script>
+    <script src="{{asset("js/go.js")}}"></script>
     <!-- load js -->
     <script type="text/javascript">
       var site_url = "{{url('/')}}" ;
