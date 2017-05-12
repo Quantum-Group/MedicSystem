@@ -90,37 +90,37 @@ class PacienteController extends Controller
     }
     public function search(Request $request){
         $medico = ModMedico::where('nombre','like','%'.$request->get('busqueda').'%')
-                            ->orWhere('apellido','like','%'.$request->get('busqueda').'%')
-                            ->orWhere('especialidad','like','%'.$request->get('busqueda').'%')
-                            ->get();
+        ->orWhere('apellido','like','%'.$request->get('busqueda').'%')
+        ->orWhere('especialidad','like','%'.$request->get('busqueda').'%')
+        ->get();
         return response()->json([
             "medico"=>$medico
-        ]);
+            ]);
     }
     public function allMedic(){
         $medico = ModMedico::all();
         return response()->json([
             "medico"=>$medico
-        ]);
+            ]);
     }
     public function citaDisponible(Request $request){
         $fecha = Carbon::parse($request->get('fecha'))->format('Y-m-d');
         $resultado = ModAgenda::where("medico_id",$request->get('medico_id'))
-                                    ->with(["cita"=>function($query) use($fecha){
-                                        $query->where("start","like","%".$fecha."%")
-                                                ->where("trash","=",null)
-                                                ->orderBy("start","asc");
-                                    }])->get();
+        ->with(["cita"=>function($query) use($fecha){
+            $query->where("start","like","%".$fecha."%")
+            ->where("trash","=",null)
+            ->orderBy("start","asc");
+        }])->get();
         return response()->json([
             "agenda"=>$resultado
-        ]);
+            ]);
     }
     public function getBusinessHours(Request $request){
         $fecha = Carbon::parse($request->get('fecha'))->format('Y-m-d');
         $resultado = HorarioMedico::where("medico_id",$request->get('medico_id'))->get();
         return response()->json([
             "businessHours"=>$resultado
-        ]);
+            ]);
     }
     public function verifyPaciente (Request $r){
         $p = ModPaciente::where('cedula','=',$r->get('cedula'))->first();
@@ -128,10 +128,40 @@ class PacienteController extends Controller
         return response()->json([
             "p"=>$p,
             "cu"=>$cu
-        ]);
+            ]);
     }
     public function getPaciente($cms_user_id){ //devuelve json de paciente buscado
         $paciente = ModPaciente::where("cms_user_id",$cms_user_id)->first();
         return $paciente;
     }
-}
+    /* 
+        | ---------------------------------------------------------------------- 
+        | Devuelve una lista de pacientes paginado
+        | ----------------------------------------------------------------------     
+        | 
+        | 
+        */
+
+        public function paciente_all(){
+            $paciente = ModPaciente::paginate(8);
+            return response()->json([
+                "paciente"=>$paciente
+                ]);
+        }
+        /* 
+        | ---------------------------------------------------------------------- 
+        | Buscar paciente 
+        | ----------------------------------------------------------------------     
+        | @rq       = texto buscado
+        | 
+        */
+        public function buscarPaciente(Request $rq){
+            $paciente = ModPaciente::where("cedula","LIKE","%".$rq->get("texto_busqueda")."%")
+                            ->orWhere("nombre","LIKE","%".$rq->get("texto_busqueda")."%")
+                            ->orWhere("apellido","LIKE","%".$rq->get("texto_busqueda")."%")
+                            ->paginate(8);
+            return response()->json([
+                "paciente"=>$paciente
+                ]);
+        }
+    }

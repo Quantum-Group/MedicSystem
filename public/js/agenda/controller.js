@@ -11,23 +11,75 @@
             modificar: false
         }
     };
-    $scope.panel_modify = function () {
-        this.title_panel = "Modificar Cita";
-        this.class_heading = "carrot";
-        this.style_body = "background-color:white";
-        this.url = URL_MEDICO_CITA;
-        this.method = {
-            name: "_method",
-            value: "PATCH"
-        };
-        this.class_text_title = "white-header";
-        this.buttons = {
-            agendar: false,
-            trash: true,
-            cancelar: true,
-            modificar: true
+    /* 
+      | ---------------------------------------------------------------------- 
+      | Modelo GET
+      | ----------------------------------------------------------------------     
+      | 
+      | @url = url destino
+      | @params = object ex: {page:1}
+      */
+      $scope.getJSON = function(url,params){
+        var deferred = $q.defer();
+        swal({
+          html:true,
+          title: "Espere...",
+          text: '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>',
+          showConfirmButton: false
+      });
+
+        $http({
+          url: url,
+          method: 'GET',
+          params: params,
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
         }
+    }).then(function (response) {
+      swal.close();
+      deferred.resolve(response);
+  })
+        /* 
+      | ---------------------------------------------------------------------- 
+      | catch error
+      | ----------------------------------------------------------------------     
+      | 
+      | 
+      */
+      .catch(function(e){
+        deferred.reject('ERROR');
+        swal({
+          title: "Ops.. Ocurrio un error al cargar datos!",
+          text: 'DESEA RECARGAR LA PAGINA?',
+          type:"error",
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: "Sí, recargala!"
+      },function(){
+          $scope.reloadRoute();
+      });
+    });
+      return deferred.promise;
+  }
+
+
+  $scope.panel_modify = function () {
+    this.title_panel = "Modificar Cita";
+    this.class_heading = "carrot";
+    this.style_body = "background-color:white";
+    this.url = URL_MEDICO_CITA;
+    this.method = {
+        name: "_method",
+        value: "PATCH"
     };
+    this.class_text_title = "white-header";
+    this.buttons = {
+        agendar: false,
+        trash: true,
+        cancelar: true,
+        modificar: true
+    }
+};
     // Borra los campos del ingreso de datos de actualizacion
     $scope.resetAutorizacion = function () {
         $scope.autorizacion = "";
@@ -37,11 +89,11 @@
     /*
      * Panel de modificacion de la cita
      * */
-    $scope.panelModCita = function (event) {
+     $scope.panelModCita = function (event) {
         /*
          * Preparar el panel para modificar una cita
          * */
-        $scope.config = {
+         $scope.config = {
             defaultDate: moment(event.start).format('YYYY-MM-DD'),
             defaultView: 'agendaDay'
         };
@@ -79,41 +131,118 @@
         $scope.panel = panelModificar;
         /*$scope.$watch('panel',function(){
          $scope.panel = $scope.panel_modify;
-         });*/
-        try {
-            $scope.$apply();
-        } catch (e) {
+     });*/
+     try {
+        $scope.$apply();
+    } catch (e) {
 
-        }
-    };
+    }
+};
     /*
      * Inicializacion
      */
 
-    $scope.init = function () {
-        $scope.tipo_convenio = true;
-        $scope.config = {
-            defaultDate: $scope.fecha,
-            defaultView: 'agendaWeek'
-        };
-        $scope.sel_convenio = "I.E.S.S.";
-        $scope.options_convenio = [
-            "I.E.S.S.",
-            "PARTICULAR"
-        ];
-        $(".select2").select2();
-        $('#fecha, .datepicker').datepicker({
-            language: 'es',
-            autoclose: true,
-            format: 'dd/mm/yyyy'
-        });
-        $('#calendar').fullCalendar({
-            header: {
-                left: 'prev,next, today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay'
-            },
-            defaultDate: $scope.config.defaultDate,
+     $scope.init = function () {
+        /* 
+      | ---------------------------------------------------------------------- 
+      | iniciar sistema de paginacion pacientes
+      | ----------------------------------------------------------------------     
+      | 
+      | 
+      */
+      $scope.paciente_pages = {
+        type:1, // define tipo de consulta: 1 normal 2 busqueda
+        total:'',
+        per_page:'',
+        current_page:'',
+        last_page:'',
+        next_page_url:'',
+        from:'',
+        to:'',
+        prev_page_url:'',
+        items:[],
+        status:'',
+        paginate:function(num){
+          this.items =  [];
+          var actual = $scope.paciente_pages.current_page;
+
+          for (var i = $scope.paciente_pages.current_page; i <= $scope.paciente_pages.last_page; i++) {
+            status = i == $scope.paciente_pages.current_page ? 'active': '';
+
+            if(i <= $scope.paciente_pages.current_page+num){ //mostrar 8 botones
+              $scope.paciente_pages.items.push({
+                num:i,
+                status:status
+            });
+          }
+
+          }// end for
+      }
+  };
+ /* 
+      | ---------------------------------------------------------------------- 
+      | Inicializar PACIENTES
+      | ----------------------------------------------------------------------     
+      | 
+      | 
+      */
+
+      var consulta_paciente = $scope.getJSON(URL_ALL_PACIENTE,null);
+      consulta_paciente.then(function(response){
+        $scope.paciente = response.data.paciente.data;
+
+        $scope.paciente_pages.from = response.data.paciente.from;
+        $scope.paciente_pages.to = response.data.paciente.to;
+        $scope.paciente_pages.total = response.data.paciente.total;
+        $scope.paciente_pages.next_page_url = response.data.paciente.next_page_url;
+        $scope.paciente_pages.last_page = response.data.paciente.last_page;
+        $scope.paciente_pages.per_page = response.data.paciente.per_page;
+        $scope.paciente_pages.current_page = response.data.paciente.current_page;
+
+        var status = '';
+
+        for (var i = 1; i <= $scope.paciente_pages.last_page; i++) {
+
+          status = i == $scope.paciente_pages.current_page ? 'active': '';
+
+            if(i <= 8){ //mostrar 8 botones
+              $scope.paciente_pages.items.push({
+                num:i,
+                status:status
+            });
+          }
+      }
+
+      //$scope.$watch('paciente', function () {
+        //if ($scope.busqueda != '') {
+          //$scope.ajuste();
+      //}
+  //});
+});
+
+      $scope.tipo_convenio = true;
+      $scope.config = {
+        defaultDate: $scope.fecha,
+        defaultView: 'agendaWeek'
+    };
+    $scope.sel_convenio = "I.E.S.S.";
+    $scope.options_convenio = [
+    "I.E.S.S.",
+    "PARTICULAR"
+    ];
+    $(".select2").select2();
+    $('#fecha, .datepicker').datepicker({
+        language: 'es',
+        autoclose: true,
+        format: 'dd/mm/yyyy'
+    });
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next, today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        defaultDate: $scope.config.defaultDate,
             height: 460, //alto del calendario
             defaultView: $scope.config.defaultView,
             locale: 'es', // tomado de locale
@@ -165,7 +294,7 @@
         /*
          *  Inicializar paneles
          * */
-        if (CITA.id == "") {
+         if (CITA.id == "") {
             $scope.panel = new $scope.panel_default();
         } else {
             $scope.panelModCita(CITA);
@@ -182,8 +311,8 @@
     };
     $scope.verify_time = function () {
         var verified = false,
-            inicio = moment($scope.horaInicio.toString(), 'H:mm a'),
-            fin = moment($scope.horaFin.toString(), 'H:mm a');
+        inicio = moment($scope.horaInicio.toString(), 'H:mm a'),
+        fin = moment($scope.horaFin.toString(), 'H:mm a');
         verified = !inicio.isAfter(fin);
         return verified;
     };
@@ -191,14 +320,14 @@
     $scope.validate_hourMedic = function () {
         var businessHours = HORARIO_TRABAJO;
         var inicio = moment($scope.horaInicio.toString(), 'H:mm a'),
-            fin = moment($scope.horaFin.toString(), 'H:mm a'),
-            fecha = moment($scope.cita.fecha, 'DD/MM/YYYY').format('dddd');
+        fin = moment($scope.horaFin.toString(), 'H:mm a'),
+        fecha = moment($scope.cita.fecha, 'DD/MM/YYYY').format('dddd');
         var verified = false;
         // recorrer dias y horas
         angular.forEach(businessHours, function (key, value) {
             var day_selected = fecha, // martes
                 day_business = $scope.map_day(parseInt(key.dow[0])); // martes
-            if (day_selected == day_business) {
+                if (day_selected == day_business) {
                 // comparar horas
                 var hour_business_start = moment(key.start, 'H:mm a');
                 var hour_business_end = moment(key.end, 'H:mm a');
@@ -242,34 +371,33 @@
                 result = false;
             }
         }
-         console.log(result)
+        console.log(result)
         return result;
     }
-
     $scope.map_day = function (day) {
         var result = "";
         switch (day) {
             case 1:
-                result = "lunes";
-                break;
+            result = "lunes";
+            break;
             case 2:
-                result = "martes";
-                break;
+            result = "martes";
+            break;
             case 3:
-                result = "miércoles";
-                break;
+            result = "miércoles";
+            break;
             case 4:
-                result = "jueves";
-                break;
+            result = "jueves";
+            break;
             case 5:
-                result = "viernes";
-                break;
+            result = "viernes";
+            break;
             case 6:
-                result = "sábado";
-                break;
+            result = "sábado";
+            break;
             case 7:
-                result = "domingo";
-                break;
+            result = "domingo";
+            break;
 
         }
         return result;
@@ -278,7 +406,7 @@
     /*
      * muestra los datos para ingresar fechas de autorizacion de convenio particular o iess
      * */
-    $scope.eval_convenio = function () {
+     $scope.eval_convenio = function () {
         console.log($scope.sel_convenio)
         if ($scope.sel_convenio == 'I.E.S.S.') {
             $scope.tipo_convenio = true;
@@ -334,17 +462,17 @@
         $scope.panel = new $scope.panel_default();
         /*$scope.$watch('panel',function(){
          $scope.panel = $scope.panel_default;
-         });*/
-        try {
-            $scope.$apply();
-        } catch (err) {
-            console.log(err);
-        }
-    };
+     });*/
+     try {
+        $scope.$apply();
+    } catch (err) {
+        console.log(err);
+    }
+};
     /*
      * Recarga la página actual
      */
-    $scope.reloadRoute = function () {
+     $scope.reloadRoute = function () {
         $window.location.reload();
     };
     /*
@@ -353,7 +481,7 @@
     /*
      * Recarga la página actual
      */
-    $scope.reloadCalendar = function () {
+     $scope.reloadCalendar = function () {
         $("#calendar").fullCalendar("refetchEvents");
     };
     /*
@@ -362,7 +490,7 @@
     /*
      * Cancelar la cita
      */
-    $scope.cancelarCita = function () {
+     $scope.cancelarCita = function () {
         $scope.setDateTime();
         swal({
             title: "¿Desea cancelar la cita?",
@@ -403,7 +531,7 @@
     /*
      * -->
      */
-    $scope.showModalDate = function () {
+     $scope.showModalDate = function () {
         $("#mod_agregar_cita").modal("show");
     };
     $scope.setDateTime = function () {
@@ -423,7 +551,7 @@
     /*
      *  Sincronizar agenda
      * */
-    $scope.agendaWorker = {
+     $scope.agendaWorker = {
         load: function () {
             $("#calendar").fullCalendar("refetchEvents");
         }
@@ -432,7 +560,7 @@
      * -->
      *
      * */
-    $scope.submit = function (e) {
+     $scope.submit = function (e) {
         e.preventDefault();
         if( $scope.validHours() &&  $scope.validate_hourMedic() && $scope.verify_time() && $scope.verify_date() && $scope.horaInicio != "" && $scope.horaFin != "" && $scope.horaInicio != $scope.horaFin){
             $scope.setDateTime();
@@ -482,11 +610,97 @@
     // cambiar formato de fecha 01/11/2017 a 2017-01-11 // not used
     $scope.formatDate = function (date) {
         var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
         if (month.length < 2) month = '0' + month;
         if (day.length < 2) day = '0' + day;
         return [year, month, day].join('-');
     };
+     /* 
+      | ---------------------------------------------------------------------- 
+      | Buscar paciente
+      | ----------------------------------------------------------------------     
+      | @e = event
+      | @num_page = numero de pagina
+      */
+      $scope.buscarPaciente= function(e){
+        e.preventDefault();
+        var params = {texto_busqueda:$scope.txt_busqueda_paciente}
+        var consulta_paciente = $scope.getJSON(URL_BUSCAR_PACIENTE,params);
+
+        consulta_paciente.then(function(response){
+          $scope.paciente = response.data.paciente.data;
+          $scope.paciente_pages.from = response.data.paciente.from;
+          $scope.paciente_pages.to = response.data.paciente.to;
+          $scope.paciente_pages.total = response.data.paciente.total;
+          $scope.paciente_pages.next_page_url = response.data.paciente.next_page_url;
+          $scope.paciente_pages.last_page = response.data.paciente.last_page;
+          $scope.paciente_pages.per_page = response.data.paciente.per_page;
+          $scope.paciente_pages.current_page = response.data.paciente.current_page;
+
+          $scope.paciente_pages.items = [];
+
+          var status = ''
+
+          $scope.paciente_pages.paginate(7);
+          $scope.paciente_pages.type = 2;
+          //$scope.$watch('paciente', function () {
+            //if ($scope.busqueda != '') {
+              //$scope.ajuste();
+            //}
+          //});
+      });
+
+    };
+
+
+      /* 
+      | ---------------------------------------------------------------------- 
+      | Agregar el paciente desde el modal de busqueda
+      | ----------------------------------------------------------------------     
+      | 
+      | 
+      */
+      $scope.agregarPaciente = function(id,cedula,nombre,apellido){
+        $("#myModal").modal("hide");
+        $scope.paciente_nombres = nombre+" "+apellido;
+        $scope.idpaciente = id;
+    };
+      /* 
+      | ---------------------------------------------------------------------- 
+      | Navegar entre paginas pacientes
+      | ----------------------------------------------------------------------     
+      | @e = event
+      | @num_page = numero de pagina
+      */
+      $scope.pacientePage = function(e,num_page) {
+
+        var page = {page:num_page,texto_busqueda:$scope.txt_busqueda_paciente};
+        var consulta = $scope.getJSON($scope.paciente_pages.type == 1 ? URL_ALL_PACIENTE : URL_BUSCAR_PACIENTE,page);
+
+        consulta.then(function(response){
+          $scope.paciente = response.data.paciente.data;
+          $scope.paciente_pages.from = response.data.paciente.from;
+          $scope.paciente_pages.to = response.data.paciente.to;
+          $scope.paciente_pages.total = response.data.paciente.total;
+          $scope.paciente_pages.next_page_url = response.data.paciente.next_page_url;
+          $scope.paciente_pages.last_page = response.data.paciente.last_page;
+          $scope.paciente_pages.per_page = response.data.paciente.per_page;
+          $scope.paciente_pages.current_page = response.data.paciente.current_page;
+
+          $scope.paciente_pages.items = [];
+
+          var status = ''
+
+          $scope.paciente_pages.paginate(7);
+
+          //$scope.$watch('paciente', function () {
+            //if ($scope.busqueda != '') {
+              //$scope.ajuste();
+            //}
+          //});
+        });
+        
+      };
 });
